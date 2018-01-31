@@ -12,8 +12,13 @@ class ProfessorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+    public function index(Request $request)
+    {
+        $request->user()->authorizeRole('Ver Professor');
         return view('professor.index')->with([
             'professors' => Professor::all()
         ]);
@@ -24,8 +29,9 @@ class ProfessorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->authorizeRole('Crear Professor');
         return view('professor.create');
     }
 
