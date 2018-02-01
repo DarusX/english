@@ -31,7 +31,7 @@
         $.ajax({
             url: $(this).attr("href"),
             success: function(data){
-                //$("#modalContent").html(data);
+                $("#modalContent").html(data);
             }
         });
     })
