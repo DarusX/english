@@ -5,19 +5,19 @@
     <form action="{{route('professors.store')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group col-sm-4">
-            <label for="">Nombre</label>
+            <label for="" class="required">Nombre</label>
             <input type="text" name="name" class="form-control">
         </div>
         <div class="form-group col-sm-4">
-            <label for="">Apellidos</label>
+            <label for="" class="required">Apellidos</label>
             <input type="text" name="lastname" class="form-control">
         </div>
         <div class="form-group col-sm-4">
-            <label for="">Fecha de nacimiento</label>
+            <label for="" class="required">Fecha de nacimiento</label>
             <input type="date" name="birthdate" class="form-control">
         </div>
         <div class="form-group col-sm-4">
-            <label for="">Sexo</label>
+            <label for="" class="required">Sexo</label>
             <select name="gender" class="form-control">
                 <option value="M">Maculino</option>
                 <option value="F">Femenino</option>
@@ -40,11 +40,11 @@
             <input type="text" name="rfc" class="form-control">
         </div>
         <div class="form-group col-sm-4">
-            <label for="">Celular</label>
+            <label for="" class="required">Celular</label>
             <input type="text" name="mobile" class="form-control">
         </div>
         <div class="form-group col-sm-4">
-            <label for="">Teléfono</label>
+            <label for="" class="required">Teléfono</label>
             <input type="text" name="phone" class="form-control">
         </div>
         <div class="form-group col-sm-4">
@@ -52,11 +52,11 @@
             <input type="text" name="blood_type" class="form-control">
         </div>
         <div class="form-group col-sm-4">
-            <label for="">Dirección</label>
+            <label for="" class="required">Dirección</label>
             <input type="text" name="address" class="form-control">
         </div>
         <div class="form-group col-sm-4">
-            <label for="">Email</label>
+            <label for="" class="required">Email</label>
             <input type="email" name="email" class="form-control">
         </div>
         <div class="form-group col-sm-4">

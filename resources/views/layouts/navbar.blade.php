@@ -34,9 +34,8 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li>
-                                
-                            </li>
+                            <li><a href="{{route('professors.index')}}">Profesores</a></li>
+                            <li><a href="{{route('professors.create')}}">Crear</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

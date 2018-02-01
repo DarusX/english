@@ -18,7 +18,6 @@ class ProfessorController extends Controller
     }
     public function index(Request $request)
     {
-        $request->user()->authorizeRole('Ver Professor');
         return view('professor.index')->with([
             'professors' => Professor::all()
         ]);
@@ -31,7 +30,6 @@ class ProfessorController extends Controller
      */
     public function create(Request $request)
     {
-        $request->user()->authorizeRole('Crear Professor');
         return view('professor.create');
     }
 
@@ -95,5 +93,10 @@ class ProfessorController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function ajax(){
+        $connector = new GridConnector(null, "PHPLaravel");     
+        $connector->configure(new Professor(), "id", "name,lastname");                                                      
+        $connector->render();    
     }
 }
