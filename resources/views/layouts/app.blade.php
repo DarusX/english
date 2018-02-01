@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,22 +14,34 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('dxhtml/dhtmlxgrid.css')}}">
+    <link rel="stylesheet" href="{{asset('css/sidebar.css')}}">
     <style>
-    @include('layouts.css')
+        @include('layouts.css')
     </style>
 </head>
+
 <body>
-    @include('layouts.navbar')
-    <div class="container-fluid">
-        <div class="row">
-            @yield('content')
+    <div id="wrapper">
+        @include('layouts.sidebar')
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    @include('layouts.navbar')
+                    @yield('content')
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{asset('dxhtml/dhtmlxgrid.js')}}"></script>
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
     @yield('scripts')
 </body>
+
 </html>

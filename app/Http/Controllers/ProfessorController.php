@@ -63,6 +63,9 @@ class ProfessorController extends Controller
      */
     public function show($id)
     {
+        return view('professor.show')->with([
+            'professor' => Professor::findOrFail($id)
+        ]);
     }
 
     /**
