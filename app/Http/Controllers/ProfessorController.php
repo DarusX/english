@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Professor;
+use DateTime;
+use App\User;
 
 class ProfessorController extends Controller
 {
@@ -42,7 +44,12 @@ class ProfessorController extends Controller
     public function store(Request $request)
     {
         $professor = Professor::create($request->all());
-
+        $username =  $this->username($request);
+        User::create([
+            'username' => $username,
+            'password' => bcrypt($username),
+            'name' => $request->name.' '.$request->lastname
+        ]);
         return redirect()->route('professors.edit', [
             'id' => $professor->id
         ]);
@@ -94,9 +101,12 @@ class ProfessorController extends Controller
     {
         //
     }
-    public function ajax(){
-        $connector = new GridConnector(null, "PHPLaravel");     
-        $connector->configure(new Professor(), "id", "name,lastname");                                                      
-        $connector->render();    
+    public function username($data){
+        $n = $data->name;
+        $l = $data->lastname;
+        $b = DateTime::createFromFormat('Y-m-d',$data->birthdate);
+        $b = $b->format('ym');
+        $str = $n[0].$n[1].$l[0].$l[1].$b;
+        return strtoupper($str);
     }
 }
