@@ -1,5 +1,6 @@
 <?php
 return [
     'professors' => 'Profesores',
-    'create' => 'Crear'
+    'create' => 'Crear',
+    'level' => 'Nivel',
 ];

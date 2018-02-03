@@ -35,12 +35,27 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                        Collapsible Group Item #3
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        @lang('menu.level')
                     </a>
                 </h4>
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
+                <div class="list-group">
+                    <a href="{{route('level.index')}}" class="list-group-item">@lang('menu.level')</a>
+                    <a href="{{route('level.create')}}" class="list-group-item">@lang('menu.create')</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                        Collapsible Group Item #3
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
                 <div class="panel-body">
                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
                 </div>
