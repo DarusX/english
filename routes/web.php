@@ -23,3 +23,6 @@ Route::resources([
     'professors' => 'ProfessorController'
 ]);
 Route::get('/ajax/professors', 'ProfessorController@ajax');
+Route::resources([
+    'sucursal' => 'SucursalController'
+]);

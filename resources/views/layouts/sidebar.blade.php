@@ -21,13 +21,14 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                        Collapsible Group Item #2
+                        Sucursal
                     </a>
                 </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="" class="list-group-item">Profesores</a>
+                    <a href="{{route('sucursal.index')}}" class="list-group-item">Sucursal</a>
+                    <a href="{{route('sucursal.create')}}" class="list-group-item">@lang('menu.create')</a>
                 </div>
             </div>
         </div>
