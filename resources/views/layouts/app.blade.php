@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/sidebar.css')}}">
+    <link rel="stylesheet" href="{{asset('dxhtml/dhtmlxgrid.css')}}">
     <style>
         @include('layouts.css')
     </style>
@@ -35,6 +36,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{asset('dxhtml/dhtmlxgrid.js')}}"></script>
     <script>
         $("#menu-toggle").click(function(e) {
             e.preventDefault();

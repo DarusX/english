@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Professor;
 use DateTime;
 use App\User;
+use Dhtmlx\Connector\JSONDataConnector;
 
 class ProfessorController extends Controller
 {
@@ -111,5 +112,9 @@ class ProfessorController extends Controller
         $b = $b->format('ym');
         $str = $n[0].$n[1].$l[0].$l[1].$b;
         return strtoupper($str);
+    }
+    public function ajax(Request $request)
+    {
+        return response()->json(Professor::all());
     }
 }

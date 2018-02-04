@@ -19,9 +19,18 @@
         </tbody>
     </table>
 </div>
+<div id="grid_here" style="width: 600px; height: 400px;"></div>
 @include('professor.modal')
 @endsection
 @section('scripts')
+<script type="text/javascript" charset="utf-8">
+    mygrid = new dhtmlXGridObject('grid_here');
+    mygrid.setHeader("name");
+    mygrid.init();
+    mygrid.load("{{route('professors.ajax')}}", "js");
+    var dp = new dataProcessor("./grid_data");
+    dp.init(mygrid);
+</script>
 <script>
     $("td a").click(function(event){
         event.preventDefault();

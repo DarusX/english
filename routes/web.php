@@ -20,14 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resources([
-    'professors' => 'ProfessorController'
-]);
-Route::get('/ajax/professors', 'ProfessorController@ajax');
-
-Route::resources([
-    'sucursal' => 'SucursalController'
-]);
-
-Route::resources([
+    'professors' => 'ProfessorController',
+    'sucursal' => 'SucursalController',
     'level' => 'LevelController'
 ]);
+Route::get('/ajax/professors', 'ProfessorController@ajax')->name('professors.ajax');
