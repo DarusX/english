@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resources([
     'professors' => 'ProfessorController',
-    'sucursal' => 'SucursalController',
-    'level' => 'LevelController'
+    'branches' => 'BranchController',
+    'levels' => 'LevelController'
 ]);
 Route::get('/ajax/professors', 'ProfessorController@ajax')->name('professors.ajax');

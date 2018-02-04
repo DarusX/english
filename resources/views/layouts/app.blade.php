@@ -28,7 +28,12 @@
             <div class="container-fluid">
                 <div class="row">
                     @include('layouts.navbar')
-                    @yield('content')
+                    <div class="container">
+                        <div class="row">
+                            @yield('content')
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

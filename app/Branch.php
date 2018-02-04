@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Level extends Model
+class Branch extends Model
 {
     protected $fillable = [
-        'level', 'description'
+        'name', 'address', 'phone'
     ];
 }

@@ -21,14 +21,14 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                        Sucursal
+                        @lang('menu.branches')
                     </a>
                 </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('sucursal.index')}}" class="list-group-item">Sucursal</a>
-                    <a href="{{route('sucursal.create')}}" class="list-group-item">@lang('menu.create')</a>
+                    <a href="{{route('branches.index')}}" class="list-group-item">@lang('menu.branches')</a>
+                    <a href="{{route('branches.create')}}" class="list-group-item">@lang('menu.create')</a>
                 </div>
             </div>
         </div>
@@ -36,14 +36,14 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                        @lang('menu.level')
+                        @lang('menu.levels')
                     </a>
                 </h4>
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('level.index')}}" class="list-group-item">@lang('menu.level')</a>
-                    <a href="{{route('level.create')}}" class="list-group-item">@lang('menu.create')</a>
+                    <a href="{{route('levels.index')}}" class="list-group-item">@lang('menu.levels')</a>
+                    <a href="{{route('levels.create')}}" class="list-group-item">@lang('menu.create')</a>
                 </div>
             </div>
         </div>

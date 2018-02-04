@@ -2,5 +2,6 @@
 return [
     'professors' => 'Profesores',
     'create' => 'Crear',
-    'level' => 'Nivel',
+    'levels' => 'Niveles',
+    'branches' => 'Sucursales',
 ];
