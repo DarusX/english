@@ -4,4 +4,5 @@ return [
     'create' => 'Crear',
     'levels' => 'Niveles',
     'branches' => 'Sucursales',
+    'types' => 'Tipos de curso',
 ];

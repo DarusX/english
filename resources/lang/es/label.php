@@ -2,5 +2,9 @@
 return [
     'name' => 'Nombre',
     'address' => 'Dirección',
-    'phone' => 'Teléfono'
+    'phone' => 'Teléfono',
+    'coursetype' => 'Tipo de curso',
+    'duration' => 'Duración',
+    'information' => 'Información'
+
 ];
