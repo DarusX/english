@@ -57,8 +57,8 @@
             </div>
             <div id="collapseFour" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('types.index')}}" class="list-group-item">@lang('menu.types')</a>
-                    <a href="{{route('types.create')}}" class="list-group-item">@lang('menu.create')</a>
+                    <a href="{{route('course_type.index')}}" class="list-group-item">@lang('menu.types')</a>
+                    <a href="{{route('course_type.create')}}" class="list-group-item">@lang('menu.create')</a>
                 </div>
             </div>
         </div>

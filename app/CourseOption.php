@@ -11,6 +11,6 @@ class CourseOption extends Model
 
     public function classification()
     {
-        return $this->belongsTo('App\Classification', 'classification_id', 'id');    
+        return $this->belongsTo('App\CourseClassification', 'classification_id', 'id');    
     }
 }

@@ -29,7 +29,7 @@ class CourseClassificationController extends Controller
     public function edit($id)
     {
         return view('classifications.edit')->with([
-            'classification' => CourseClassification::find($id),
+            'classification' => CourseClassification::find($id)
         ]); 
     }
     public function update(Request $request, $id)

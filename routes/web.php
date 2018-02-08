@@ -23,7 +23,7 @@ Route::resources([
     'professors' => 'ProfessorController',
     'branches' => 'BranchController',
     'levels' => 'LevelController',
-    'types' => 'CourseTypeController',
+    'course_type' => 'CourseTypeController',
     'classifications' => 'CourseClassificationController',
     'options' => 'CourseOptionController'
 ]);

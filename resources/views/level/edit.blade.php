@@ -1,38 +1,23 @@
 @extends('layouts.app')
 @section('content')
-<div class="row">
-    <div class="col-sm-12">
-    <h1><center>Modificar datos</center></h1>
-    </div>
+<div class="col-sm-12">
+    <h1>@lang('title.level')</h1>
 </div>
 <div class="col-sm-12">
-<form action="{{route('level.update', $nivel->id)}}" method="POST" role="form">
-{{csrf_field()}}
-{{method_field('PUT')}}
-<div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
-        <div class="form-group">
+    <form action="{{route('levels.update', $level->id)}}" method="POST" role="form">
+    {{csrf_field()}}
+    {{method_field('PUT')}}
+        <div class="form-group col-sm-4">
             <label for="">Nivel</label>
-            <input class="form-control" name="level" value="{{$nivel->level}}">
+            <input class="form-control" name="level" value="{{$level->level}}">
         </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
-        <div class="form-group">
+        <div class="form-group col-sm-4">
             <label for="">Información del nivel</label>
-            <input class="form-control" name="information" value="{{$nivel->information}}">
+            <input class="form-control" name="description" value="{{$level->description}}">
         </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <center><button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o fa-lg" aria-hidden="true"></i> 
-        Guardar</button>
-        <a href="{{route('level.index')}}" class="btn btn-danger">
-        <i class="fa fa-undo fa-lg" aria-hidden="true"></i> Regresar</a></center>
-    </div>
-</div>
-</form>
+        <div class="form-group col-sm-12">
+            <button type="submit" class="btn btn-default">@lang('button.save')</button>
+        </div>
+    </form>
 </div>
 @endsection

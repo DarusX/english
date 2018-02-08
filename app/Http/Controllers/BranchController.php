@@ -25,7 +25,7 @@ class BranchController extends Controller
     {
         $Branch = Branch::create($request->all());
 
-        return redirect()->route('branch.index');
+        return redirect()->route('branches.index');
     }
     public function edit($id)
     {
@@ -36,7 +36,7 @@ class BranchController extends Controller
     public function update(Request $request, $id)
     {
         Branch::find($id)->update($request->all());
-        return redirect()->route('branch.index');
+        return redirect()->route('branches.index');
     }
     public function destroy($id)
     {

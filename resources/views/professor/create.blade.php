@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="col-sm-12">
-    <h1>Profesor</h1>
+    <h1>@lang('title.professor')</h1>
     <form action="{{route('professors.store')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group col-sm-4">

@@ -33,7 +33,7 @@ class CourseOptionController extends Controller
     {
         return view('options.edit')->with([
             'option' => CourseOption::find($id),
-            'classifications' => Classification::all()
+            'classifications' => CourseClassification::all()
         ]); 
     }
     public function update(Request $request, $id)

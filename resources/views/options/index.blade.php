@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="col-sm-12">
-    <h1>@lang('title.options')</h1>
+    <h1>@lang('title.courseoptions')</h1>
     <table class="table">
         <thead>
             <tr>

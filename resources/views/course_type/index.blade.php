@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="col-sm-12">
-    <h1>@lang('title.coursetype')</h1>
+    <h1>@lang('title.coursetypes')</h1>
     <table class="table">
         <thead>
             <tr>
@@ -20,8 +20,8 @@
                     <td>{{$t->information}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
-                            <a href="{{route('types.destroy', $t->id)}}" class="btn btn-default">@lang('icon.delete')</a>
-                            <a href="{{route('types.edit', $t->id)}}" class="btn btn-default">@lang('icon.edit')</a>
+                            <a href="{{route('course_type.destroy', $t->id)}}" class="btn btn-default">@lang('icon.delete')</a>
+                            <a href="{{route('course_type.edit', $t->id)}}" class="btn btn-default">@lang('icon.edit')</a>
                         </div>
                     </td>
                 <tr>

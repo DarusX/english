@@ -1,18 +1,15 @@
 @extends('layouts.app')
 @section('content')
-<div class="row">
-    <div class="col-sm-12">
-    <h1><center>Modificar datos</center></h1>
-    </div>
+<div class="col-sm-12">
+<h1>@lang('title.courseoption')</h1>
 </div>
 <div class="col-sm-12">
-<form action="{{route('option.update', $option->id)}}" method="POST" role="form">
+<form action="{{route('options.update', $option->id)}}" method="POST" role="form">
 {{csrf_field()}}
 {{method_field('PUT')}}
-<div class="row">
     <div class="form-group col-sm-4">
             <label for="">Opción de curso</label>
-            <input class="form-control" name="name" value="{{option->name}}">
+            <input class="form-control" name="name" value="{{$option->name}}">
     </div>
     <div class="form-group col-sm-4">
         <label for="" class="required">@lang('label.classification')</label>
@@ -26,15 +23,9 @@
             @endforeach
         </select>
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <center><button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o fa-lg" aria-hidden="true"></i> 
-        Guardar</button>
-        <a href="{{route('option.index')}}" class="btn btn-danger">
-        <i class="fa fa-undo fa-lg" aria-hidden="true"></i> Regresar</a></center>
+    <div class="form-group col-sm-12">
+        <button type="submit" class="btn btn-default">@lang('button.save')</button>
     </div>
-</div>
 </form>
 </div>
 @endsection

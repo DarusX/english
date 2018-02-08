@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="col-sm-12">
-    <h1>Profesor</h1>
+    <h1>@lang('title.professor')</h1>
 </div>
 <div class="col-sm-12">
     <form action="{{route('professors.update', $professor->id)}}" method="post" enctype="multipart/form-data">
@@ -75,7 +75,7 @@
             <input type="file" name="_photo" class="form-control" >
         </div>
         <div class="form-group col-sm-12">
-            <button type="submit" class="btn btn-default">Guardar</button>
+            <button type="submit" class="btn btn-default">@lang('button.save')</button>
         </div>
 
     </form>

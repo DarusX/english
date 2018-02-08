@@ -1,10 +1,10 @@
 @extends('layouts.app') 
 @section('content')
 <div class="col-sm-12">
-    <h1>@lang('title.option')</h1>
+    <h1>@lang('title.courseoption')</h1>
     <form action="{{route('options.store')}}" method="POST">
         {{csrf_field()}}
-        <div class="form-group">
+        <div class="form-group col-sm-4">
             <label for="" class="required">@lang('label.option')</label>
             <input class="form-control" name="name">
         </div>
@@ -17,7 +17,8 @@
                 @endforeach
             </select>
         </div>
-            <button type="submit" class="btn btn-primary">@lang('button.save')</button>
+        <div class="form-group col-sm-12">
+            <button type="submit" class="btn btn-default">@lang('button.save')</button>
         </div>
     </form>
 </div>
