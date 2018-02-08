@@ -65,6 +65,36 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                        @lang('menu.classifications')
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+                <div class="list-group">
+                    <a href="{{route('classifications.index')}}" class="list-group-item">@lang('menu.classifications')</a>
+                    <a href="{{route('classifications.create')}}" class="list-group-item">@lang('menu.create')</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                        @lang('menu.options')
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse">
+                <div class="list-group">
+                    <a href="{{route('options.index')}}" class="list-group-item">@lang('menu.options')</a>
+                    <a href="{{route('options.create')}}" class="list-group-item">@lang('menu.create')</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFourab">
                         Collapsible Group Item #3
                     </a>

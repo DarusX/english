@@ -5,6 +5,9 @@ return [
     'phone' => 'Teléfono',
     'coursetype' => 'Tipo de curso',
     'duration' => 'Duración',
-    'information' => 'Información'
+    'information' => 'Información',
+    'classification' => 'Clasificación',
+    'option' => 'Opción',
+    
 
 ];

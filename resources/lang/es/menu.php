@@ -5,4 +5,6 @@ return [
     'levels' => 'Niveles',
     'branches' => 'Sucursales',
     'types' => 'Tipos de curso',
+    'classifications' => 'Clasificación de curso',
+    'options' => 'Opción de curso',
 ];
