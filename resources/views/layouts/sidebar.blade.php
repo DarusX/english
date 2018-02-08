@@ -95,6 +95,20 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+                        @lang('menu.departments')
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseSeven" class="panel-collapse collapse">
+                <div class="list-group">
+                    <a href="{{route('departments.index')}}" class="list-group-item">@lang('menu.departments')</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFourab">
                         Collapsible Group Item #3
                     </a>

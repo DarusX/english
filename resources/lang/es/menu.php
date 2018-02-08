@@ -7,4 +7,5 @@ return [
     'types' => 'Tipos de curso',
     'classifications' => 'Clasificación de curso',
     'options' => 'Opción de curso',
+    'departments' => 'Departamentos',
 ];

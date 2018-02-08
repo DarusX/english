@@ -12,6 +12,8 @@ return [
     'courseclassification' => 'Clasificación de curso',
     'courseoptions' => 'Opciones de curso',
     'courseoption' => 'Opción de curso',
+    'departments' => 'Departamentos',
+    'department' => 'Departamento',
     
 
 ];
