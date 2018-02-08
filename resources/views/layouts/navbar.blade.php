@@ -16,7 +16,8 @@
             </button>
 
             <!-- Branding Image -->
-            <a href="#menu-toggle" class="navbar-brand" id="menu-toggle">Toggle Menu</a>
+            <a href="#menu-toggle" class="navbar-brand" id="menu-toggle">
+                <i class="fa fa-bars"></i>
             </a>
         </div>
 
