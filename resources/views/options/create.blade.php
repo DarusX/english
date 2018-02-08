@@ -5,7 +5,7 @@
     <form action="{{route('options.store')}}" method="POST">
         {{csrf_field()}}
         <div class="form-group col-sm-4">
-            <label for="" class="required">@lang('label.option')</label>
+            <label for="" class="required">@lang('label.courseoption')</label>
             <input class="form-control" name="name">
         </div>
         <div class="form-group col-sm-4">

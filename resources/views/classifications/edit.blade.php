@@ -9,7 +9,7 @@
         {{csrf_field()}}
         {{method_field('PUT')}}
         <div class="form-group">
-            <label for="">Clasificación</label> 
+            <label for="">@lang('label.courseclassification')</label> 
             <input type="text" class="form-control" name="name" value="{{$classification->name}}">
         </div>
         <div class="form-group col-sm-12">

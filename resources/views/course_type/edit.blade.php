@@ -8,7 +8,7 @@
         {{csrf_field()}}
         {{method_field('PUT')}}
         <div class="form-group col-sm-4">
-            <label for="">@lang('label.name')</label>
+            <label for="">@lang('label.coursetype')</label>
             <input type="text" name="name" class="form-control" value="{{$type->name}}">
         </div>  
         <div class="form-group col-sm-4">

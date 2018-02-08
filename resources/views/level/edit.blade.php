@@ -8,11 +8,11 @@
     {{csrf_field()}}
     {{method_field('PUT')}}
         <div class="form-group col-sm-4">
-            <label for="">Nivel</label>
+            <label for="">@lang('label.level')</label>
             <input class="form-control" name="level" value="{{$level->level}}">
         </div>
         <div class="form-group col-sm-4">
-            <label for="">Información del nivel</label>
+            <label for="">@lang('label.description')</label>
             <input class="form-control" name="description" value="{{$level->description}}">
         </div>
         <div class="form-group col-sm-12">

@@ -5,7 +5,7 @@
     <form action="{{route('classifications.store')}}" method="POST">
         {{csrf_field()}}
         <div class="form-group">
-            <label for="" class="required">@lang('label.name')</label>
+            <label for="" class="required">@lang('label.courseclassification')</label>
             <input class="form-control" name="name">
         </div>
             <button type="submit" class="btn btn-primary">@lang('button.save')</button>

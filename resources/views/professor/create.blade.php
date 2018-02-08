@@ -19,7 +19,7 @@
         <div class="form-group col-sm-4">
             <label for="" class="required">@lang('label.gender')</label>
             <select name="gender" class="form-control">
-                <option value="M">Maculino</option>
+                <option value="M">Masculino</option>
                 <option value="F">Femenino</option>
             </select>
         </div>
