@@ -5,7 +5,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th>@lang('head.classification')</th>
+                <th>@lang('head.courseclassification')</th>
                 <th>@lang('head.actions')</th>
             </tr>
         </thead>

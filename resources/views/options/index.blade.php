@@ -5,8 +5,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th>@lang('head.option')</th>
-                <th>@lang('head.classifications')</th>
+                <th>@lang('head.courseoption')</th>
+                <th>@lang('head.classification')</th>
                 <th>@lang('head.actions')</th>
             </tr>
         </thead>
