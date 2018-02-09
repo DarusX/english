@@ -3,7 +3,6 @@
 <div class="col-sm-12">
     <h1>@lang('title.courseclassification')</h1>
 </div>
-</div>
 <div class="col-sm-12"> 
     <form action="{{route('classifications.update', $classification->id)}}" method="POST">
         {{csrf_field()}}

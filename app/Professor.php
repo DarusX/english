@@ -24,4 +24,12 @@ class Professor extends Model
         'fired',
         'photo'
     ];
+    public function course()
+    {
+        return $this->hasMany('App\Course', 'professor_id', 'id');
+    }
+    public function getTeacherAttribute()
+    {
+        return $this->name.' '.$this->lastname;
+    }
 }

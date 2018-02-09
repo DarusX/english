@@ -13,4 +13,8 @@ class CourseOption extends Model
     {
         return $this->belongsTo('App\CourseClassification', 'classification_id', 'id');    
     }
+    public function course()
+    {
+        return $this->hasMany('App\Course', 'course_option_id', 'id');
+    }
 }

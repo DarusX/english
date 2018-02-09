@@ -26,6 +26,7 @@ Route::resources([
     'course_type' => 'CourseTypeController',
     'classifications' => 'CourseClassificationController',
     'options' => 'CourseOptionController',
-    'departments' => 'DepartmentController'
+    'departments' => 'DepartmentController',
+    'courses' => 'CourseController',
 ]);
 Route::get('/ajax/professors', 'ProfessorController@ajax')->name('professors.ajax');

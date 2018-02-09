@@ -109,6 +109,21 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
+                        @lang('menu.courses')
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseEight" class="panel-collapse collapse">
+                <div class="list-group">
+                    <a href="{{route('courses.index')}}" class="list-group-item">@lang('menu.courses')</a>
+                    <a href="{{route('courses.create')}}" class="list-group-item">@lang('menu.create')</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFourab">
                         Collapsible Group Item #3
                     </a>

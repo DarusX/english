@@ -8,6 +8,7 @@
             <label for="" class="required">@lang('label.courseclassification')</label>
             <input class="form-control" name="name">
         </div>
+        <div class="form-group col-sm-12">
             <button type="submit" class="btn btn-primary">@lang('button.save')</button>
         </div>
     </form>
