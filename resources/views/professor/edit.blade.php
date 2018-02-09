@@ -17,7 +17,7 @@
         </div>
         <div class="form-group col-sm-4">
             <label for="">@lang('label.birthdate')</label>
-            <input type="date" name="birthdate" class="form-control" value="{{$professor->birthdate}}">
+            <input class="form-control datepicker" name="birthdate" class="form-control" value="{{$professor->birthdate}}">
         </div>
         <div class="form-group col-sm-4">
             <label for="">@lang('label.gender')</label>
@@ -80,4 +80,7 @@
 
     </form>
 </div>
+@endsection
+@section('scripts')
+    @include('scriptdatepicker')
 @endsection

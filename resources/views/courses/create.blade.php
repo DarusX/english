@@ -1,7 +1,7 @@
 @extends('layouts.app') 
 @section('content')
 <div class="col-sm-12">
-    <h1>@lang('title.courseclassification')</h1>
+    <h1>@lang('title.course')</h1>
     <form action="{{route('courses.store')}}" method="POST">
         {{csrf_field()}}
         <div class="form-group col-sm-4">
@@ -9,7 +9,7 @@
             <input type="text" class="form-control" name="course">
         </div>
         <div class="form-group col-sm-4">
-            <label for="" class="required">@lang('label.coursetype')</label>
+            <label for="" class="required">@lang('label.course_type')</label>
             <select name="course_type_id" class="form-control">
                 <option value="">-Seleccione-</option>
                 @foreach($types as $t)
@@ -18,8 +18,8 @@
             </select>
         </div>
         <div class="form-group col-sm-4">
-            <label for="" class="required">@lang('label.courseoption')</label>
-            <select name="course_type_id" class="form-control">
+            <label for="" class="required">@lang('label.course_option')</label>
+            <select name="course_option_id" class="form-control">
                 <option value="">-Seleccione-</option>
                 @foreach($options as $o)
                 <option value="{{$o->id}}">{{$o->name}}</option>
@@ -45,15 +45,15 @@
         </div>
         <div class="form-group col-sm-4">
             <label for="" class="required">@lang('label.start_date')</label>
-            <input class="form-control" name="start_date">
+            <input class="form-control datepicker" name="start_date">
         </div>
         <div class="form-group col-sm-4">
             <label for="" class="required">@lang('label.finish_date')</label>
-            <input class="form-control" name="finish_date">
+            <input class="form-control datepicker" name="finish_date">
         </div>
         <div class="form-group col-sm-4">
             <label for="" class="required">@lang('label.classroom')</label>
-            <select name="classroom" class="form-control">
+            <select name="classroom_id" class="form-control">
                 <option value="">-Seleccione-</option>
                 @foreach($classrooms as $c)
                 <option value="{{$c->id}}">{{$c->number}}</option>
@@ -74,7 +74,7 @@
             <select name="branch_id" class="form-control">
                 <option value="">-Seleccione-</option>
                 @foreach($branches as $b)
-                <option value="{{$b->id}}">{{$c->name}}</option>
+                <option value="{{$b->id}}">{{$b->name}}</option>
                 @endforeach
             </select>
         </div>
@@ -87,4 +87,7 @@
         </div>
     </form>
 </div>
+@endsection
+@section('scripts')
+    @include('scriptdatepicker')
 @endsection

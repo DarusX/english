@@ -1,11 +1,11 @@
 @extends('layouts.app') 
 @section('content')
 <div class="col-sm-12">
-    <h1>@lang('title.coursetype')</h1>
+    <h1>@lang('title.course_type')</h1>
     <form action="{{route('course_type.store')}}" method="POST">
         {{csrf_field()}}
         <div class="form-group">
-            <label for="" class="required">@lang('label.coursetype')</label>
+            <label for="" class="required">@lang('label.course_type')</label>
             <input class="form-control" name="name">
         </div>
         <div class="form-group">

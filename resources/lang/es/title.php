@@ -6,14 +6,15 @@ return [
     'branch' => 'Sucursal',
     'levels' => 'Niveles',
     'level' => 'Nivel',
-    'coursetypes' => 'Tipos de curso',
-    'coursetype' => 'Tipo de curso',
-    'courseclassifications' => 'Clasificaciones de curso',
-    'courseclassification' => 'Clasificación de curso',
-    'courseoptions' => 'Opciones de curso',
-    'courseoption' => 'Opción de curso',
+    'course_types' => 'Tipos de curso',
+    'course_type' => 'Tipo de curso',
+    'course_classifications' => 'Clasificaciones de curso',
+    'course_classification' => 'Clasificación de curso',
+    'course_options' => 'Opciones de curso',
+    'course_option' => 'Opción de curso',
     'departments' => 'Departamentos',
     'department' => 'Departamento',
-    
+    'courses' => 'Cursos',
+    'course' => 'Curso',
 
 ];

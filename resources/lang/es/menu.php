@@ -8,4 +8,5 @@ return [
     'classifications' => 'Clasificación de curso',
     'options' => 'Opción de curso',
     'departments' => 'Departamentos',
+    'courses' => 'Cursos',
 ];

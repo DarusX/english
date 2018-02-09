@@ -20,7 +20,7 @@ class Course extends Model
     {
     return $this->belongsTo('App\CourseOption', 'course_option_id', 'id');
     }
-    public function classroom()
+    public function room()
     {
     return $this->belongsTo('App\Classroom', 'classroom_id', 'id');
     }

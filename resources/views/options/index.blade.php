@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="col-sm-12">
-    <h1>@lang('title.courseoptions')</h1>
+    <h1>@lang('title.course_options')</h1>
     <table class="table">
         <thead>
             <tr>
-                <th>@lang('head.courseoption')</th>
+                <th>@lang('head.course_option')</th>
                 <th>@lang('head.classification')</th>
                 <th>@lang('head.actions')</th>
             </tr>

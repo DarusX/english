@@ -14,7 +14,7 @@
         </div>
         <div class="form-group col-sm-4">
             <label for="" class="required">@lang('label.birthdate')</label>
-            <input type="date" name="birthdate" class="form-control">
+            <input class="form-control datepicker" name="birthdate" class="form-control">
         </div>
         <div class="form-group col-sm-4">
             <label for="" class="required">@lang('label.gender')</label>
@@ -74,7 +74,9 @@
         <div class="form-group col-sm-12">
             <button type="submit" class="btn btn-default">@lang('button.save')</button>
         </div>
-
     </form>
 </div>
+@endsection
+@section('scripts')
+    @include('scriptdatepicker')
 @endsection
