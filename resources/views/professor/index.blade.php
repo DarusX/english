@@ -8,6 +8,11 @@
         <thead>
             <tr>
                 <th>@lang('head.name')</th>
+                <th>@lang('head.mobile')</th>
+                <th>@lang('head.phone')</th>
+                <th>@lang('head.email')</th>
+                <th>@lang('head.career')</th>
+                <th>@lang('head.address')</th>
                 <th>@lang('head.actions')</th>
             </tr>
         </thead>
@@ -15,6 +20,17 @@
             @foreach($professors as $p)
             <tr>
                 <td><a href="{{route('professors.show', $p->id)}}">{{$p->name}} {{$p->lastname}}</a></td>
+                <td>{{$p->mobile}}</td>
+                <td>{{$p->phone}}</td>
+                <td>{{$p->email}}</td>
+                <td>{{$p->career}}</td>
+                <td>{{$p->address}}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <a href="{{route('professors.destroy', $p->id)}}" class="btn btn-default">@lang('icon.delete')</a>
+                        <a href="{{route('professors.edit', $p->id)}}" class="btn btn-default">@lang('icon.edit')</a>
+                    </div>
+                </td>
             </tr>
             @endforeach
         </tbody>

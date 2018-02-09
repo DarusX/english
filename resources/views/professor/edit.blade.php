@@ -47,7 +47,7 @@
             <input type="text" name="mobile" class="form-control" value="{{$professor->mobile}}">
         </div>
         <div class="form-group col-sm-4">
-            <label for="">@lang('label.phone'</label>
+            <label for="">@lang('label.phone')</label>
             <input type="text" name="phone" class="form-control" value="{{$professor->phone}}">
         </div>
         <div class="form-group col-sm-4">
