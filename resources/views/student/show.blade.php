@@ -46,8 +46,8 @@
                 <td>{{$student->address}}</td>      
                 <td>{{$student->comment}}</td>
                 <td>{{$student->registration_date}}</td>
-                <td>{{$student->branch}}</td>
-                <td>{{$student->status}}</td>
+                <td>{{$student->branch->name}}</td>
+                <td>{{$student->status->status}}</td>
             </tr>
         </tbody>
     </table>

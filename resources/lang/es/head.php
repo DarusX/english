@@ -15,6 +15,8 @@ return [
     'hired' => 'Contratado',
     'fired' => 'Despedido',
     'address' => 'Dirección',
+    'emergency_phone' => 'Teléfono de emergencia',
+    'status' => 'Estado',
     'level' => 'Nivel',
     'description' => 'Descripción',
     'course_type' => 'Tipo de curso',

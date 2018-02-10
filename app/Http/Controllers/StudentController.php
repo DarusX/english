@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Student;
 use DateTime;
 use App\User;
+use App\Branch;
 use Dhtmlx\Connector\JSONDataConnector;
 
 class StudentController extends Controller
@@ -28,7 +29,9 @@ class StudentController extends Controller
      */
     public function create(Request $request)
     {
-        return view('student.create');
+        return view('student.create')->with([
+            'branches' => Branch::all()
+            ]);
     }
 
     /**
@@ -73,7 +76,8 @@ class StudentController extends Controller
     public function edit($id)
     {
         return view('student.edit')->with([
-            'student' => Student::find($id)
+            'student' => Student::find($id),
+            'branches' => Branch::all()
         ]);
     }
 

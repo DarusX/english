@@ -28,11 +28,11 @@ class Student extends Model
     ];
     public function branch()
     {
-    return $this->belongsTo('App\Branch', 'branch_id', 'id');
+    return $this->belongsTo(Branch::class);
     }
     public function status()
     {
-    return $this->belongsTo('App\Status', 'status_id', 'id');
+    return $this->belongsTo(Status::class);
     }
     public function setEstatusAttribute()
     {

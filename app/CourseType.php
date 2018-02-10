@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class CourseType extends Model
 {
-    protected $table = 'course_type';
     protected $fillable = ['name', 'duration', 'information'];
-    public function course()
+    public function courses()
     {
-        return $this->hasMany('App\Course', 'course_type_id', 'id');
+        return $this->hasMany(Course::class);
     }
 }

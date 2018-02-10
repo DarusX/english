@@ -124,14 +124,15 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFourab">
-                        Collapsible Group Item #3
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
+                        @lang('menu.students')
                     </a>
                 </h4>
             </div>
-            <div id="collapseFourab" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+            <div id="collapseNine" class="panel-collapse collapse">
+                <div class="list-group">
+                    <a href="{{route('students.index')}}" class="list-group-item">@lang('menu.students')</a>
+                    <a href="{{route('students.create')}}" class="list-group-item">@lang('menu.create')</a>
                 </div>
             </div>
         </div>

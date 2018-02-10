@@ -27,8 +27,8 @@
                 <td>{{$s->emergency_phone}}</td>
                 <td>{{$s->address}}</td>
                 <td>{{$s->email}}</td>
-                <td>{{$s->branch}}</td>
-                <td>{{$s->status}}</td>
+                <td>{{$s->branch->name}}</td>
+                <td>{{$s->status->status}}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
                         <a href="{{route('students.destroy', $s->id)}}" class="btn btn-default">@lang('icon.delete')</a>

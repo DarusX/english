@@ -3,9 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use App\Status;
 
-class CreateStatusTable extends Migration
+class CreateCourseTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +13,13 @@ class CreateStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('status', function (Blueprint $table) {
+        Schema::create('course_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('status',20);
+            $table->string('name',25);
+            $table->string('duration',25)->nullable();
+            $table->string('information',25)->nullable();
             $table->timestamps();
         });
-        Status::create(['status' => 'Preinscrito']);
-        Status::create(['status' => 'Inscrito']);
-        Status::create(['status' => 'Egresado']);
-        Status::create(['status' => 'Baja']);
     }
 
     /**
@@ -32,6 +29,6 @@ class CreateStatusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('status');
+        Schema::dropIfExists('course_types');
     }
 }

@@ -27,7 +27,7 @@
                     <td>{{$c->course_type->name}}</td>
                     <td>{{$c->date}}</td>
                     <td>{{$c->schedule}}</td>
-                    <td>{{$c->room->number}}</td>
+                    <td>{{$c->classroom->number}}</td>
                     <td>{{$c->professor->teacher}}</td>
                     <td>${{$c->price}}</td>
                     <td>

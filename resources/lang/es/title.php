@@ -1,11 +1,9 @@
 <?php
 return [
-    'professors' => 'Profesores',
-    'professor' => 'Profesor',
     'branches' => 'Sucursales',
     'branch' => 'Sucursal',
-    'levels' => 'Niveles',
-    'level' => 'Nivel',
+    'courses' => 'Cursos',
+    'course' => 'Curso',
     'course_types' => 'Tipos de curso',
     'course_type' => 'Tipo de curso',
     'course_classifications' => 'Clasificaciones de curso',
@@ -14,7 +12,10 @@ return [
     'course_option' => 'Opción de curso',
     'departments' => 'Departamentos',
     'department' => 'Departamento',
-    'courses' => 'Cursos',
-    'course' => 'Curso',
-
+    'levels' => 'Niveles',
+    'level' => 'Nivel',
+    'professors' => 'Profesores',
+    'professor' => 'Profesor',
+    'students' => 'Estudiantes',
+    'student' => 'Estudiante',
 ];

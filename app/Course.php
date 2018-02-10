@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    protected $table = 'course';
     protected $fillable = ['course', 'level_id', 'course_type_id', 'course_option_id', 'start_time', 'finish_time','start_date', 'finish_date', 'classroom_id', 'professor_id', 'branch_id', 'price'];
     public function level()
     {
@@ -14,23 +13,23 @@ class Course extends Model
     }
     public function course_type()
     {
-    return $this->belongsTo('App\CourseType', 'course_type_id', 'id');
+    return $this->belongsTo(CourseType::class);
     }
     public function course_option()
     {
-    return $this->belongsTo('App\CourseOption', 'course_option_id', 'id');
+    return $this->belongsTo(CourseOption::class);
     }
-    public function room()
+    public function classroom()
     {
-    return $this->belongsTo('App\Classroom', 'classroom_id', 'id');
+    return $this->belongsTo(Classroom::class);
     }
     public function professor()
     {
-    return $this->belongsTo('App\Professor', 'professor_id', 'id');
+    return $this->belongsTo(Professor::class);
     }
     public function branch()
     {
-    return $this->belongsTo('App\Branch', 'branch_id', 'id');
+    return $this->belongsTo(Branch::class);
     }
     public function getDateAttribute()
     {

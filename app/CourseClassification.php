@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class CourseClassification extends Model
 {
-    protected $table = 'course_classification';
     protected $fillable = ['name'];
 
-    public function option()
+    public function options()
     {
-        return $this->hasMany('App\CourseOption', 'classification_id', 'id');
+        return $this->hasMany(CourseOption::class);
     }
 }

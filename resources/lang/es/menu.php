@@ -9,4 +9,5 @@ return [
     'options' => 'Opción de curso',
     'departments' => 'Departamentos',
     'courses' => 'Cursos',
+    'students' => 'Estudiantes',
 ];
