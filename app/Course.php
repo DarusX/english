@@ -10,7 +10,7 @@ class Course extends Model
     protected $fillable = ['course', 'level_id', 'course_type_id', 'course_option_id', 'start_time', 'finish_time','start_date', 'finish_date', 'classroom_id', 'professor_id', 'branch_id', 'price'];
     public function level()
     {
-    return $this->belongsTo('App\Level', 'level_id', 'id');
+    return $this->belongsTo(Level::class);
     }
     public function course_type()
     {

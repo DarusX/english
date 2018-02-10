@@ -26,5 +26,13 @@ class Student extends Model
         'username',
         'photo'
     ];
+    public function branch()
+    {
+    return $this->belongsTo('App\Branch', 'branch_id', 'id');
+    }
+    public function status()
+    {
+    return $this->belongsTo('App\Status', 'status_id', 'id');
+    }
 
 }
