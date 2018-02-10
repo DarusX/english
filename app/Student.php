@@ -34,5 +34,14 @@ class Student extends Model
     {
     return $this->belongsTo('App\Status', 'status_id', 'id');
     }
+    public function setEstatusAttribute()
+    {
+        if ($this->status==1) {
+            return 'Inscrito';
+        } else {
+            return 'Preinscrito';
+        }
+        
+    }
 
 }

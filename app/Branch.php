@@ -11,7 +11,7 @@ class Branch extends Model
     ];
     public function course()
     {
-        return $this->hasMany('App\Course', 'branch_id', 'id');
+        return $this->hasMany(Course::class);
     }
     public function student()
     {
