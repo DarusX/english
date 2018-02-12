@@ -5,6 +5,7 @@ use App\User;
 use App\Role;
 use App\Classroom;
 use App\Status;
+use App\Branch;
 
 class DatabaseSeeder extends Seeder
 {
@@ -37,6 +38,12 @@ class DatabaseSeeder extends Seeder
         Status::create(['status' => 'Inscrito']);
         Status::create(['status' => 'Egresado']);
         Status::create(['status' => 'Baja']);
+
+        Branch::create([
+            'name' => 'Nombre',
+            'address' => 'Direccion',
+            'phone' => '99999'
+        ]);
         // $this->call(UsersTableSeeder::class);
     }
 }
