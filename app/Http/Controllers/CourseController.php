@@ -10,6 +10,8 @@ use App\Branch;
 use App\Level;
 use App\Professor;
 use App\Classroom;
+use App\CourseStudent;
+use App\Student;
 
 class CourseController extends Controller
 {
@@ -65,12 +67,24 @@ class CourseController extends Controller
     public function destroy($id)
     {
     }
-    public function inscription(Request $request)
+    public function inscription($id, Request $request)
     {
         return view('courses.inscription')->with([
-            'course' => Course::findOrFail($id),
-            'student' => Student::findOrFail($id)
+            'course' => Course::find($id),
+            'students' => Student::all()
             ]);
+    }
+    public function score($id)
+    {
+        return view('courses.score')->with
+        (['list' => CourseStudent::find($id),
+        'course' => course::find($id),
+        ]);
+    }
+    public function storeScore($id, Request $request)
+    {   
+        CourseStudent::find($id)->update($request->all());
+        return redirect()->route('courses.index');      
     }
     public function ajax(Request $request)
     {

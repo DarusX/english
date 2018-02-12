@@ -21,7 +21,10 @@ class CourseStudentController extends Controller
     }
     public function edit($id)
     {
-       
+        return view('courses.score')->with
+        (['list' => CourseStudent::find($id),
+        'course' => course::find($id),
+        ]);
     }
     public function update(Request $request, $id)
     {

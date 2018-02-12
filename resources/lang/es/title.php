@@ -15,7 +15,8 @@ return [
     'level' => 'Nivel',
     'levels' => 'Niveles',   
     'professor' => 'Profesor',
-    'professors' => 'Profesores',    
+    'professors' => 'Profesores',  
+    'score' => 'Calificación',  
     'student' => 'Estudiante',
     'students' => 'Estudiantes',
     

@@ -15,4 +15,9 @@ class CourseStudent extends Model
     {
     return $this->belongsTo(Student::class);
     } 
+    public function getTotalScoreAttribute()
+    {
+    $total=($this->oral_exam+$this->written_exam+$this->homework+$this->attendance);
+    return $total;
+    }
 }

@@ -12,7 +12,7 @@ return [
     'cedula' => 'Cédula',
     'classification' => 'Clasificación',
     'classroom' => 'Salón',
-    'comment' => 'Comentarios',
+    'comments' => 'Comentarios',
     'course' => 'Curso',
     'course_classification' => 'Clasificación de curso',
     'course_option' => 'Opción de curso',

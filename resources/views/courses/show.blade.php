@@ -1,4 +1,5 @@
-
+@extends('layouts.app')
+@section('content')
 <div class="col-sm-12">
     <h1>Información completa</h1>
 </div>
@@ -61,6 +62,7 @@
             <th>@lang('head.written_exam')</th>
             <th>@lang('head.homework')</th>
             <th>@lang('head.attendance')</th>
+            <th>@lang('head.comments')</th>
             <th>@lang('head.actions')</th>
         <tr>
         @foreach($course->lists as $list)
@@ -71,8 +73,29 @@
             <td>{{$list->written_exam}}</td>
             <td>{{$list->homework}}</td>
             <td>{{$list->attendance}}</td>
-            <td></td>
+            <td>{{$list->comment}}</td>
+            <td>
+            <a href="{{route('courses.score', $list->id)}}" class="btn btn-default">@lang('icon.edit')</a>
+            </td>
         <tr>
     @endforeach
     </thead>
 </table>
+@include('courses.modal')
+@endsection
+@section('scripts')
+<script>
+    $("td a").click(function(event){
+        event.preventDefault();
+        $("#modalContent").html("<img src='{{asset('img/loading.gif')}}' class='img-responsive' width='content'>");
+
+        $("#modalShow").modal("toggle");
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function(data){
+                $("#modalContent").html(data);
+            }
+        });
+    })
+</script>
+@endsection

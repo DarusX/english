@@ -32,6 +32,7 @@
                     <td>${{$c->price}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
+                            <a href="{{route('courses.inscription', $c->id)}}" class="btn btn-default"></a>
                             <a href="{{route('courses.show', $c->id)}}" class="btn btn-default">@lang('icon.show')</a>
                             <a href="{{route('courses.destroy', $c->id)}}" class="btn btn-default">@lang('icon.delete')</a>
                             <a href="{{route('courses.edit', $c->id)}}" class="btn btn-default">@lang('icon.edit')</a>
@@ -43,23 +44,4 @@
         </tbody>
     </table>
 </div>
-
-@include('courses.modal')
-@endsection
-@section('scripts')
-
-<script>
-    $("td a").click(function(event){
-        event.preventDefault();
-        $("#modalContent").html("<img src='{{asset('img/loading.gif')}}' class='img-responsive' width='content'>");
-
-        $("#modalShow").modal("toggle");
-        $.ajax({
-            url: $(this).attr("href"),
-            success: function(data){
-                $("#modalContent").html(data);
-            }
-        });
-    })
-</script>
 @endsection

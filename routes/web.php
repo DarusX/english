@@ -30,6 +30,10 @@ Route::resources([
     'courses' => 'CourseController',
     'students' => 'StudentController',
 ]);
+Route::post('/students/search', 'StudentController@search')->name('students.search');
+Route::get('/courses/{id}/inscription', 'CourseController@inscription')->name('courses.inscription');
+Route::get('/courses/{id}/score', 'CourseController@score')->name('courses.score');
+Route::post('/courses/{id}/storeScore', 'courseController@storeScore')->name('courses.storeScore');
 Route::get('/ajax/professors', 'ProfessorController@ajax')->name('professors.ajax');
 Route::get('/ajax/students', 'StudentController@ajax')->name('students.ajax');
 Route::get('/ajax/courses', 'CourseController@ajax')->name('courses.ajax');
