@@ -40,5 +40,6 @@ return [
     'rfc' => 'RFC',
     'schedule' => 'Horario',
     'status' => 'Estado',
+    'total' => 'Total',
     'written_exam' => 'Examen escrito',
 ];

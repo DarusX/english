@@ -62,7 +62,8 @@
             <th>@lang('head.written_exam')</th>
             <th>@lang('head.homework')</th>
             <th>@lang('head.attendance')</th>
-            <th>@lang('head.comments')</th>
+            <th>@lang('head.total')</th>
+            <th>@lang('head.comments')</th>         
             <th>@lang('head.actions')</th>
         <tr>
         @foreach($course->lists as $list)
@@ -73,6 +74,7 @@
             <td>{{$list->written_exam}}</td>
             <td>{{$list->homework}}</td>
             <td>{{$list->attendance}}</td>
+            <td>{{$list->totalScore}}</td>
             <td>{{$list->comment}}</td>
             <td>
             <a href="{{route('courses.score', $list->id)}}" class="btn btn-default">@lang('icon.edit')</a>

@@ -84,7 +84,7 @@ class CourseController extends Controller
     public function storeScore($id, Request $request)
     {   
         CourseStudent::find($id)->update($request->all());
-        return redirect()->route('courses.index');      
+        return redirect()->back();      
     }
     public function ajax(Request $request)
     {
