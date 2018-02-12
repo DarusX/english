@@ -31,6 +31,10 @@ class Course extends Model
     {
     return $this->belongsTo(Branch::class);
     }
+    public function lists()
+    {
+    return $this->hasMany(CourseStudent::class);
+    }
     public function getDateAttribute()
     {
         return $this->start_date.' to '.$this->finish_date;

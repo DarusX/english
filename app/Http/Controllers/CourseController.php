@@ -39,6 +39,12 @@ class CourseController extends Controller
         Course::create($request->all());
         return redirect()->route('courses.index');
     }
+    public function show($id)
+    {
+        return view('courses.show')->with([
+            'course' => Course::findOrFail($id)   
+        ]);
+    }
     public function edit($id)
     {
         return view('courses.edit')->with([
@@ -58,5 +64,16 @@ class CourseController extends Controller
     }
     public function destroy($id)
     {
+    }
+    public function inscription(Request $request)
+    {
+        return view('courses.inscription')->with([
+            'course' => Course::findOrFail($id),
+            'student' => Student::findOrFail($id)
+            ]);
+    }
+    public function ajax(Request $request)
+    {
+        return response()->json(Course::all());
     }
 }

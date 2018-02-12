@@ -34,14 +34,21 @@ class Student extends Model
     {
     return $this->belongsTo(Status::class);
     }
-    public function setEstatusAttribute()
+    public function setStatusAttribute()
     {
         if ($this->status==1) {
-            return 'Inscrito';
-        } else {
             return 'Preinscrito';
+        } else {
+            return 'Inscrito';
         }
         
     }
-
+    public function lists()
+    {
+    return $this->hasMany(CourseStudent::class);
+    }
+    public function getStudentNameAttribute()
+    {
+        return $this->name.' '.$this->lastname;
+    }
 }

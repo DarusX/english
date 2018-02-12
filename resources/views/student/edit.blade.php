@@ -58,11 +58,11 @@
             <input type="text" name="address" class="form-control" value="{{$student->address}}">
         </div>
         <div class="form-group col-sm-4">
-            <label for="" class="required">@lang('label.comment')</label>
-            <input type="email" name="comment" class="form-control" value="{{$student->comment}}">
+            <label for="" >@lang('label.comment')</label>
+            <input type="text" name="comment" class="form-control" value="{{$student->comment}}">
         </div>
         <div class="form-group col-sm-4">
-            <label for="" class="required">@lang('label.branch')</label>
+            <label for="">@lang('label.branch')</label>
             <select name="branch_id" class="form-control">
                 <option value="">-Seleccione-</option>
                 @foreach($branches as $b)

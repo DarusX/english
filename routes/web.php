@@ -32,3 +32,4 @@ Route::resources([
 ]);
 Route::get('/ajax/professors', 'ProfessorController@ajax')->name('professors.ajax');
 Route::get('/ajax/students', 'StudentController@ajax')->name('students.ajax');
+Route::get('/ajax/courses', 'CourseController@ajax')->name('courses.ajax');

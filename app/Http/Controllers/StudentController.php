@@ -116,4 +116,8 @@ class StudentController extends Controller
     {
         return response()->json(Student::all());
     }
+    public function search(Request $request)
+    {
+        return view('students/search')->with(['students'=>Student::where('name','LIKE','%'.$request->name.'%')->get()]);
+    }
 }
