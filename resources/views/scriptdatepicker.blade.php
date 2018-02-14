@@ -8,7 +8,7 @@
     <script src="{{asset('datePicker/locales/bootstrap-datepicker.es.min.js')}}"></script>
     <script>
     $('.datepicker').datepicker({
-        format: "yyyy/mm/dd",
+        format: "yyyy-mm-dd",
         language: "es",
         autoclose: true
     });
