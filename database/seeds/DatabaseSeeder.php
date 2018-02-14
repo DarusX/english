@@ -5,7 +5,11 @@ use App\User;
 use App\Role;
 use App\Classroom;
 use App\Status;
-
+use App\Branch;
+use App\CourseType;
+use App\Level;
+use App\CourseClassification;
+use App\CourseOption;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -37,6 +41,28 @@ class DatabaseSeeder extends Seeder
         Status::create(['status' => 'Inscrito']);
         Status::create(['status' => 'Egresado']);
         Status::create(['status' => 'Baja']);
+
+        Branch::create([
+            'name' => 'Nombre',
+            'address' => 'Direccion',
+            'phone' => '99999'
+        ]);
+        CourseType::create([
+            'name' => 'Sabatino',
+            'duration' => '5 horas',
+            'information' => 'Sábado matutino'
+        ]);
+        Level::create([
+            'level' => '1',
+            'description' => 'A1'
+        ]);
+        CourseClassification::create([
+            'name' => 'Inglés general'
+        ]);
+        CourseOption::create([
+            'name' => 'Jovenes y adultos',
+            'classification_id' => '1',
+        ]);
         // $this->call(UsersTableSeeder::class);
     }
 }
