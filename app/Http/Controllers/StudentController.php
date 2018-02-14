@@ -15,6 +15,7 @@ class StudentController extends Controller
     {
         $this->middleware('auth');
     }
+    
     public function index(Request $request)
     {
         return view('student.index')->with([
@@ -52,6 +53,10 @@ class StudentController extends Controller
         return redirect()->route('students.edit', [
             'id' => $student->id
         ]);
+    }
+    public function search(Request $request)
+    {
+        return view('students/search')->with(['students'=>Student::where('name','LIKE','%'.$request->name.'%')->get()]);
     }
 
     /**
@@ -116,8 +121,5 @@ class StudentController extends Controller
     {
         return response()->json(Student::all());
     }
-    public function search(Request $request)
-    {
-        return view('students/search')->with(['students'=>Student::where('name','LIKE','%'.$request->name.'%')->get()]);
-    }
+    
 }

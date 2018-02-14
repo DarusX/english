@@ -63,11 +63,11 @@
         </div>
         <div class="form-group col-sm-4">
             <label for="">@lang('label.hired')</label>
-            <input type="date" name="hired" class="form-control" value="{{$professor->hired}}">
+            <input name="hired" class="form-control datepicker" value="{{$professor->hired}}">
         </div>
         <div class="form-group col-sm-4">
             <label for="">@lang('label.fired')</label>
-            <input type="date" name="fired" class="form-control" value="{{$professor->fired}}">
+            <input name="fired" class="form-control datepicker" value="{{$professor->fired}}">
         </div>
         <div class="form-group col-sm-4">
             <label for="">@lang('label.photo')</label>

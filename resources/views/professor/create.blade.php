@@ -61,11 +61,11 @@
         </div>
         <div class="form-group col-sm-4">
             <label for="">@lang('label.hired')</label>
-            <input type="date" name="hired" class="form-control">
+            <input class="form-control datepicker" name="hired">
         </div>
         <div class="form-group col-sm-4">
             <label for="">@lang('label.fired')</label>
-            <input type="date" name="fired" class="form-control">
+            <input class="form-control datepicker" name="fired">
         </div>
         <div class="form-group col-sm-4">
             <label for="">@lang('label.photo')</label>

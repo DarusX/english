@@ -30,7 +30,7 @@ Route::resources([
     'courses' => 'CourseController',
     'students' => 'StudentController',
 ]);
-Route::post('/students/search', 'StudentController@search')->name('students.search');
+Route::POST('/students/search', 'StudentController@search')->name('students.search');
 Route::get('/courses/{id}/inscription', 'CourseController@inscription')->name('courses.inscription');
 Route::get('/courses/{id}/score', 'CourseController@score')->name('courses.score');
 Route::post('/courses/{id}/storeScore', 'courseController@storeScore')->name('courses.storeScore');
