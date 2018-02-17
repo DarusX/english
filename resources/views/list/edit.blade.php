@@ -15,6 +15,7 @@
         <div class="panel-body">
             <form action="{{route('lists.update', $list->id)}}" method="POST" role="form">
                 {{csrf_field()}}
+                {{method_field('PUT')}}
                 <div class="form-group col-sm-4">
                     <label for="">@lang('label.oral_exam')</label>
                     <input type="text" name="oral_exam" value="{{$list->oral_exam}}" class="form-control">
