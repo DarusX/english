@@ -150,5 +150,20 @@
                 </div>
             </div>
         </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">
+                        @lang('menu.items')
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseEleven" class="panel-collapse collapse">
+                <div class="list-group">
+                    <a href="{{route('items.index')}}" class="list-group-item">@lang('menu.items')</a>
+                    <a href="{{route('items.create')}}" class="list-group-item">@lang('menu.create')</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
