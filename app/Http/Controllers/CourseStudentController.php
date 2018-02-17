@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CourseStudent;
 use App\Course;
+use PDF;
 
 class CourseStudentController extends Controller
 {
@@ -43,5 +44,10 @@ class CourseStudentController extends Controller
     public function ajax(Request $request)
     {
         return response()->json(Course::all());
+    }
+    public function lista(Request $request, $id){
+        $lista = CourseStudent::where('course_id', $id)->get();
+        $pdf = PDF::loadview('report.student_list', compact('lista'))->setPaper('letter');
+        return $pdf->download('VHGo.pdf');
     }
 }

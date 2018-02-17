@@ -32,6 +32,9 @@ Route::resources([
     'students' => 'StudentController',
     'items' => 'ItemController',
 ]);
+Route::prefix('/report')->group(function(){
+    Route::get('/lista/{id}', 'CourseStudentController@lista');
+});
 Route::POST('/students/search', 'StudentController@search')->name('students.search');
 Route::get('/courses/{id}/inscription', 'CourseController@inscription')->name('courses.inscription');
 Route::get('/courses/{id}/score', 'CourseController@score')->name('courses.score');
