@@ -21,13 +21,13 @@ class CourseController extends Controller
     }
     public function index(Request $request)
     {
-        return view('courses.index')->with([
+        return view('course.index')->with([
             'courses' => Course::all()]
         );
     }
     public function create(Request $request)
     {
-        return view('courses.create')->with([
+        return view('course.create')->with([
             'levels' => Level::all(),
             'types' => CourseType::all(),
             'options' => CourseOption::all(),
@@ -43,13 +43,13 @@ class CourseController extends Controller
     }
     public function show($id)
     {
-        return view('courses.show')->with([
+        return view('course.show')->with([
             'course' => Course::findOrFail($id)   
         ]);
     }
     public function edit($id)
     {
-        return view('courses.edit')->with([
+        return view('course.edit')->with([
             'course' => Course::find($id),
             'levels' => Level::all(),
             'types' => CourseType::all(),
@@ -69,14 +69,14 @@ class CourseController extends Controller
     }
     public function inscription($id, Request $request)
     {
-        return view('courses.inscription')->with([
+        return view('course.inscription')->with([
             'course' => Course::find($id),
             'students' => Student::all()
             ]);
     }
     public function score($id)
     {
-        return view('courses.score')->with
+        return view('course.score')->with
         (['list' => CourseStudent::find($id),
         'course' => course::find($id),
         ]);

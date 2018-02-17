@@ -3,6 +3,7 @@ return [
     'branches' => 'Sucursales',
     'classifications' => 'Clasificación de curso',
     'courses' => 'Cursos',
+    'course_lists' => 'Lista de cursos',
     'create' => 'Crear',
     'departments' => 'Departamentos',
     'levels' => 'Niveles',

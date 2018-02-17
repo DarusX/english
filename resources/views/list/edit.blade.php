@@ -13,7 +13,7 @@
 <div class="col-sm-12">
     <div class="panel panel-default">
         <div class="panel-body">
-            <form action="{{route('courses.storeScore', $list->id)}}" method="POST" role="form">
+            <form action="{{route('lists.update', $list->id)}}" method="POST" role="form">
                 {{csrf_field()}}
                 <div class="form-group col-sm-4">
                     <label for="">@lang('label.oral_exam')</label>

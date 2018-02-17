@@ -32,10 +32,8 @@
                     <td>${{$c->price}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
-                            <a href="{{route('courses.inscription', $c->id)}}" class="btn btn-default"></a>
-                            <a href="{{route('courses.show', $c->id)}}" class="btn btn-default">@lang('icon.show')</a>
-                            <a href="{{route('courses.destroy', $c->id)}}" class="btn btn-default">@lang('icon.delete')</a>
-                            <a href="{{route('courses.edit', $c->id)}}" class="btn btn-default">@lang('icon.edit')</a>
+                            <a href="{{route('lists.show', $c->id)}}" class="btn btn-default">@lang('icon.show')</a>
+                            <a href="{{route('lists.destroy', $c->id)}}" class="btn btn-default">@lang('icon.delete')</a>
                         </div>
                     </td>
                 <tr>

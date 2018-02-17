@@ -1,5 +1,3 @@
-@extends('layouts.app')
-@section('content')
 <div class="col-sm-12">
     <h1>@lang('title.course')</h1>
 </div>
@@ -106,7 +104,4 @@
         </div>
     </form>
 </div>
-@endsection
-@section('scripts')
 @include('scriptdatepicker')
-@endsection

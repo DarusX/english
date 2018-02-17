@@ -13,13 +13,13 @@ class CourseClassificationController extends Controller
     }
     public function index(Request $request)
     {
-        return view('classifications.index')->with([
+        return view('classification.index')->with([
             'classifications' => CourseClassification::all()]
         );
     }
     public function create(Request $request)
     {
-        return view('classifications.create');
+        return view('classification.create');
     }
     public function store(Request $request)
     {
@@ -28,7 +28,7 @@ class CourseClassificationController extends Controller
     }
     public function edit($id)
     {
-        return view('classifications.edit')->with([
+        return view('classification.edit')->with([
             'classification' => CourseClassification::find($id)
         ]); 
     }

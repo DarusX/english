@@ -14,13 +14,13 @@ class CourseOptionController extends Controller
     }
     public function index(Request $request)
     {
-        return view('options.index')->with([
+        return view('option.index')->with([
             'options' => CourseOption::all()]
         );
     }
     public function create(Request $request)
     {
-        return view('options.create')->with([
+        return view('option.create')->with([
             'classifications' => CourseClassification::all(),
             ]);
     }
@@ -31,7 +31,7 @@ class CourseOptionController extends Controller
     }
     public function edit($id)
     {
-        return view('options.edit')->with([
+        return view('option.edit')->with([
             'option' => CourseOption::find($id),
             'classifications' => CourseClassification::all()
         ]); 

@@ -125,11 +125,25 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
-                        @lang('menu.students')
+                        @lang('menu.course_lists')
                     </a>
                 </h4>
             </div>
             <div id="collapseNine" class="panel-collapse collapse">
+                <div class="list-group">
+                    <a href="{{route('lists.index')}}" class="list-group-item">@lang('menu.courses')</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">
+                        @lang('menu.students')
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse">
                 <div class="list-group">
                     <a href="{{route('students.index')}}" class="list-group-item">@lang('menu.students')</a>
                     <a href="{{route('students.create')}}" class="list-group-item">@lang('menu.create')</a>
