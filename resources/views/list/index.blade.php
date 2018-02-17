@@ -33,6 +33,7 @@
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
                             <a href="{{route('lists.show', $c->id)}}" class="btn btn-default">@lang('icon.show')</a>
+                            <a href="{{route('report.lista', $c->id)}}" class="btn btn-default">@lang('icon.print')</a>
                             <a href="{{route('lists.destroy', $c->id)}}" class="btn btn-default">@lang('icon.delete')</a>
                         </div>
                     </td>
