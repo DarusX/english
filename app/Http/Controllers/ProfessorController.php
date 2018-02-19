@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Professor;
 use DateTime;
 use App\User;
+use PDF;
 use Dhtmlx\Connector\JSONDataConnector;
 
 class ProfessorController extends Controller
@@ -111,5 +112,10 @@ class ProfessorController extends Controller
     public function ajax(Request $request)
     {
         return response()->json(Professor::all());
+    }
+    public function lista(Request $request){
+        $lista = Professor::all();
+        $pdf = PDF::loadview('report.professor_list', compact('lista'))->setPaper('legal', 'landscape');
+        return $pdf->stream('professors.pdf');
     }
 }

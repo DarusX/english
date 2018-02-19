@@ -1,9 +1,3 @@
-@extends('layouts.app')
-@section('content')
-<div class="col-sm-12">
-    <h1>@lang('title.branch')</h1>
-</div>
-</div>
 <div class="col-sm-12"> 
     <form action="{{route('branches.update', $branch->id)}}" method="POST">
         {{csrf_field()}}
@@ -25,4 +19,3 @@
         </div>
     </form>
 </div>
-@endsection

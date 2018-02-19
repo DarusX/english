@@ -2,6 +2,8 @@
 @section('content')
 <div class="col-sm-12">
     <h1>@lang('title.course_options')</h1>
+</div>
+<div class="col-sm-12">
     <table class="table">
         <thead>
             <tr>

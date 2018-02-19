@@ -7,6 +7,7 @@ use App\Student;
 use DateTime;
 use App\User;
 use App\Branch;
+use PDF;
 use Dhtmlx\Connector\JSONDataConnector;
 
 class StudentController extends Controller
@@ -122,6 +123,11 @@ class StudentController extends Controller
     public function ajax(Request $request)
     {
         return response()->json(Student::all());
+    }
+    public function lista(Request $request){
+        $lista = Student::all();
+        $pdf = PDF::loadview('report.student_list', compact('lista'))->setPaper('legal', 'landscape');
+        return $pdf->stream('students.pdf');
     }
     
 }

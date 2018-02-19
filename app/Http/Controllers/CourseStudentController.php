@@ -47,7 +47,7 @@ class CourseStudentController extends Controller
     }
     public function lista(Request $request, $id){
         $lista = CourseStudent::where('course_id', $id)->get();
-        $pdf = PDF::loadview('report.student_list', compact('lista'))->setPaper('letter');
-        return $pdf->download('VHGo.pdf');
+        $pdf = PDF::loadview('report.student_score_list', compact('lista'))->setPaper('letter');
+        return $pdf->stream('score.pdf');
     }
 }

@@ -34,6 +34,10 @@ Route::resources([
 ]);
 Route::prefix('/report')->group(function(){ 
     Route::get('/lista/{id}', 'CourseStudentController@lista')->name('report.lista');
+    Route::get('/course/lista', 'CourseController@lista')->name('course.lista');
+    Route::get('/lista', 'ProfessorController@lista')->name('professor.lista');
+    Route::get('/lista', 'StudentController@lista')->name('student.lista');
+    
 });
 Route::POST('/students/search', 'StudentController@search')->name('students.search');
 Route::get('/courses/{id}/inscription', 'CourseController@inscription')->name('courses.inscription');
@@ -43,3 +47,4 @@ Route::get('/ajax/professors', 'ProfessorController@ajax')->name('professors.aja
 Route::get('/ajax/students', 'StudentController@ajax')->name('students.ajax');
 Route::get('/ajax/courses', 'CourseController@ajax')->name('courses.ajax');
 Route::get('/ajax/lists', 'CourseStudentController@ajax')->name('lists.ajax');
+Route::get('/ajax/branches', 'BranchController@ajax')->name('branches.ajax');

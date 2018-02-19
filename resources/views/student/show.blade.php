@@ -14,7 +14,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{$student->name}} {{$student->lastname}}</a></td>
+                <td>{{$student->name}} {{$student->lastname}}</td>
                 <td>{{$student->birthdate}}</td>
                 <td>{{$student->gender}}</td>
                 <td>{{$student->curp}}</td>

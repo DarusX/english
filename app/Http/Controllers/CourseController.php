@@ -12,6 +12,7 @@ use App\Professor;
 use App\Classroom;
 use App\CourseStudent;
 use App\Student;
+use PDF;
 
 class CourseController extends Controller
 {
@@ -89,5 +90,10 @@ class CourseController extends Controller
     public function ajax(Request $request)
     {
         return response()->json(Course::all());
+    }
+    public function lista(Request $request){
+        $lista = Course::all();
+        $pdf = PDF::loadview('report.course_list', compact('lista'))->setPaper('letter', 'landscape');
+        return $pdf->stream('courses.pdf');
     }
 }

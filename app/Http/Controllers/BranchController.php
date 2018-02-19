@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Branch;
+use PDF;
 
 class BranchController extends Controller
 {
@@ -27,6 +28,12 @@ class BranchController extends Controller
 
         return redirect()->route('branches.index');
     }
+    public function show($id)
+    {
+        return view('branch.show')->with([
+            'branch' => Branch::findOrFail($id)
+        ]);  
+    }
     public function edit($id)
     {
         return view('branch.edit')->with([
@@ -42,8 +49,8 @@ class BranchController extends Controller
     {
     
     }
-    public function show($id)
+    public function ajax(Request $request)
     {
-       
+        return response()->json(Branch::all());
     }
 }

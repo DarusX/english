@@ -16,7 +16,7 @@
         <tbody>
             @foreach($branches as $b)
             <tr>       
-                <td>{{$b->name}}</td>
+                <td><a href="{{route('branches.show', $b->id)}}">{{$b->name}}</td>
                 <td>{{$b->address}}</td>
                 <td>{{$b->phone}}</td>
                 <td>
@@ -30,4 +30,21 @@
         </tbody>
     </table>
 </div>
+@include('branch.modal')
+@endsection
+@section('scripts')
+<script>
+    $("td a").click(function(event){
+        event.preventDefault();
+        $("#modalContent").html("<img src='{{asset('img/loading.gif')}}' class='img-responsive' width='content'>");
+
+        $("#modalShow").modal("toggle");
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function(data){
+                $("#modalContent").html(data);
+            }
+        });
+    })
+</script>
 @endsection

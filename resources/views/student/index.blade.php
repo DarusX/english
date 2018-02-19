@@ -4,6 +4,9 @@
     <h1>@lang('title.students')</h1>
 </div>
 <div class="col-sm-12">
+<a href="{{route('student.lista')}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
+</div>
+<div class="col-sm-12">
     <table class="table">
         <thead>
             <tr>

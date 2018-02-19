@@ -2,6 +2,11 @@
 @section('content')
 <div class="col-sm-12">
     <h1>@lang('title.course_classifications')</h1>
+</div>
+<div class="col-sm-12">
+<a href="{{route('classification.lista')}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
+</div>
+<div class="col-sm-12">
     <table class="table">
         <thead>
             <tr>

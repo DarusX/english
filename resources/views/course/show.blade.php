@@ -3,7 +3,7 @@
     <tbody>
         <tr>       
             <td>@lang('head.course')</td>
-            <td>{{$course->course}}</a></td>
+            <td>{{$course->course}}</td>
         <tr>
         <tr>       
             <td>@lang('head.level')</td>
