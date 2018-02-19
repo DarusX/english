@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CourseOption;
 use App\CourseClassification;
-use PDF;
 
 class CourseOptionController extends Controller
 {
