@@ -68,25 +68,6 @@ class CourseController extends Controller
     public function destroy($id)
     {
     }
-    public function inscription($id, Request $request)
-    {
-        return view('course.inscription')->with([
-            'course' => Course::find($id),
-            'students' => Student::all()
-            ]);
-    }
-    public function score($id)
-    {
-        return view('course.score')->with
-        (['list' => CourseStudent::find($id),
-        'course' => course::find($id),
-        ]);
-    }
-    public function storeScore($id, Request $request)
-    {   
-        CourseStudent::find($id)->update($request->all());
-        return redirect()->back();      
-    }
     public function ajax(Request $request)
     {
         return response()->json(Course::all());

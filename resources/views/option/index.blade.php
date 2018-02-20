@@ -16,7 +16,7 @@
             @foreach($options as $o)
             <tbody>
                 <tr>       
-                    <td>{{$o->name}}</td>
+                    <td><a href="{{route('options.show', $o->id)}}">{{$o->name}}</td>
                     <td>{{$o->classification->name}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
@@ -30,4 +30,21 @@
         </tbody>
     </table>
 </div>
+@include('option.modal')
+@endsection
+@section('scripts')
+<script>
+    $("td a").click(function(event){
+        event.preventDefault();
+        $("#modalContent").html("<img src='{{asset('img/loading.gif')}}' class='img-responsive' width='content'>");
+
+        $("#modalShow").modal("toggle");
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function(data){
+                $("#modalContent").html(data);
+            }
+        });
+    })
+</script>
 @endsection

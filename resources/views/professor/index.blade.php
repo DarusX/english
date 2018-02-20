@@ -4,7 +4,7 @@
     <h1>@lang('title.professors')</h1>
 </div>
 <div class="col-sm-12">
-<a href="{{route('professor.lista')}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
+<a href="{{route('report.professor')}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
 </div>
 <div class="col-sm-12">
     <table class="table">

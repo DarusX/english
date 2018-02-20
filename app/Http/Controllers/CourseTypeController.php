@@ -22,6 +22,12 @@ class CourseTypeController extends Controller
         CourseType::create($request->all());
         return redirect()->route('course_type.index');
     }
+    public function show($id)
+    {
+        return view('course_type.show')->with([
+            'type' => CourseType::findOrFail($id)   
+        ]);
+    }
     public function edit($id)
     {
         return view('course_type.edit')->with([
@@ -35,5 +41,9 @@ class CourseTypeController extends Controller
     }
     public function destroy($id)
     {
+    }
+    public function ajax(Request $request)
+    {
+        return response()->json(CourseType::all());
     }
 }

@@ -2,6 +2,8 @@
 @section('content')
 <div class="col-sm-12">
     <h1>@lang('title.levels')</h1>
+</div>
+<div class="col-sm-12">
     <table class="table">
         <thead>
             <tr>
@@ -14,7 +16,7 @@
             @foreach($levels as $l)
             <tbody>
                 <tr>       
-                    <td>{{$l->level}}</td>
+                    <td><a href="{{route('levels.show', $l->id)}}">{{$l->level}}</td>
                     <td>{{$l->description}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
@@ -28,4 +30,21 @@
         </tbody>
     </table>
 </div>
+@include('level.modal')
+@endsection
+@section('scripts')
+<script>
+    $("td a").click(function(event){
+        event.preventDefault();
+        $("#modalContent").html("<img src='{{asset('img/loading.gif')}}' class='img-responsive' width='content'>");
+
+        $("#modalShow").modal("toggle");
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function(data){
+                $("#modalContent").html(data);
+            }
+        });
+    })
+</script>
 @endsection

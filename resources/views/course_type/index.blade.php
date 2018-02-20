@@ -2,6 +2,8 @@
 @section('content')
 <div class="col-sm-12">
     <h1>@lang('title.course_types')</h1>
+</div>
+<div class="col-sm-12">
     <table class="table">
         <thead>
             <tr>
@@ -15,7 +17,7 @@
             @foreach($types as $t)
             <tbody>
                 <tr>       
-                    <td>{{$t->name}}</td>
+                    <td><a href="{{route('course_type.show', $t->id)}}">{{$t->name}}</td>
                     <td>{{$t->duration}}</td>
                     <td>{{$t->information}}</td>
                     <td>
@@ -30,4 +32,21 @@
         </tbody>
     </table>
 </div>
+@include('course_type.modal')
+@endsection
+@section('scripts')
+<script>
+    $("td a").click(function(event){
+        event.preventDefault();
+        $("#modalContent").html("<img src='{{asset('img/loading.gif')}}' class='img-responsive' width='content'>");
+
+        $("#modalShow").modal("toggle");
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function(data){
+                $("#modalContent").html(data);
+            }
+        });
+    })
+</script>
 @endsection

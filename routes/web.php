@@ -34,17 +34,18 @@ Route::resources([
 ]);
 Route::prefix('/report')->group(function(){ 
     Route::get('/lista/{id}', 'CourseStudentController@lista')->name('report.lista');
-    Route::get('/course/lista', 'CourseController@lista')->name('course.lista');
-    Route::get('/lista', 'ProfessorController@lista')->name('professor.lista');
-    Route::get('/lista', 'StudentController@lista')->name('student.lista');
+    Route::get('/course', 'CourseController@lista')->name('report.course');
+    Route::get('/professor', 'ProfessorController@lista')->name('report.professor');
+    Route::get('/student', 'StudentController@lista')->name('report.student');
     
 });
 Route::POST('/students/search', 'StudentController@search')->name('students.search');
-Route::get('/courses/{id}/inscription', 'CourseController@inscription')->name('courses.inscription');
-Route::get('/courses/{id}/score', 'CourseController@score')->name('courses.score');
-Route::post('/courses/{id}/storeScore', 'courseController@storeScore')->name('courses.storeScore');
 Route::get('/ajax/professors', 'ProfessorController@ajax')->name('professors.ajax');
 Route::get('/ajax/students', 'StudentController@ajax')->name('students.ajax');
 Route::get('/ajax/courses', 'CourseController@ajax')->name('courses.ajax');
 Route::get('/ajax/lists', 'CourseStudentController@ajax')->name('lists.ajax');
 Route::get('/ajax/branches', 'BranchController@ajax')->name('branches.ajax');
+Route::get('/ajax/levels', 'LevelController@ajax')->name('levels.ajax');
+Route::get('/ajax/course_type', 'CourseTypeController@ajax')->name('course_type.ajax');
+Route::get('/ajax/options', 'CourseOptionController@ajax')->name('options.ajax');
+Route::get('/ajax/items', 'ItemController@ajax')->name('items.ajax');

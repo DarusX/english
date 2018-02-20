@@ -29,6 +29,12 @@ class CourseOptionController extends Controller
         CourseOption::create($request->all());
         return redirect()->route('options.index');
     }
+    public function show($id)
+    {
+        return view('option.show')->with([
+            'option' => CourseOption::findOrFail($id)   
+        ]);
+    }
     public function edit($id)
     {
         return view('option.edit')->with([
@@ -43,5 +49,9 @@ class CourseOptionController extends Controller
     }
     public function destroy($id)
     {
+    }
+    public function ajax(Request $request)
+    {
+        return response()->json(CourseOption::all());
     }
 }

@@ -14,8 +14,8 @@
             @foreach($items as $i)
             <tbody>
                 <tr>       
-                    <td>{{$i->name}}</td>
-                    <td>{{$i->price}}</td>
+                    <td><a href="{{route('items.show', $i->id)}}">{{$i->name}}</td>
+                    <td>${{$i->price}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
                             <a href="{{route('items.destroy', $i->id)}}" class="btn btn-default">@lang('icon.delete')</a>
@@ -28,4 +28,21 @@
         </tbody>
     </table>
 </div>
+@include('item.modal')
+@endsection
+@section('scripts')
+<script>
+    $("td a").click(function(event){
+        event.preventDefault();
+        $("#modalContent").html("<img src='{{asset('img/loading.gif')}}' class='img-responsive' width='content'>");
+
+        $("#modalShow").modal("toggle");
+        $.ajax({
+            url: $(this).attr("href"),
+            success: function(data){
+                $("#modalContent").html(data);
+            }
+        });
+    })
+</script>
 @endsection

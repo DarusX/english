@@ -1,8 +1,3 @@
-@extends('layouts.app')
-@section('content')
-<div class="col-sm-12">
-    <h1>@lang('title.course_type')</h1>
-</div>
 <div class="col-sm-12">
     <form action="{{route('course_type.update', $type->id)}}" method="post">
         {{csrf_field()}}
@@ -25,4 +20,3 @@
 
     </form>
 </div>
-@endsection

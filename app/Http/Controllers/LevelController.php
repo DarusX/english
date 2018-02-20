@@ -26,6 +26,12 @@ class LevelController extends Controller
         Level::create($request->all());
         return redirect()->route('levels.index');
     }
+    public function show($id)
+    {
+        return view('level.show')->with([
+            'level' => Level::findOrFail($id)
+        ]);  
+    }
     public function edit($id)
     {
         return view('level.edit')->with([
@@ -39,5 +45,9 @@ class LevelController extends Controller
     }
     public function destroy($id)
     {
+    }
+    public function ajax(Request $request)
+    {
+        return response()->json(Level::all());
     }
 }

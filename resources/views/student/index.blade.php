@@ -4,7 +4,7 @@
     <h1>@lang('title.students')</h1>
 </div>
 <div class="col-sm-12">
-<a href="{{route('student.lista')}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
+<a href="{{route('report.student')}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
 </div>
 <div class="col-sm-12">
     <table class="table">
@@ -43,18 +43,9 @@
         </tbody>
     </table>
 </div>
-<div id="grid_here" style="width: 600px; height: 400px;"></div>
 @include('student.modal')
 @endsection
 @section('scripts')
-<script type="text/javascript" charset="utf-8">
-    mygrid = new dhtmlXGridObject('grid_here');
-    mygrid.setHeader("name");
-    mygrid.init();
-    mygrid.load("{{route('students.ajax')}}", "js");
-    var dp = new dataProcessor("./grid_data");
-    dp.init(mygrid);
-</script>
 <script>
     $("td a").click(function(event){
         event.preventDefault();

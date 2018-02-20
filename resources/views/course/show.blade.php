@@ -1,46 +1,46 @@
-<div class="col-md-12">
+<div class="col-md-12"> 
     <table class="table table-bordered table-condensed">
     <tbody>
         <tr>       
             <td>@lang('head.course')</td>
             <td>{{$course->course}}</td>
-        <tr>
+        </tr>
         <tr>       
             <td>@lang('head.level')</td>
             <td>{{$course->level->level}}</td>
-        <tr>
+        </tr>
         <tr>       
             <td>@lang('head.course_type')</td>
             <td>{{$course->course_type->name}}</td>
-        <tr>
+        </tr>
         <tr>       
             <td>@lang('head.course_option')</td>
             <td>{{$course->course_option->name}}</td>
-        <tr>
+        </tr>
         <tr>       
             <td>@lang('head.date')</td>
             <td>{{$course->Date}}</td>
-        <tr>
+        </tr>
         <tr>       
             <td>@lang('head.schedule')</td>
             <td>{{$course->Schedule}}</td>
-        <tr>
+        </tr>
         <tr>       
             <td>@lang('head.classroom')</td>
             <td>{{$course->classroom->number}}</td>
-        <tr>
+        </tr>
         <tr>       
             <td>@lang('head.professor')</td>
             <td>{{$course->professor->teacher}}</td>
-        <tr>
+        </tr>
         <tr>       
             <td>@lang('head.branch')</td>
             <td>{{$course->branch->name}}</td>
-        <tr>
+        </tr>
         <tr>       
             <td>@lang('head.price')</td>
             <td>${{$course->price}}</td>
-        <tr>
+        </tr>
     </tbody>
     </table>    
 </div> 

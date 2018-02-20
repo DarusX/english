@@ -1,8 +1,3 @@
-@extends('layouts.app')
-@section('content')
-<div class="col-sm-12">
-    <h1>@lang('title.level')</h1>
-</div>
 <div class="col-sm-12">
     <form action="{{route('levels.update', $level->id)}}" method="POST" role="form">
     {{csrf_field()}}
@@ -20,4 +15,3 @@
         </div>
     </form>
 </div>
-@endsection

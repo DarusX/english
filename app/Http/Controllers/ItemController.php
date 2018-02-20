@@ -26,6 +26,12 @@ class ItemController extends Controller
         Item::create($request->all());
         return redirect()->route('items.index');
     }
+    public function show($id)
+    {
+        return view('item.show')->with([
+            'item' => Item::findOrFail($id)   
+        ]);
+    }
     public function edit($id)
     {
         return view('item.edit')->with([
@@ -39,5 +45,9 @@ class ItemController extends Controller
     }
     public function destroy($id)
     {
+    }
+    public function ajax(Request $request)
+    {
+        return response()->json(Item::all());
     }
 }

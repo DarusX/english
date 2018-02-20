@@ -26,6 +26,12 @@ class CourseClassificationController extends Controller
         CourseClassification::create($request->all());
         return redirect()->route('classifications.index');
     }
+    public function show($id)
+    {
+        return view('classification.show')->with([
+            'classification' => CourseClassification::findOrFail($id)   
+        ]);
+    }
     public function edit($id)
     {
         return view('classification.edit')->with([
@@ -39,5 +45,9 @@ class CourseClassificationController extends Controller
     }
     public function destroy($id)
     {
+    }
+    public function ajax(Request $request)
+    {
+        return response()->json(CourseClassification::all());
     }
 }

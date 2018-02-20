@@ -1,51 +1,57 @@
 <div class="col-sm-12">
     <table class="table">
-        <thead>
-            <tr>
-                <th>@lang('head.name')</th>
-                <th>@lang('head.birthdate')</th>
-                <th>@lang('head.gender')</th>
-                <th>@lang('head.career')</th>
-                <th>@lang('head.cedula')</th>
-                <th>@lang('head.curp')</th>
-                <th>@lang('head.rfc')</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>{{$professor->name}} {{$professor->lastname}}</a></td>
+                <td>@lang('head.name')</td>
+                <td>{{$professor->name}} {{$professor->lastname}}</td>
+            </tr>
+            <tr>
+                <td>@lang('head.birthdate')</td>
                 <td>{{$professor->birthdate}}</td>
+            </tr>
+            <tr>
+                <td>@lang('head.gender')</td>
                 <td>{{$professor->gender}}</td>
+            </tr>
+            <tr>
+                <td>@lang('head.career')</td>
                 <td>{{$professor->career}}</td>
+            </tr>
+            <tr>
+                <td>@lang('head.cedula')</td>
                 <td>{{$professor->cedula}}</td>
+            </tr>
+            <tr>
+                <td>@lang('head.curp')</td>
                 <td>{{$professor->curp}}</td>
+            </tr>
+            <tr>
+                <td>@lang('head.rfc')</td>
                 <td>{{$professor->rfc}}</td>
             </tr>
-        </tbody>
-    </table>
-</div>
-<div class="col-sm-12">
-    <table class="table">
-        <thead>
             <tr>
-                <th>@lang('head.mobile')</th>
-                <th>@lang('head.phone')</th>
-                <th>@lang('head.blood_type')</th>
-                <th>@lang('head.address')</th>
-                <th>@lang('head.email')</th>
-                <th>@lang('head.hired')</th> 
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+                <td>@lang('head.mobile')</td>
                 <td>{{$professor->mobile}}</td>
+            </tr>
+            <tr>
+                <td>@lang('head.phone')</td>
                 <td>{{$professor->phone}}</td>
+            </tr>
+            <tr>
+                <td>@lang('head.blood_type')</td>
                 <td>{{$professor->blood_type}}</td>
+            </tr>
+            <tr>
+                <td>@lang('head.address')</td>
                 <td>{{$professor->address}}</td>
+            </tr>
+            <tr>
+                <td>@lang('head.email')</td>
                 <td>{{$professor->email}}</td>
+            </tr>
+            <tr>
+                <td>@lang('head.hired')</td> 
                 <td>{{$professor->hired}}</td>
-                <td></td>
             </tr>
         </tbody>
     </table>
