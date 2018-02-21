@@ -31,7 +31,7 @@ class ProfessorController extends Controller
      */
     public function create(Request $request)
     {
-        $request->user()->authorizeRoles(['name' => 'Crear usuario maestro']);
+        $request->user()->authorizeRoles(['name' => 'Crear maestro']);
         return view('professor.create');
     }
 
@@ -74,7 +74,7 @@ class ProfessorController extends Controller
      */
     public function edit($id)
     {
-        $request->user()->authorizeRoles(['name' => 'Editar usuario maestro']);
+        $request->user()->authorizeRoles(['name' => 'Editar maestro']);
         return view('professor.edit')->with([
             'professor' => Professor::find($id)
         ]);

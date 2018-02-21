@@ -20,7 +20,7 @@ class StudentController extends Controller
     
     public function index(Request $request)
     {
-        $request->user()->authorizeRoles(['name' => 'Ver maestros']);
+        $request->user()->authorizeRoles(['name' => 'Ver estudiante']);
         return view('student.index')->with([
             'students' => Student::all()
         ]);
@@ -33,7 +33,7 @@ class StudentController extends Controller
      */
     public function create(Request $request)
     {
-        $request->user()->authorizeRoles(['name' => 'Crear usuario alumno']);
+        $request->user()->authorizeRoles(['name' => 'Crear estudiante']);
         return view('student.create')->with([
             'branches' => Branch::all()
             ]);
@@ -86,7 +86,7 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $request->user()->authorizeRoles(['name' => 'Editar usuario alumno']);
+        $request->user()->authorizeRoles(['name' => 'Editar estudiante']);
         return view('student.edit')->with([
             'student' => Student::find($id),
             'branches' => Branch::all()
