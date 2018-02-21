@@ -31,6 +31,7 @@ Route::resources([
     'lists' => 'CourseStudentController',
     'students' => 'StudentController',
     'items' => 'ItemController',
+    'roles' => 'RolController',
 ]);
 Route::prefix('/report')->group(function(){ 
     Route::get('/lista/{id}', 'CourseStudentController@lista')->name('report.lista');

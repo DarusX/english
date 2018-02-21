@@ -14,7 +14,7 @@
         </div>
         <div class="form-group col-sm-4">
             <label for="" class="required">@lang('label.birthdate')</label>
-            <input class="form-control" name="birthdate" class="form-control">
+            <input class="form-control datepicker" name="birthdate" class="form-control">
         </div>
         <div class="form-group col-sm-4">
             <label for="" class="required">@lang('label.gender')</label>
@@ -77,4 +77,7 @@
         </div>
     </form>
 </div>
+@endsection
+@section('scripts')
+    @include('scriptdatepicker')
 @endsection
