@@ -7,6 +7,7 @@ use App\Professor;
 use DateTime;
 use App\User;
 use PDF;
+use App\Role;
 use Dhtmlx\Connector\JSONDataConnector;
 
 class ProfessorController extends Controller
@@ -17,6 +18,7 @@ class ProfessorController extends Controller
     }
     public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['name' => 'Ver maestros']);
         return view('professor.index')->with([
             'professors' => Professor::all()
         ]);
@@ -29,6 +31,7 @@ class ProfessorController extends Controller
      */
     public function create(Request $request)
     {
+        $request->user()->authorizeRoles(['name' => 'Crear usuario maestro']);
         return view('professor.create');
     }
 
@@ -47,9 +50,7 @@ class ProfessorController extends Controller
             'password' => bcrypt($username),
             'name' => $request->name.' '.$request->lastname
         ]);
-        return redirect()->route('professors.edit', [
-            'id' => $professor->id
-        ]);
+        return redirect()->route('professors.index');
     }
 
     /**
@@ -73,6 +74,7 @@ class ProfessorController extends Controller
      */
     public function edit($id)
     {
+        $request->user()->authorizeRoles(['name' => 'Editar usuario maestro']);
         return view('professor.edit')->with([
             'professor' => Professor::find($id)
         ]);

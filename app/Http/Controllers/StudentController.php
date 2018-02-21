@@ -8,6 +8,7 @@ use DateTime;
 use App\User;
 use App\Branch;
 use PDF;
+use App\Role;
 use Dhtmlx\Connector\JSONDataConnector;
 
 class StudentController extends Controller
@@ -19,6 +20,7 @@ class StudentController extends Controller
     
     public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['name' => 'Ver maestros']);
         return view('student.index')->with([
             'students' => Student::all()
         ]);
@@ -31,6 +33,7 @@ class StudentController extends Controller
      */
     public function create(Request $request)
     {
+        $request->user()->authorizeRoles(['name' => 'Crear usuario alumno']);
         return view('student.create')->with([
             'branches' => Branch::all()
             ]);
@@ -83,6 +86,7 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
+        $request->user()->authorizeRoles(['name' => 'Editar usuario alumno']);
         return view('student.edit')->with([
             'student' => Student::find($id),
             'branches' => Branch::all()

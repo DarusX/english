@@ -26,7 +26,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $admin->roles()->attach(Role::create([
-            'name' => 'Crear Professor'
+            'name' => 'Crear profesor',
+            'name' => 'Ver profesor',
+            'name' => 'Editar profesor',
+            'name' => 'Crear estudiante',
+            'name' => 'Ver estudiante',
+            'name' => 'Editar estudiante',
         ]));
 
         Classroom::create(['number' => '1']);
