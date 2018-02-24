@@ -19,7 +19,11 @@ class StudentController extends Controller
     
     public function index(Request $request)
     {
-        $request->user()->authorizeRoles(['name' => 'Ver estudiante']);
+        $request->user()->authorizeRoles([
+            'name' => 'Administrador',
+            'name' => 'Recepcion',
+
+            ]);
         return view('student.index')->with([
             'students' => Student::all()
         ]);
