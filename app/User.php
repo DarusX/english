@@ -24,7 +24,7 @@ class User extends Authenticatable
     {
         return null !== $this->roles()->where('name', $role)->first();
     }
-    public function authorizeRole($role)
+    public function authorizeRoles($role)
     {
         return $this->hasRole($role) || abort(401, 'This action is unauthorized.');
     }
