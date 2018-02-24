@@ -23,7 +23,7 @@ class Student extends Model
         'registration_date',
         'branch_id',
         'status_id',
-        'username',
+        'matricula',
         'photo'
     ];
     public function branch()

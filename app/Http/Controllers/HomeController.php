@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Student;
+use App\Professor;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data=null;
+        if(Auth::user()->authorizeRoles(['name'=>"Estudiante"]))
+        {
+            Student::where('matricula', Auth::user()->username)->get()->first();
+        }
+        else
+        {
+            Professor::where('matricula', Auth::user()->username)->get()->first();
+        }
+        return view('home')->with([
+            'datos' => $data
+        ]);
     }
 }

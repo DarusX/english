@@ -31,7 +31,7 @@ class CreateStudentsTable extends Migration
             $table->date('registration_date')->nullable();
             $table->integer('branch_id')->unsigned()->nullable();
             $table->integer('status_id')->unsigned()->nullable()->default(1);
-            $table->string('username')->nullable()->unique();
+            $table->string('matricula')->nullable()->unique();
             $table->string('photo')->default('student/default.jpg');
             $table->timestamps();
         });

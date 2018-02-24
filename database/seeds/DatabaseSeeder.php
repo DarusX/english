@@ -25,12 +25,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123456')
         ]);
 
-        $admin->roles()->attach(Role::create(['name' => 'Crear profesor',]));
-        $admin->roles()->attach(Role::create(['name' => 'Ver profesor',]));
-        $admin->roles()->attach(Role::create(['name' => 'Editar profesor',]));
-        $admin->roles()->attach(Role::create(['name' => 'Crear estudiante',]));
-        $admin->roles()->attach(Role::create(['name' => 'Ver estudiante',]));
-        $admin->roles()->attach(Role::create(['name' => 'Editar estudiante',]));
+        $admin->roles()->attach(Role::create(['name' => 'Profesor',]));
+        $admin->roles()->attach(Role::create(['name' => 'Estudiante',]));
 
         Classroom::create(['number' => '1']);
         Classroom::create(['number' => '2']);

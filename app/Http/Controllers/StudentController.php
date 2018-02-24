@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Student;
 use DateTime;
 use App\User;
+use App\Role;
 use App\Branch;
 use PDF;
 use Dhtmlx\Connector\JSONDataConnector;
@@ -19,11 +20,6 @@ class StudentController extends Controller
     
     public function index(Request $request)
     {
-        $request->user()->authorizeRoles([
-            'name' => 'Administrador',
-            'name' => 'Recepcion',
-
-            ]);
         return view('student.index')->with([
             'students' => Student::all()
         ]);
@@ -35,8 +31,7 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
-    {
-        $request->user()->authorizeRoles(['name' => 'Crear estudiante']);    
+    {    
         return view('student.create')->with([
             'branches' => Branch::all()
             ]);
@@ -49,17 +44,18 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $student = Student::create($request->all());
+    { 
         $username =  $this->username($request);
         $user = User::create([
             'username' => $username,
             'password' => bcrypt($username),
             'name' => $request->name.' '.$request->lastname
+        ])->roles()->attach(Role::where('name', 'Estudiante')->get()->first());     
+        $student = Student::create($request->all());
+        $student->update([
+            'matricula' => $username,
         ]);
-        return redirect()->action('RolController@edit', [
-            'id' => $user->id
-        ]);
+        return redirect()->route('students.index');
     }
     public function search(Request $request)
     {
