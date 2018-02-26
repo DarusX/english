@@ -85,7 +85,6 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $request->user()->authorizeRoles(['name' => 'Editar estudiante']);
         return view('student.edit')->with([
             'student' => Student::find($id),
             'branches' => Branch::all()
