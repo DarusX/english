@@ -25,15 +25,15 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
         $data=null;
         if(Auth::user()->authorizeRoles(['name'=>"Estudiante"]))
         {
-            Student::where('matricula', Auth::user()->username)->get()->first();
+            $data = Student::where('matricula', Auth::user()->username)->get()->first();
         }
         else
         {
-            Professor::where('matricula', Auth::user()->username)->get()->first();
+            $data = Professor::where('matricula', Auth::user()->username)->get()->first();
         }
         return view('home')->with([
             'datos' => $data

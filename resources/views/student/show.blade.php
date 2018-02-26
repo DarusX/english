@@ -46,7 +46,7 @@
                 <td>{{$student->address}}</td>
             </tr>
             <tr> 
-                <td>@lang('head.comment')</td> 
+                <td>@lang('head.comments')</td> 
                 <td>{{$student->comment}}</td>
             </tr>
             <tr>
@@ -57,7 +57,6 @@
                 <td>@lang('head.branch')</td>
                 <td>{{$student->branch->name}}</td>
             </tr>
-            <tr>
             <tr>
                 <td>@lang('head.status')</td>
                 <td>{{$student->status->status}}</td>

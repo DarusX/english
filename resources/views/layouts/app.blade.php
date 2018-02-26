@@ -26,7 +26,7 @@
 
 <body>
     <div id="wrapper">
-        @include('layouts.sidebar')
+        @yield('barralateral')
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
