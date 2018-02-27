@@ -1,11 +1,7 @@
 @extends('layouts.app')
-@section('barralateral')
+@section('side')
 <div class="col-sm-12">
-    @if(Auth::user()->authorizeRoles(['name'=>"Estudiante"]))
-        @include('layouts.menu-alumno')
-    @else
-        @include('layouts.sidebar')
-    @endif
+@include('layouts.menu')
 </div> 
 @endsection
 @section('content')

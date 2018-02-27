@@ -15,6 +15,7 @@ class StudentScoreController extends Controller
     
     public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['name' => 'Estudiante']);
         $data=null;
         if(Auth::user()->authorizeRoles(['name'=>"Estudiante"]))
         {

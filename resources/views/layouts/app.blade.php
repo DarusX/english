@@ -26,7 +26,7 @@
 
 <body>
     <div id="wrapper">
-        @yield('barralateral')
+        @yield('side')
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">

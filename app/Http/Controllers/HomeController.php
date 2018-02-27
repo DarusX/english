@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
 use App\Student;
 use App\Professor;
 
@@ -31,9 +32,13 @@ class HomeController extends Controller
         {
             $data = Student::where('matricula', Auth::user()->username)->get()->first();
         }
-        else
+        elseif(Auth::user()->authorizeRoles(['name'=>"Profesor"]))
         {
             $data = Professor::where('matricula', Auth::user()->username)->get()->first();
+        }
+        else
+        {
+            $data = User::where('username', Auth::user()->username)->get()->first();
         }
         return view('home')->with([
             'datos' => $data

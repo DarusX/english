@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('barralateral')
+@section('side')
 <div class="col-sm-12">
     @if(Auth::user()->authorizeRoles(['name'=>"Estudiante"]))
-        @include('layouts.menu-alumno')
+        @include('layouts.menu-student')
     @else
         @include('layouts.sidebar')
     @endif
@@ -10,7 +10,7 @@
 @endsection
 @section('content')
 <div class="col-md-10 col-sm-offset-1">
-<table class="table">
+    <table class="table">
         <tbody>
             <tr>
                 <td>@lang('head.name')</td>

@@ -10,6 +10,7 @@ return [
     'levels' => 'Niveles',
     'options' => 'Opción de curso',
     'professors' => 'Profesores',
+    'score' => 'Calificación', 
     'students' => 'Estudiantes',
     'types' => 'Tipos de curso',
 

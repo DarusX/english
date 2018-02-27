@@ -1,4 +1,9 @@
 @extends('layouts.app')
+@section('side')
+<div class="col-sm-12">
+@include('layouts.menu')
+</div> 
+@endsection
 @section('content')
 <div class="col-sm-12">
     <h1>@lang('title.students')</h1>
