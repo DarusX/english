@@ -27,21 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     { 
-        $data=null;
-        if(Auth::user()->authorizeRoles(['name'=>"Estudiante"]))
-        {
-            $data = Student::where('matricula', Auth::user()->username)->get()->first();
-        }
-        elseif(Auth::user()->authorizeRoles(['name'=>"Profesor"]))
-        {
-            $data = Professor::where('matricula', Auth::user()->username)->get()->first();
-        }
-        else
-        {
-            $data = User::where('username', Auth::user()->username)->get()->first();
-        }
-        return view('home')->with([
-            'datos' => $data
-        ]);
+        return view('home');
     }
 }

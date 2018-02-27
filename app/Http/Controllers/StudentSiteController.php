@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Student;
 
-class StudentScoreController extends Controller
+class StudentSiteController extends Controller
 {
     public function __construct()
     {
@@ -16,13 +16,13 @@ class StudentScoreController extends Controller
     public function index(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Estudiante']);
-        $data=null;
+        $student=null;
         if(Auth::user()->authorizeRoles(['name'=>"Estudiante"]))
         {
-            $data = Student::where('matricula', Auth::user()->username)->get()->first();
+            $student = Student::where('matricula', Auth::user()->username)->get()->first();
         }
-        return view('student_score.index')->with([
-            'datos' => $data
+        return view('score.index')->with([
+            'students' => $student
         ]);
     }
 

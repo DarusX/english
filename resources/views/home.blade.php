@@ -5,7 +5,5 @@
 </div> 
 @endsection
 @section('content')
-<div class="col-md-10 col-sm-offset-1">
-    
-</div>
+<h1>{{Auth::user()->username}}</h1>
 @endsection

@@ -27,6 +27,28 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/home';
 
+    protected function redirectTo()
+    {
+        if(Auth::user()->authorizeRoles(['name'=>"Estudiante"]))
+        {
+            $data = Student::where('matricula', Auth::user()->username)->get()->first();
+            return view('/page/student')->with([
+                'datos' => $data
+                ]);
+        }
+        elseif(Auth::user()->authorizeRoles(['name'=>"Profesor"]))
+        {
+            $data = Professor::where('matricula', Auth::user()->username)->get()->first();
+            return view('/page/professor')->with([
+                'datos' => $data
+                ]);
+        }
+        elseif(Auth::user()->authorizeRoles(['name'=>"Administrador"]))
+        {
+            return '/home';
+        }
+        
+    }
     /**
      * Create a new controller instance.
      *

@@ -25,8 +25,9 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123456')
         ]);
 
-        $admin->roles()->attach(Role::create(['name' => 'Profesor',]));
-        $admin->roles()->attach(Role::create(['name' => 'Estudiante',]));
+        $admin->roles()->attach(Role::create(['name' => 'Administrador',]));
+        Role::create(['name' => 'Profesor']);
+        Role::create(['name' => 'Estudiante']);
 
         Classroom::create(['number' => '1']);
         Classroom::create(['number' => '2']);
@@ -42,7 +43,7 @@ class DatabaseSeeder extends Seeder
         Status::create(['status' => 'Baja']);
 
         Branch::create([
-            'name' => 'Nombre',
+            'name' => 'Tabasco 2000',
             'address' => 'Direccion',
             'phone' => '99999'
         ]);
