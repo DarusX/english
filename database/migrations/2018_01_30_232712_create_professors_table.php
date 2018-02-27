@@ -28,7 +28,7 @@ class CreateProfessorsTable extends Migration
             $table->char('blood_type',2)->nullable();
             $table->string('address',50);
             $table->string('email');
-            $table->string('matricula')->unique();
+            $table->string('matricula')->nullable()->unique();
             $table->date('hired')->nullable();
             $table->date('fired')->nullable();
             $table->string('photo')->default('worker/default.jpg');

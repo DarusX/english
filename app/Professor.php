@@ -20,6 +20,7 @@ class Professor extends Model
         'blood_type',
         'address',
         'email',
+        'matricula',
         'hired',
         'fired',
         'photo'

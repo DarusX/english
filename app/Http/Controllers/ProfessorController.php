@@ -43,13 +43,16 @@ class ProfessorController extends Controller
      */
     public function store(Request $request)
     {
-        $professor = Professor::create($request->all());
-        $username =  $this->username($request);
+        $username =  $this->username($request);       
         User::create([
             'username' => $username,
             'password' => bcrypt($username),
             'name' => $request->name.' '.$request->lastname
-        ]);
+            ])->roles()->attach(Role::where('name', 'Profesor')->get()->first()); 
+            $professor = Professor::create($request->all()); 
+            $professor->update([
+                'matricula' => $username,
+            ]);
         return redirect()->route('professors.index');
     }
 
