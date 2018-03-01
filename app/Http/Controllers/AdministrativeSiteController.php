@@ -10,6 +10,7 @@ use App\User;
 use App\Role;
 use App\Course;
 use App\Student;
+use App\Branch;
 use DateTime;
 
 class AdministrativeSiteController extends Controller
@@ -34,8 +35,9 @@ class AdministrativeSiteController extends Controller
     public function student(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Administrativo']);
-        return view('administrative.student')->with([
+        return view('student.pre-registered')->with([
             'students' => Student::Preinscrito(),
+            'branches' => Branch::all()
         ]);
     }
     public function inscription($id, Request $request)

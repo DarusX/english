@@ -47,6 +47,10 @@ class Student extends Model
     {
         return $query->where('status_id','=',1)->get();
     }
+    public function scopeInscrito($query)
+    {
+        return $query->where('status_id','=',2)->get();
+    }
     public function lists()
     {
     return $this->hasMany(CourseStudent::class);

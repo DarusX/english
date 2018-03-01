@@ -1,11 +1,3 @@
-@extends('layouts.app')
-@section('side')
-<div class="col-sm-12">
-@include('layouts.menu')
-</div> 
-@endsection
-@section('content')
-<br>
 <div class="col-sm-12">
     <form action="{{route('administrative.storeinscription', $student->id)}}"  method="POST" role="form">
         {{csrf_field()}}
@@ -36,7 +28,4 @@
         </div>
     </form>
 </div>
-@endsection
-@section('scripts')
 @include('scriptdatepicker')
-@endsection

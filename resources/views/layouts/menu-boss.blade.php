@@ -19,13 +19,12 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                        @lang('menu.courses')
+                        @lang('menu.administration_boss')
                     </a>
                 </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('administrative.list')}}" class="list-group-item">@lang('menu.courses')</a>
                 </div>
             </div>
         </div> 
@@ -33,13 +32,12 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                        @lang('menu.students')
+                        @lang('menu.academic_boss')
                     </a>
                 </h4>
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('student.pre-registered')}}" class="list-group-item">@lang('menu.students')</a>
                 </div>
             </div>
         </div>
@@ -47,13 +45,14 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                        @lang('menu.password')
+                        @lang('menu.sales_boss')
                     </a>
                 </h4>
             </div>
             <div id="collapseFour" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('employee.password')}}" class="list-group-item">@lang('menu.update')</a>
+                    <a href="{{route('student.pre-registered')}}" class="list-group-item">@lang('menu.pre-registered')</a>
+                    <a href="{{route('employee.list')}}" class="list-group-item">@lang('menu.courses')</a>
                 </div>
             </div>
         </div>
@@ -61,13 +60,13 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                        @lang('menu.items')
+                        @lang('menu.password')
                     </a>
                 </h4>
             </div>
             <div id="collapseFive" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('items.index')}}" class="list-group-item">@lang('menu.items')</a>
+                    <a href="{{route('employee.password')}}" class="list-group-item">@lang('menu.update')</a>
                 </div>
             </div>
         </div>

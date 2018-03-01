@@ -8,4 +8,6 @@
         @include('layouts.menu-recepcionist')
     @elseif(Auth::user()->authorizeRoles(['name'=>"Administrativo"]))
         @include('layouts.menu-administrative')
+    @elseif(Auth::user()->authorizeRoles(['name'=>"Jefe"]))
+        @include('layouts.menu-boss')
     @endif

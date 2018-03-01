@@ -9,7 +9,6 @@
     <h1>@lang('title.students')</h1>
 </div>
 <div class="col-sm-12">
-<a data-toggle="modal" data-target="#create" class="btn btn-default">@lang('icon.create')</a>
 <a href="{{route('report.student')}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
 </div>
 <div class="col-sm-12">
@@ -52,7 +51,6 @@
     </table>
 </div>
 @include('student.modal')
-@include('student.create')
 @endsection
 @section('scripts')
 <script>

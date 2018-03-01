@@ -59,7 +59,7 @@ Route::prefix('/page')->group(function(){
     Route::get('/employee/password', 'EmployeeGeneralController@password')->name('employee.password');
     Route::post('/employee/updatepassword', 'EmployeeGeneralController@updatepassword')->name('employee.updatepassword');   
 
-    Route::get('recepcionist/list', 'RecepcionistSiteController@course')->name('recepcionist.list'); 
+    Route::get('employee/list', 'RecepcionistSiteController@course')->name('employee.list'); 
     Route::get('courselist/{id}/show', 'RecepcionistSiteController@show')->name('courselist.show');
     Route::get('/recepcionist/student', 'RecepcionistSiteController@student')->name('recepcionist.student'); 
     Route::post('/recepcionist/store', 'RecepcionistSiteController@store')->name('recepcionist.store');    
@@ -67,7 +67,7 @@ Route::prefix('/page')->group(function(){
     
     Route::get('administrative/list', 'AdministrativeSiteController@course')->name('administrative.list'); 
     Route::get('administrative/{id}/show', 'AdministrativeSiteController@show')->name('administrative.show');
-    Route::get('/administrative/student', 'AdministrativeSiteController@student')->name('administrative.student'); 
+    Route::get('/student/pre-registered', 'AdministrativeSiteController@student')->name('student.pre-registered'); 
     Route::get('/administrative/{id}/inscription', 'AdministrativeSiteController@inscription')->name('administrative.inscription'); 
     Route::post('administrative/{id}/storeinscription', 'AdministrativeSiteController@storeinscription')->name('administrative.storeinscription');
 });

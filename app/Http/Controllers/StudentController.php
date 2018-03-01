@@ -21,7 +21,7 @@ class StudentController extends Controller
     public function index(Request $request)
     {
         return view('student.index')->with([
-            'students' => Student::all(),
+            'students' => Student::Inscrito(),
             'branches' => Branch::all()
         ]);
     }
