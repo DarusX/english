@@ -78,4 +78,8 @@ class StudentSiteController extends Controller
             }
         }
     }
+    public function ajax(Request $request)
+    {
+        return response()->json(Student::all());
+    }
 }

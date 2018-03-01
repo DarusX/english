@@ -9,7 +9,6 @@
             </div>
             <div class="modal-body">
                 <div class="row" id="modalContent">
-                       
                 </div>
             </div>
         </div>

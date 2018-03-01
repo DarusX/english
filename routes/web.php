@@ -55,14 +55,19 @@ Route::prefix('/page')->group(function(){
     Route::get('/professor/password', 'ProfessorSiteController@password')->name('professor.password');
     Route::post('/professor/updatepassword', 'ProfessorSiteController@updatepassword')->name('professor.updatepassword');     
     
-    Route::get('/employee', 'RecepcionistSiteController@index')->name('page.employee');
+    Route::get('/employee', 'EmployeeGeneralController@index')->name('page.employee');
+    Route::get('/employee/password', 'EmployeeGeneralController@password')->name('employee.password');
+    Route::post('/employee/updatepassword', 'EmployeeGeneralController@updatepassword')->name('employee.updatepassword');   
+
     Route::get('recepcionist/list', 'RecepcionistSiteController@course')->name('recepcionist.list'); 
     Route::get('courselist/{id}/show', 'RecepcionistSiteController@show')->name('courselist.show');
     Route::get('/recepcionist/student', 'RecepcionistSiteController@student')->name('recepcionist.student'); 
-    Route::get('/recepcionist/create', 'RecepcionistSiteController@create')->name('recepcionist.create'); 
     Route::post('/recepcionist/store', 'RecepcionistSiteController@store')->name('recepcionist.store');    
-    Route::get('/employee/password', 'RecepcionistSiteController@password')->name('employee.password');
-    Route::post('/employee/updatepassword', 'RecepcionistSiteController@updatepassword')->name('employee.updatepassword');     
+    
+    
+    Route::get('administrative/list', 'AdministrativeSiteController@course')->name('administrative.list'); 
+    Route::get('administrative/{id}/show', 'AdministrativeSiteController@show')->name('administrative.show');
+    Route::get('/administrative/student', 'AdministrativeSiteController@student')->name('administrative.student'); 
 });
 //Route::get('/home', 'Auth\LoginController@redirectPath')->name('home');
 Route::POST('/students/search', 'StudentController@search')->name('students.search');
@@ -77,3 +82,4 @@ Route::get('/ajax/course_types', 'CourseTypeController@ajax')->name('course_type
 Route::get('/ajax/options', 'CourseOptionController@ajax')->name('options.ajax');
 Route::get('/ajax/items', 'ItemController@ajax')->name('items.ajax');
 Route::get('/ajax/employees', 'EmployeeController@ajax')->name('employees.ajax');
+Route::get('/ajax/recepcionist', 'RecepcionistSiteController@ajax')->name('recepcionist.ajax');

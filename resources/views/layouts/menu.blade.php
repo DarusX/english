@@ -6,4 +6,6 @@
         @include('layouts.menu-professor')
     @elseif(Auth::user()->authorizeRoles(['name'=>"Recepcionista"]))
         @include('layouts.menu-recepcionist')
+    @elseif(Auth::user()->authorizeRoles(['name'=>"Administrativo"]))
+        @include('layouts.menu-admon')
     @endif
