@@ -83,7 +83,7 @@
             <th>@lang('head.total')</th>
             <th>@lang('head.comments')</th>         
             <th>@lang('head.actions')</th>
-        <tr>
+        </tr>
         @foreach($course->lists as $list)
         <tr>  
             <td></td>     
@@ -97,7 +97,7 @@
             <td>
             <a href="{{route('lists.edit', $list->id)}}" class="btn btn-default">@lang('icon.edit')</a>
             </td>
-        <tr>
+        </tr>
     @endforeach
     </thead>
 </table>

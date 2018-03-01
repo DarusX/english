@@ -21,7 +21,7 @@ class StudentSiteController extends Controller
         {
             $student = Student::where('matricula', Auth::user()->username)->get()->first();
         }
-        return view('score.index')->with([
+        return view('student.score')->with([
             'students' => $student
         ]);
     }

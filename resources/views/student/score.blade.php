@@ -20,7 +20,10 @@
             <th>@lang('head.total')</th>
             <th>@lang('head.comments')</th>         
             <th>@lang('head.actions')</th>
-        <tr>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($students as $s)
         <tr>  
             <td></td>     
             <td>{{$datos->lists->course->course}}</td>
@@ -32,7 +35,8 @@
             <td>{{$datos->lists->comment}}</td>
             <td>
             </td>
+        @endforeach
         <tr>
-    </thead>
+        <tbody>
 </table>
 @endsection

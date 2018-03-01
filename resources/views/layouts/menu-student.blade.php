@@ -12,7 +12,7 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('student_score.index')}}" class="list-group-item">@lang('menu.score')</a>
+                    <a href="{{route('students.score')}}" class="list-group-item">@lang('menu.score')</a>
                 </div>
             </div>
         </div>    
