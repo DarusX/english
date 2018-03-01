@@ -30,10 +30,13 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
-
-    protected function redirectTo()
+    public function redirectPath()
     {
-        if(Auth::user()->authorizeRoles(['name'=>"Estudiante"]))
+        if(Auth::user()->authorizeRoles(['name'=>"Administrador"]))
+        {
+            return '/home';
+        }
+        elseif(Auth::user()->authorizeRoles(['name'=>"Estudiante"]))
         {
             $data = Student::where('matricula', Auth::user()->username)->get()->first();
             return view('/page/student')->with([
@@ -46,10 +49,6 @@ class LoginController extends Controller
             return view('/page/professor')->with([
                 'datos' => $data
                 ]);
-        }
-        elseif(Auth::user()->authorizeRoles(['name'=>"Administrador"]))
-        {
-            return '/home';
         }
         
     }

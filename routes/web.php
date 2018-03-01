@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resources([
     'professors' => 'ProfessorController',
@@ -39,9 +39,9 @@ Route::prefix('/report')->group(function(){
     Route::get('/student', 'StudentController@lista')->name('report.student');
     
 });
-Route::get('/home', 'LoginController@redirectTo')->name('home');
-Route::get('page/student', 'LoginController@redirectTo')->name('page.student');
-Route::get('page/professor', 'LoginController@redirectTo')->name('page.professor');
+//Route::get('/home', 'Auth\LoginController@redirectPath')->name('home');
+//Route::get('page/student', 'Auth\LoginController@redirectPath')->name('page.student');
+//Route::get('page/professor', 'Auth\LoginController@redirectPath')->name('page.professor');
 Route::POST('/students/search', 'StudentController@search')->name('students.search');
 Route::get('/ajax/professors', 'ProfessorController@ajax')->name('professors.ajax');
 Route::get('/ajax/students', 'StudentController@ajax')->name('students.ajax');
