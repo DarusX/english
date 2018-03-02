@@ -13,7 +13,7 @@ class StudentSiteController extends Controller
         $this->middleware('auth');
     }
     
-    public function index(Request $request)
+    public function score(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Estudiante']);
         $student=null;

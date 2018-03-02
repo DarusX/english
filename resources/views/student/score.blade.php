@@ -23,7 +23,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($students as $s)
+        @foreach($students as $datos)
         <tr>  
             <td></td>     
             <td>{{$datos->lists->course->course}}</td>
@@ -36,7 +36,7 @@
             <td>
             </td>
         @endforeach
-        <tr>
-        <tbody>
+        </tr>
+    <tbody>
 </table>
 @endsection
