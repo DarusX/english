@@ -12,17 +12,18 @@ class StudentSiteController extends Controller
     {
         $this->middleware('auth');
     }
-    
+    public function index()
+    {
+        return view('/page/student')->with([
+            'datos' => Student::where('matricula', Auth::user()->username)->get()->first()
+        ]);
+    }
     public function score(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Estudiante']);
-        $student=null;
-        if(Auth::user()->authorizeRoles(['name'=>"Estudiante"]))
-        {
-            $student = Student::where('matricula', Auth::user()->username)->get()->first();
-        }
+        
         return view('student.score')->with([
-            'students' => $student
+            'student' => Student::where('matricula', Auth::user()->username)->get()->first()
         ]);
     }
 
