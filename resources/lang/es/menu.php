@@ -9,9 +9,13 @@ return [
     'items' => 'Productos',
     'levels' => 'Niveles',
     'options' => 'Opción de curso',
+    'password' => 'Contraseña',
+    'personal_information' => 'Información personal',
     'professors' => 'Profesores',
-    'score' => 'Calificación', 
+    'report_cards' => 'Calificaciones', 
+    'schedule' => 'Horario',
     'students' => 'Estudiantes',
     'types' => 'Tipos de curso',
+    'update' => 'Actualizar',
 
 ];

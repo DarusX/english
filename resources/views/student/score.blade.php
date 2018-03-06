@@ -6,7 +6,7 @@
 @endsection
 @section('content')
 <div class="col-sm-12">
-	<center><h3>@lang('title.students')</h3></center>
+	<center><h3>@lang('title.report_cards')</h3></center>
 </div>
 <table class="table table-bordered table-condensed">
     <thead>

@@ -29,7 +29,7 @@ class CreateStudentsTable extends Migration
             $table->string('comment',50)->nullable();
             $table->char('blood_type',2)->nullable();
             $table->date('registration_date')->nullable();
-            $table->integer('branch_id')->unsigned()->nullable();
+            $table->integer('branch_id')->unsigned();
             $table->integer('status_id')->unsigned()->nullable()->default(1);
             $table->string('matricula')->nullable()->unique();
             $table->string('photo')->default('student/default.jpg');

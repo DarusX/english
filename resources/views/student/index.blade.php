@@ -16,6 +16,7 @@
         <thead>
             <tr>
                 <th>@lang('head.name')</th>
+                <th>@lang('head.matricula')</th>
                 <th>@lang('head.mobile')</th>
                 <th>@lang('head.phone')</th>
                 <th>@lang('head.emergency_phone')</th>
@@ -30,6 +31,7 @@
             @foreach($students as $s)
             <tr>
                 <td><a href="{{route('students.show', $s->id)}}">{{$s->name}} {{$s->lastname}}</a></td>
+                <td>{{$s->matricula}}</td>
                 <td>{{$s->mobile}}</td>
                 <td>{{$s->phone}}</td>
                 <td>{{$s->emergency_phone}}</td>
