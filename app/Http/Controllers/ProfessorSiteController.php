@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\Student;
+use App\Professor;
 use App\User;
 use Hash;
 use Validator;
 
-
-class StudentSiteController extends Controller
+class ProfessorSiteController extends Controller
 {
     public function __construct()
     {
@@ -18,37 +17,28 @@ class StudentSiteController extends Controller
     }
     public function index()
     {
-        return view('page.student')->with([
-            'datos' => Student::where('matricula', Auth::user()->username)->get()->first()
-        ]);
-    }
-    public function score(Request $request)
-    {
-        $request->user()->authorizeRoles(['name' => 'Estudiante']);
-        
-        return view('student.score')->with([
-            'student' => Student::where('matricula', Auth::user()->username)->get()->first()
+        return view('page.professor')->with([
+            'datos' => Professor::where('matricula', Auth::user()->username)->get()->first()
         ]);
     }
     public function schedule(Request $request)
     {
-        $request->user()->authorizeRoles(['name' => 'Estudiante']);
-        
-        return view('student.schedule')->with([
-            'student' => Student::where('matricula', Auth::user()->username)->get()->first()
+        $request->user()->authorizeRoles(['name' => 'Profesor']);
+        return view('professor.schedule')->with([
+            'professor' => Professor::where('matricula', Auth::user()->username)->get()->first()
         ]);
     }
     public function password(Request $request)
     {
-        $request->user()->authorizeRoles(['name' => 'Estudiante']);
-        return view('student.password')->with([
+        $request->user()->authorizeRoles(['name' => 'Profesor']);
+        return view('professor.password')->with([
             'user' => User::where('username', Auth::user()->username)->get()->first()
         ]);
     }
 
     public function updatepassword(Request $request)
     {
-        $request->user()->authorizeRoles(['name' => 'Estudiante']);
+        $request->user()->authorizeRoles(['name' => 'Profesor']);
         $rules = [
             'mypassword' => 'required',
             'password' => 'required|confirmed|',
@@ -61,21 +51,19 @@ class StudentSiteController extends Controller
         
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()){
-            return redirect('page/students/password')->withErrors($validator);
+            return redirect('page/professors/password')->withErrors($validator);
         }
         else{
         if (Hash::check($request->mypassword, Auth::user()->password)){
             $user = new User;
             $user = User::where('username', Auth::user()->username)->get()->first()
                  ->update(['password' => bcrypt($request->password)]);
-                 return redirect()->route('page.student'); 
+                 return redirect()->route('page.professor'); 
             }
             else
             {
-                return redirect('page/students/password')->with('message', 'Credenciales incorrectas');
+                return redirect('page/professors/password')->with('message', 'Credenciales incorrectas');
             }
         }
     }
-
-
 }

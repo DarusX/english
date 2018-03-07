@@ -23,5 +23,6 @@ return [
     'score' => 'Calificación',  
     'student' => 'Estudiante',
     'students' => 'Estudiantes',
+    'update' => 'Actualizar',
     
 ];

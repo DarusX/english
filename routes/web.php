@@ -45,10 +45,13 @@ Route::prefix('/page')->group(function(){
     Route::get('/students/score', 'StudentSiteController@score')->name('students.score');
     Route::get('/students/schedule', 'StudentSiteController@schedule')->name('students.schedule'); 
     Route::get('/students/password', 'StudentSiteController@password')->name('students.password');
-    Route::POST('/students/updatepassword', 'StudentSiteController@updatepassword')->name('students.updatepassword');      
+    Route::post('/students/updatepassword', 'StudentSiteController@updatepassword')->name('students.updatepassword');
+    Route::get('/professor', 'ProfessorSiteController@index')->name('page.professor');
+    Route::get('/professors/schedule', 'ProfessorSiteController@schedule')->name('professors.schedule');  
+    Route::get('/professors/password', 'ProfessorSiteController@password')->name('professors.password');
+    Route::post('/professors/updatepassword', 'ProfessorSiteController@updatepassword')->name('professors.updatepassword');     
 });
 //Route::get('/home', 'Auth\LoginController@redirectPath')->name('home');
-//Route::get('page/professor', 'Auth\LoginController@redirectPath')->name('page.professor');
 Route::POST('/students/search', 'StudentController@search')->name('students.search');
 Route::get('/ajax/professors', 'ProfessorController@ajax')->name('professors.ajax');
 Route::get('/ajax/students', 'StudentController@ajax')->name('students.ajax');

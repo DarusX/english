@@ -3,6 +3,7 @@
 <div class="col-sm-12">
 @include('layouts.menu')
 </div> 
+@endsection
 @section('content')
 <div class="col-md-10 col-sm-offset-1">
     <table class="table">
@@ -39,12 +40,7 @@
                 <td>@lang('head.address')</td>
                 <td>{{$datos->address}}</td>
             </tr>
-            <tr>
-                <td>@lang('head.branch')</td>
-                <td>{{$datos->branch->name}}</td>
-            </tr>
         </tbody>
-    </table>
-    
+    </table>   
 </div>
 @endsection

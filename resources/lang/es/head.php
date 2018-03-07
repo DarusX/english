@@ -29,6 +29,7 @@ return [
     'gender' => 'Género',
     'hired' => 'Contratado',
     'homework' => 'Tarea',
+    'id' => 'Matricula',
     'information' => 'Información',
     'level' => 'Nivel',
     'mobile' => 'Celular',

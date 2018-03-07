@@ -16,7 +16,7 @@
         <thead>
             <tr>
                 <th>@lang('head.name')</th>
-                <th>@lang('head.matricula')</th>
+                <th>@lang('head.id')</th>
                 <th>@lang('head.mobile')</th>
                 <th>@lang('head.phone')</th>
                 <th>@lang('head.emergency_phone')</th>
