@@ -50,6 +50,7 @@ Route::prefix('/page')->group(function(){
     Route::get('/professors/schedule', 'ProfessorSiteController@schedule')->name('professors.schedule');  
     Route::get('/professors/password', 'ProfessorSiteController@password')->name('professors.password');
     Route::post('/professors/updatepassword', 'ProfessorSiteController@updatepassword')->name('professors.updatepassword');     
+    Route::get('/professors/{id}/list', 'ProfessorSiteController@show')->name('professors.list');
 });
 //Route::get('/home', 'Auth\LoginController@redirectPath')->name('home');
 Route::POST('/students/search', 'StudentController@search')->name('students.search');

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Auth;
 use App\Student;
 use App\User;
+use App\Course;
 use Hash;
 use Validator;
 
@@ -35,7 +37,8 @@ class StudentSiteController extends Controller
         $request->user()->authorizeRoles(['name' => 'Estudiante']);
         
         return view('student.schedule')->with([
-            'student' => Student::where('matricula', Auth::user()->username)->get()->first()
+            'student' => Student::where('matricula', Auth::user()->username)->get()->first(),
+            'horario' => Course::whereDate('start_date', '=', Carbon::now()->format('Y-m-d'))->get()
         ]);
     }
     public function password(Request $request)

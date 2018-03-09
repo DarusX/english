@@ -26,17 +26,16 @@
         @foreach($student->lists as $datos)
         <tr>  
             <td></td>     
-            <td>{{$datos->lists->course->course}}</td>
-            <td>{{$datos->lists->oral_exam}}</td>
-            <td>{{$datos->lists->written_exam}}</td>
-            <td>{{$datos->lists->homework}}</td>
-            <td>{{$datos->lists->attendance}}</td>
-            <td>{{$datos->lists->totalScore}}</td>
-            <td>{{$datos->lists->comment}}</td>
-            <td>
-            </td>
-        @endforeach
+            <td>{{$datos->course->course}}</td>
+            <td>{{$datos->oral_exam}}</td>
+            <td>{{$datos->written_exam}}</td>
+            <td>{{$datos->homework}}</td>
+            <td>{{$datos->attendance}}</td>
+            <td>{{$datos->totalScore}}</td>
+            <td>{{$datos->comment}}</td>
+            <td></td>       
         </tr>
-    <tbody>
+        @endforeach
+    </tbody>
 </table>
 @endsection

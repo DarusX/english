@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Course extends Model
 {
@@ -42,10 +43,5 @@ class Course extends Model
     public function getScheduleAttribute()
     {
         return $this->start_time. ' a '.$this->finish_time;
-    }
-    public function scopeHorario($query)
-    {
-       return $query->whereDate('start_date', '<=', Carbon::now()->format('Y-m-d'))
-                ->whereDate('finish_date', '>=', Carbon::now()->format('Y-m-d'))->get();
     }
 }

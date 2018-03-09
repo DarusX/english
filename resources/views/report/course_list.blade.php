@@ -29,7 +29,7 @@
                 <td>{{$l->classroom->number}}</td>
                 <td>{{$l->professor->teacher}}</td>
                 <td>{{$l->branch->name}}</td>
-                <td>{{$l->price}}</td>
+                <td>${{$l->price}}</td>
             </tr>
             @endforeach
         </tbody>

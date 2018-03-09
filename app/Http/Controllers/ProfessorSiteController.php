@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Professor;
+use App\Course;
 use App\User;
 use Hash;
 use Validator;
@@ -19,6 +20,12 @@ class ProfessorSiteController extends Controller
     {
         return view('page.professor')->with([
             'datos' => Professor::where('matricula', Auth::user()->username)->get()->first()
+        ]);
+    }
+    public function show($id)
+    {
+        return view('professor.list')->with([
+            'course' => Course::findOrFail($id)   
         ]);
     }
     public function schedule(Request $request)

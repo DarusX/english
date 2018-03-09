@@ -25,11 +25,15 @@
         @foreach($student->lists as $datos)
         <tr>  
             <td></td>     
-            <td>{{$datos->lists->horario}}</td>
-            <td>
-            </td>
-        @endforeach
+            <td>{{$datos->course->course}}</td>
+            <td>{{$datos->course->start_date}}</td>
+            <td>{{$datos->course->finish_date}}</td>
+            <td>{{$datos->course->Schedule}}</td>
+            <td>{{$datos->course->classroom->number}}</td>
+            <td>{{$datos->course->professor->Teacher}}</td>
+            <td></td>  
         </tr>
-    <tbody>
+        @endforeach
+    </tbody>
 </table>
 @endsection

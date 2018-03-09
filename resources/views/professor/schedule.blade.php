@@ -24,11 +24,19 @@
         @foreach($professor->courses as $datos)
         <tr>  
             <td></td>     
-            <td>{{$datos->courses->horario}}</td>
+            <td>{{$datos->course}}</td>
+            <td>{{$datos->start_date}}</td>
+            <td>{{$datos->finish_date}}</td>
+            <td>{{$datos->Schedule}}</td>
+            <td>{{$datos->classroom->number}}</td>
             <td>
+                <div class="btn-group" role="group" aria-label="...">
+                    <a href="{{route('professors.list', $datos->id)}}" class="btn btn-default">@lang('icon.show')</a>
+                    <a href="{{route('report.lista', $datos->id)}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
+                </div>
             </td>
-        @endforeach
         </tr>
-    <tbody>
+        @endforeach
+    </tbody>
 </table>
 @endsection
