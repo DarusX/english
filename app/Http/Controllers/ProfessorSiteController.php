@@ -9,6 +9,7 @@ use App\Course;
 use App\User;
 use Hash;
 use Validator;
+use Carbon\Carbon;
 
 class ProfessorSiteController extends Controller
 {
@@ -32,7 +33,14 @@ class ProfessorSiteController extends Controller
     {
         $request->user()->authorizeRoles(['name' => 'Profesor']);
         return view('professor.schedule')->with([
-            'professor' => Professor::where('matricula', Auth::user()->username)->get()->first()
+            'professor' => Professor::with([ 
+                'courses' =>  function($query){
+                    $query->where([
+                        ['start_date', '<', Carbon::now()],
+                        ['finish_date', '>', Carbon::now()]
+                    ]);
+                }
+            ])->first()
         ]);
     }
     public function password(Request $request)
