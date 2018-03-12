@@ -31,12 +31,14 @@ Route::resources([
     'lists' => 'CourseStudentController',
     'students' => 'StudentController',
     'items' => 'ItemController',
+    'employees' => 'EmployeeController',
 ]);
 Route::prefix('/report')->group(function(){ 
     Route::get('/lista/{id}', 'CourseStudentController@lista')->name('report.lista');
     Route::get('/course', 'CourseController@lista')->name('report.course');
     Route::get('/professor', 'ProfessorController@lista')->name('report.professor');
     Route::get('/student', 'StudentController@lista')->name('report.student');
+    Route::get('/employee', 'EmployeeController@lista')->name('report.employee');
     
 });
 
@@ -63,3 +65,4 @@ Route::get('/ajax/levels', 'LevelController@ajax')->name('levels.ajax');
 Route::get('/ajax/course_type', 'CourseTypeController@ajax')->name('course_type.ajax');
 Route::get('/ajax/options', 'CourseOptionController@ajax')->name('options.ajax');
 Route::get('/ajax/items', 'ItemController@ajax')->name('items.ajax');
+Route::get('/ajax/employees', 'EmployeeController@ajax')->name('employees.ajax');

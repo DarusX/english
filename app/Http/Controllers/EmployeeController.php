@@ -3,24 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Professor;
+use App\Employee;
 use DateTime;
 use App\User;
 use PDF;
 use App\Role;
 use Dhtmlx\Connector\JSONDataConnector;
 
-class ProfessorController extends Controller
+class EmployeeController extends Controller
 {
-   public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
     public function index(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Administrador']);
-        return view('professor.index')->with([
-            'professors' => Professor::all()
+        return view('employee.index')->with([
+            'employees' => Employee::all()
         ]);
     }
 
@@ -32,7 +32,7 @@ class ProfessorController extends Controller
     public function create(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Administrador']);
-        return view('professor.create');
+        return view('employee.create');
     }
 
     /**
@@ -42,18 +42,29 @@ class ProfessorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $username =  $this->username($request);       
-        User::create([
-            'username' => $username,
-            'password' => bcrypt($username),
-            'name' => $request->name.' '.$request->lastname
-            ])->roles()->attach(Role::where('name', 'Profesor')->get()->first()); 
-            $professor = Professor::create($request->all()); 
-            $professor->update([
+    {   
+        $username =  $this->username($request);
+        if($role = $request->input("role", "Recepcionista")) 
+        {     
+            User::create([   
+                'username' => $username,
+                'password' => bcrypt($username),
+                'name' => $request->name.' '.$request->lastname   
+            ])->roles()->attach(Role::where('name', 'Recepcionista')->get()->first()); 
+        }
+        elseif($role = $request->input("role", "Jefe")) 
+        {
+            User::create([   
+                'username' => $username,
+                'password' => bcrypt($username),
+                'name' => $request->name.' '.$request->lastname   
+            ])->roles()->attach(Role::where('name', 'Jefe')->get()->first()); 
+        }
+            $employee = Employee::create($request->all()); 
+            $employee->update([
                 'matricula' => $username,
             ]);
-        return redirect()->route('professors.index');
+        return redirect()->route('employees.index');
     }
 
     /**
@@ -64,8 +75,8 @@ class ProfessorController extends Controller
      */
     public function show($id)
     {
-        return view('professor.show')->with([
-            'professor' => Professor::findOrFail($id)
+        return view('employee.show')->with([
+            'employee' => Employee::findOrFail($id)
         ]);
     }
 
@@ -78,8 +89,8 @@ class ProfessorController extends Controller
     public function edit($id, Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Administrador']);
-        return view('professor.edit')->with([
-            'professor' => Professor::find($id)
+        return view('employee.edit')->with([
+            'employee' => Employee::find($id)
         ]);
     }
 
@@ -92,7 +103,7 @@ class ProfessorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Professor::find($id)->update($request->all());
+        Employee::find($id)->update($request->all());
         return redirect()->back();
     }
 
@@ -119,8 +130,8 @@ class ProfessorController extends Controller
         return response()->json(Professor::all());
     }
     public function lista(Request $request){
-        $lista = Professor::all();
-        $pdf = PDF::loadview('report.professor_list', compact('lista'))->setPaper('legal', 'landscape');
-        return $pdf->stream('professors.pdf');
+        $lista = Employee::all();
+        $pdf = PDF::loadview('report.employee_list', compact('lista'))->setPaper('legal', 'landscape');
+        return $pdf->stream('employees.pdf');
     }
 }

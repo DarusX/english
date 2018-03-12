@@ -44,5 +44,6 @@ return [
     'rfc' => 'RFC',
     'start_date' => 'Fecha de inicio',
     'start_time' => 'Hora de inicio',
+    'user_type' => 'Tipo de usuario',
     'written_exam' => 'Examen escrito',
 ];

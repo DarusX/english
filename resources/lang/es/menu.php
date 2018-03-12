@@ -6,6 +6,7 @@ return [
     'course_lists' => 'Lista de cursos',
     'create' => 'Crear',
     'departments' => 'Departamentos',
+    'employees' => 'Empleados',
     'items' => 'Productos',
     'levels' => 'Niveles',
     'options' => 'Opción de curso',

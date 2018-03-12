@@ -28,6 +28,9 @@ class DatabaseSeeder extends Seeder
         $admin->roles()->attach(Role::create(['name' => 'Administrador',]));
         Role::create(['name' => 'Profesor']);
         Role::create(['name' => 'Estudiante']);
+        Role::create(['name' => 'Recepcionista']);
+        Role::create(['name' => 'Jefe']);
+        Role::create(['name' => 'Administrativo']);
 
         Classroom::create(['number' => '1']);
         Classroom::create(['number' => '2']);

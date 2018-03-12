@@ -12,6 +12,8 @@ return [
     'course_options' => 'Opciones de curso',    
     'department' => 'Departamento',
     'departments' => 'Departamentos',
+    'employee' => 'Empleado',
+    'employees' => 'Empleados',
     'item' => 'Producto',
     'items' => 'Productos',    
     'level' => 'Nivel',

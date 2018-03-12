@@ -165,5 +165,20 @@
                 </div>
             </div>
         </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">
+                        @lang('menu.employees')
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwelve" class="panel-collapse collapse">
+                <div class="list-group">
+                    <a href="{{route('employees.index')}}" class="list-group-item">@lang('menu.employees')</a>
+                    <a href="{{route('employees.create')}}" class="list-group-item">@lang('menu.create')</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -37,8 +37,7 @@ class StudentSiteController extends Controller
         $request->user()->authorizeRoles(['name' => 'Estudiante']);
         
         return view('student.schedule')->with([
-            'student' => Student::where('matricula', Auth::user()->username)->get()->first(),
-            'horario' => Course::whereDate('start_date', '=', Carbon::now()->format('Y-m-d'))->get()
+            'student' => Student::where('matricula', Auth::user()->username)->get()->first(),        
         ]);
     }
     public function password(Request $request)
