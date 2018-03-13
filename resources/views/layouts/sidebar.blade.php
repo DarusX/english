@@ -13,7 +13,6 @@
             <div id="collapseOne" class="panel-collapse collapse">
                 <div class="list-group">
                     <a href="{{route('professors.index')}}" class="list-group-item">@lang('menu.professors')</a>
-                    <a href="{{route('professors.create')}}" class="list-group-item">@lang('menu.create')</a>
                 </div>
             </div>
         </div>
@@ -28,7 +27,6 @@
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="list-group">
                     <a href="{{route('branches.index')}}" class="list-group-item">@lang('menu.branches')</a>
-                    <a href="{{route('branches.create')}}" class="list-group-item">@lang('menu.create')</a>
                 </div>
             </div>
         </div>
@@ -43,7 +41,6 @@
             <div id="collapseThree" class="panel-collapse collapse">
                 <div class="list-group">
                     <a href="{{route('levels.index')}}" class="list-group-item">@lang('menu.levels')</a>
-                    <a href="{{route('levels.create')}}" class="list-group-item">@lang('menu.create')</a>
                 </div>
             </div>
         </div>
@@ -51,14 +48,13 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                        @lang('menu.types')
+                        @lang('menu.course_types')
                     </a>
                 </h4>
             </div>
             <div id="collapseFour" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('course_type.index')}}" class="list-group-item">@lang('menu.types')</a>
-                    <a href="{{route('course_type.create')}}" class="list-group-item">@lang('menu.create')</a>
+                    <a href="{{route('course_types.index')}}" class="list-group-item">@lang('menu.course_types')</a>
                 </div>
             </div>
         </div>
@@ -66,14 +62,13 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-                        @lang('menu.classifications')
+                        @lang('menu.course_classifications')
                     </a>
                 </h4>
             </div>
             <div id="collapseFive" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('classifications.index')}}" class="list-group-item">@lang('menu.classifications')</a>
-                    <a href="{{route('classifications.create')}}" class="list-group-item">@lang('menu.create')</a>
+                    <a href="{{route('course_classifications.index')}}" class="list-group-item">@lang('menu.course_classifications')</a>
                 </div>
             </div>
         </div>
@@ -81,14 +76,13 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-                        @lang('menu.options')
+                        @lang('menu.course_options')
                     </a>
                 </h4>
             </div>
             <div id="collapseSix" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('options.index')}}" class="list-group-item">@lang('menu.options')</a>
-                    <a href="{{route('options.create')}}" class="list-group-item">@lang('menu.create')</a>
+                    <a href="{{route('course_options.index')}}" class="list-group-item">@lang('menu.course_options')</a>
                 </div>
             </div>
         </div>
@@ -117,7 +111,6 @@
             <div id="collapseEight" class="panel-collapse collapse">
                 <div class="list-group">
                     <a href="{{route('courses.index')}}" class="list-group-item">@lang('menu.courses')</a>
-                    <a href="{{route('courses.create')}}" class="list-group-item">@lang('menu.create')</a>
                 </div>
             </div>
         </div>

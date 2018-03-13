@@ -7,7 +7,7 @@
 @section('content')
 <div class="col-sm-12">
     <h1>@lang('title.course_option')</h1>
-    <form action="{{route('options.store')}}" method="POST">
+    <form action="{{route('course_options.store')}}" method="POST">
         {{csrf_field()}}
         <div class="form-group col-sm-4">
             <label for="" class="required">@lang('label.course_option')</label>

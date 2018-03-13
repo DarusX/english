@@ -9,6 +9,9 @@
     <h1>@lang('title.course_classifications')</h1>
 </div>
 <div class="col-sm-12">
+<a href="{{route('course_classifications.create')}}" class="btn btn-default">@lang('icon.create')</a>
+</div>
+<div class="col-sm-12">
     <table class="table">
         <thead>
             <tr>
@@ -20,11 +23,11 @@
             @foreach($classifications as $cl)
             <tbody>
                 <tr>       
-                    <td><a href="{{route('classifications.show', $cl->id)}}">{{$cl->name}}</td>
+                    <td><a href="{{route('course_classifications.show', $cl->id)}}">{{$cl->name}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
-                            <a href="{{route('classifications.destroy', $cl->id)}}" class="btn btn-default">@lang('icon.delete')</a>
-                            <a href="{{route('classifications.edit', $cl->id)}}" class="btn btn-default">@lang('icon.edit')</a>
+                            <a href="{{route('course_classifications.destroy', $cl->id)}}" class="btn btn-default">@lang('icon.delete')</a>
+                            <a href="{{route('course_classifications.edit', $cl->id)}}" class="btn btn-default">@lang('icon.edit')</a>
                         </div>
                     </td>
                 <tr>
@@ -33,7 +36,7 @@
         </tbody>
     </table>
 </div>
-@include('classification.modal')
+@include('course_classification.modal')
 @endsection
 @section('scripts')
 <script>

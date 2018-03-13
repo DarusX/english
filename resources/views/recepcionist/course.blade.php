@@ -7,12 +7,6 @@
 @section('content')
 <div class="col-sm-12">
     <h1>@lang('title.courses')</h1>
-</div>
-<div class="col-sm-12">
-<a href="{{route('courses.create')}}" class="btn btn-default">@lang('icon.create')</a>
-<a href="{{route('report.course')}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
-</div>
-<div class="col-sm-12">
     <table class="table">
         <thead>
             <tr>
@@ -43,9 +37,9 @@
                     <td>${{$c->price}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
-                            <a href="{{route('courses.show', $c->id)}}" class="btn btn-default">@lang('icon.show')</a>
-                            <a href="{{route('courses.destroy', $c->id)}}" class="btn btn-default">@lang('icon.delete')</a>
-                            <a href="{{route('courses.edit', $c->id)}}" class="btn btn-default">@lang('icon.edit')</a>
+                            <a href="{{route('courselist.show', $c->id)}} " class="btn btn-default">@lang('icon.show')</a>
+                            <a href="" target="_blank" class="btn btn-default">@lang('icon.print')</a>
+                            <a href="" class="btn btn-default">@lang('icon.delete')</a>
                         </div>
                     </td>
                 <tr>
@@ -54,21 +48,4 @@
         </tbody>
     </table>
 </div>
-@include('course.modal')
-@endsection
-@section('scripts')
-<script>
-    $("td a").click(function(event){
-        event.preventDefault();
-        $("#modalContent").html("<img src='{{asset('img/loading.gif')}}' class='img-responsive' width='content'>");
-
-        $("#modalShow").modal("toggle");
-        $.ajax({
-            url: $(this).attr("href"),
-            success: function(data){
-                $("#modalContent").html(data);
-            }
-        });
-    })
-</script>
 @endsection

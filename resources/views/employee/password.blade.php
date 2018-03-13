@@ -14,7 +14,7 @@
     <h1>@lang('title.update')</h1>
 </div>
 <div class="col-sm-12">
-    <form action="{{route('professor.updatepassword')}}" method="post">
+    <form action="{{route('employee.updatepassword')}}" method="post">
         {{csrf_field()}}
         <div class="form-group col-sm-4">
             <label for="" class="required">@lang('label.old_password')</label>

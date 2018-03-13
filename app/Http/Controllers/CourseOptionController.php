@@ -14,30 +14,30 @@ class CourseOptionController extends Controller
     }
     public function index(Request $request)
     {
-        return view('option.index')->with([
+        return view('course_option.index')->with([
             'options' => CourseOption::all()]
         );
     }
     public function create(Request $request)
     {
-        return view('option.create')->with([
+        return view('course_option.create')->with([
             'classifications' => CourseClassification::all(),
             ]);
     }
     public function store(Request $request)
     {
         CourseOption::create($request->all());
-        return redirect()->route('options.index');
+        return redirect()->route('course_options.index');
     }
     public function show($id)
     {
-        return view('option.show')->with([
+        return view('course_option.show')->with([
             'option' => CourseOption::findOrFail($id)   
         ]);
     }
     public function edit($id)
     {
-        return view('option.edit')->with([
+        return view('course_option.edit')->with([
             'option' => CourseOption::find($id),
             'classifications' => CourseClassification::all()
         ]); 
@@ -45,7 +45,7 @@ class CourseOptionController extends Controller
     public function update(Request $request, $id)
     {
         CourseOption::find($id)->update($request->all());
-        return redirect()->route('options.index');
+        return redirect()->route('course_options.index');
     }
     public function destroy($id)
     {

@@ -1,5 +1,5 @@
 <div class="col-sm-12"> 
-    <form action="{{route('classifications.update', $classification->id)}}" method="POST">
+    <form action="{{route('course_classifications.update', $classification->id)}}" method="POST">
         {{csrf_field()}}
         {{method_field('PUT')}}
         <div class="form-group">

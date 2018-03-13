@@ -20,7 +20,7 @@ class CourseTypeController extends Controller
     public function store(Request $request)
     {
         CourseType::create($request->all());
-        return redirect()->route('course_type.index');
+        return redirect()->route('course_types.index');
     }
     public function show($id)
     {
@@ -37,7 +37,7 @@ class CourseTypeController extends Controller
     public function update(Request $request, $id)
     {
         CourseType::find($id)->update($request->all());
-        return redirect()->route('course_type.index');
+        return redirect()->route('course_types.index');
     }
     public function destroy($id)
     {

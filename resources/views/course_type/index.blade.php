@@ -9,6 +9,9 @@
     <h1>@lang('title.course_types')</h1>
 </div>
 <div class="col-sm-12">
+<a href="{{route('course_types.create')}}" class="btn btn-default">@lang('icon.create')</a>
+</div>
+<div class="col-sm-12">
     <table class="table">
         <thead>
             <tr>
@@ -22,13 +25,13 @@
             @foreach($types as $t)
             <tbody>
                 <tr>       
-                    <td><a href="{{route('course_type.show', $t->id)}}">{{$t->name}}</td>
+                    <td><a href="{{route('course_types.show', $t->id)}}">{{$t->name}}</td>
                     <td>{{$t->duration}}</td>
                     <td>{{$t->information}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
-                            <a href="{{route('course_type.destroy', $t->id)}}" class="btn btn-default">@lang('icon.delete')</a>
-                            <a href="{{route('course_type.edit', $t->id)}}" class="btn btn-default">@lang('icon.edit')</a>
+                            <a href="{{route('course_types.destroy', $t->id)}}" class="btn btn-default">@lang('icon.delete')</a>
+                            <a href="{{route('course_types.edit', $t->id)}}" class="btn btn-default">@lang('icon.edit')</a>
                         </div>
                     </td>
                 <tr>

@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-    <form action="{{route('course_type.update', $type->id)}}" method="post">
+    <form action="{{route('courses_type.update', $type->id)}}" method="post">
         {{csrf_field()}}
         {{method_field('PUT')}}
         <div class="form-group col-sm-4">

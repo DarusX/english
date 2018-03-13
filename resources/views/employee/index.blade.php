@@ -9,6 +9,7 @@
     <h1>@lang('title.employees')</h1>
 </div>
 <div class="col-sm-12">
+<a href="{{route('employees.create')}}" class="btn btn-default">@lang('icon.create')</a>
 <a href="{{route('report.employee')}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
 </div>
 <div class="col-sm-12">

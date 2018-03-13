@@ -81,26 +81,14 @@
         <tr>
             <th></th>
             <th>@lang('head.name')</th>
-            <th>@lang('head.oral_exam')</th>
-            <th>@lang('head.written_exam')</th>
-            <th>@lang('head.homework')</th>
-            <th>@lang('head.attendance')</th>
-            <th>@lang('head.total')</th>
-            <th>@lang('head.comments')</th>         
-            <th>@lang('head.actions')</th>
+            <th>@lang('head.id')</th>
         </tr>
         @foreach($course->lists as $list)
         <tr>  
             <td></td>     
             <td>{{$list->student->studentName}}</td>
-            <td>{{$list->oral_exam}}</td>
-            <td>{{$list->written_exam}}</td>
-            <td>{{$list->homework}}</td>
-            <td>{{$list->attendance}}</td>
-            <td>{{$list->totalScore}}</td>
-            <td>{{$list->comment}}</td>
+            <td>{{$list->student->matricula}}</td>
             <td>
-            <a href="{{route('lists.edit', $list->id)}}" class="btn btn-default">@lang('icon.edit')</a>
             </td>
         </tr>
     @endforeach
@@ -109,20 +97,6 @@
 @include('list.modal')
 @endsection
 @section('scripts')
-<script>
-    $("td a").click(function(event){
-        event.preventDefault();
-        $("#modalContent").html("<img src='{{asset('img/loading.gif')}}' class='img-responsive' width='content'>");
-
-        $("#modalShow").modal("toggle");
-        $.ajax({
-            url: $(this).attr("href"),
-            success: function(data){
-                $("#modalContent").html(data);
-            }
-        });
-    })
-</script>
 <script>
     function mostrar(){
     var div = document.getElementById('listanuevo');

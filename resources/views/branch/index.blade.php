@@ -9,6 +9,9 @@
     <h1>@lang('title.branches')</h1>
 </div>
 <div class="col-sm-12">
+<a href="{{route('branches.create')}}" class="btn btn-default">@lang('icon.create')</a>
+</div>
+<div class="col-sm-12">
     <table class="table">
         <thead>
             <tr>

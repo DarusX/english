@@ -9,6 +9,9 @@
     <h1>@lang('title.levels')</h1>
 </div>
 <div class="col-sm-12">
+<a href="{{route('levels.create')}}" class="btn btn-default">@lang('icon.create')</a>
+</div>
+<div class="col-sm-12">
     <table class="table">
         <thead>
             <tr>

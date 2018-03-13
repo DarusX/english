@@ -25,7 +25,7 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('professors.schedule')}}" class="list-group-item">@lang('menu.schedule')</a>
+                    <a href="{{route('professor.schedule')}}" class="list-group-item">@lang('menu.schedule')</a>
                 </div>
             </div>
         </div> 
@@ -39,7 +39,7 @@
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('professors.password')}}" class="list-group-item">@lang('menu.update')</a>
+                    <a href="{{route('professor.password')}}" class="list-group-item">@lang('menu.update')</a>
                 </div>
             </div>
         </div>

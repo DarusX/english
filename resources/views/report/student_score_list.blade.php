@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-    <h1>@lang('title.course') número @foreach($lista as $l) {{$l->course->course}}@endforeach</h1>
+    <h1>@lang('title.course') número </h1>
 </div>
 <div class="col-sm-12">
     <table class="table">

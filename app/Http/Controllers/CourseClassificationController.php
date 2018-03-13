@@ -13,35 +13,35 @@ class CourseClassificationController extends Controller
     }
     public function index(Request $request)
     {
-        return view('classification.index')->with([
+        return view('course_classification.index')->with([
             'classifications' => CourseClassification::all()]
         );
     }
     public function create(Request $request)
     {
-        return view('classification.create');
+        return view('course_classification.create');
     }
     public function store(Request $request)
     {
         CourseClassification::create($request->all());
-        return redirect()->route('classifications.index');
+        return redirect()->route('course_classifications.index');
     }
     public function show($id)
     {
-        return view('classification.show')->with([
+        return view('course_classification.show')->with([
             'classification' => CourseClassification::findOrFail($id)   
         ]);
     }
     public function edit($id)
     {
-        return view('classification.edit')->with([
+        return view('course_classification.edit')->with([
             'classification' => CourseClassification::find($id)
         ]); 
     }
     public function update(Request $request, $id)
     {
         CourseClassification::find($id)->update($request->all());
-        return redirect()->route('classifications.index');
+        return redirect()->route('course_classifications.index');
     }
     public function destroy($id)
     {

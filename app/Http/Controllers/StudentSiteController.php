@@ -63,7 +63,7 @@ class StudentSiteController extends Controller
         
         $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()){
-            return redirect('page/students/password')->withErrors($validator);
+            return redirect('page/student/password')->withErrors($validator);
         }
         else{
         if (Hash::check($request->mypassword, Auth::user()->password)){
@@ -74,10 +74,8 @@ class StudentSiteController extends Controller
             }
             else
             {
-                return redirect('page/students/password')->with('message', 'Credenciales incorrectas');
+                return redirect('page/student/password')->with('message', 'Credenciales incorrectas');
             }
         }
     }
-
-
 }
