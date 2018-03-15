@@ -1,7 +1,3 @@
-
-<div class="col-sm-12">
-    <h1>@lang('title.student')</h1>
-</div>
 <div class="col-sm-12">
     <form action="{{route('students.update', $student->id)}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
@@ -79,5 +75,4 @@
 
     </form>
 </div>
-
-    @include('scriptdatepicker')
+@include('scriptdatepicker')

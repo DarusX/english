@@ -23,7 +23,13 @@ class CourseController extends Controller
     public function index(Request $request)
     {
         return view('course.index')->with([
-            'courses' => Course::all()]
+            'courses' => Course::all(),
+            'levels' => Level::all(),
+            'types' => CourseType::all(),
+            'options' => CourseOption::all(),
+            'classrooms' => Classroom::all(),
+            'professors' => Professor::all(),
+            'branches' => Branch::all()]
         );
     }
     public function create(Request $request)

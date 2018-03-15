@@ -47,7 +47,11 @@ class LoginController extends Controller
             return '/page/professor';
     
         }
-        elseif(Auth::user()->authorizeRoles(['name'=>"Recepcionista"]))
+        elseif(Auth::user()->authorizeRoles([
+            'name'=>"Recepcionista",
+            'name'=>"Administrativo",
+            'name'=>"Jefe"
+        ]))
         {
             //$data = Professor::where('matricula', Auth::user()->username)->get()->first();
             return '/page/employee';

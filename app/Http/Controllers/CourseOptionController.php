@@ -15,7 +15,8 @@ class CourseOptionController extends Controller
     public function index(Request $request)
     {
         return view('course_option.index')->with([
-            'options' => CourseOption::all()]
+            'options' => CourseOption::all(),
+            'classifications' => CourseClassification::all()]
         );
     }
     public function create(Request $request)

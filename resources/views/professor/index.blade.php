@@ -9,7 +9,7 @@
     <h1>@lang('title.professors')</h1>
 </div>
 <div class="col-sm-12">
-<a href="{{route('professors.create')}}" class="btn btn-default">@lang('icon.create')</a>
+<a data-toggle="modal" data-target="#create" class="btn btn-default">@lang('icon.create')</a>
 <a href="{{route('report.professor')}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
 </div>
 <div class="col-sm-12">
@@ -49,6 +49,7 @@
 </div>
 <div id="grid_here" style="width: 600px; height: 400px;"></div>
 @include('professor.modal')
+@include('professor.create') 
 @endsection
 @section('scripts')
 <script type="text/javascript" charset="utf-8">

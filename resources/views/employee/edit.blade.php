@@ -1,7 +1,3 @@
-
-<div class="col-sm-12">
-    <h1>@lang('title.employee')</h1>
-</div>
 <div class="col-sm-12">
     <form action="{{route('employees.update', $employee->id)}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}

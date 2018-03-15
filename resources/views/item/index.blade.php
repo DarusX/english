@@ -9,7 +9,7 @@
     <h1>@lang('title.items')</h1>
 </div>
 <div class="col-sm-12">
-<a href="{{route('items.create')}}" class="btn btn-default">@lang('icon.create')</a>
+<a data-toggle="modal" data-target="#create" class="btn btn-default">@lang('icon.create')</a>
 </div>
 <div class="col-sm-12">
     <table class="table">
@@ -39,6 +39,7 @@
     </table>
 </div>
 @include('item.modal')
+@include('item.create')
 @endsection
 @section('scripts')
 <script>

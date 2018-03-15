@@ -9,7 +9,7 @@
     <h1>@lang('title.levels')</h1>
 </div>
 <div class="col-sm-12">
-<a href="{{route('levels.create')}}" class="btn btn-default">@lang('icon.create')</a>
+<a data-toggle="modal" data-target="#create" class="btn btn-default">@lang('icon.create')</a>
 </div>
 <div class="col-sm-12">
     <table class="table">
@@ -39,6 +39,7 @@
     </table>
 </div>
 @include('level.modal')
+@include('level.create')
 @endsection
 @section('scripts')
 <script>

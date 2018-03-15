@@ -9,7 +9,7 @@
     <h1>@lang('title.courses')</h1>
 </div>
 <div class="col-sm-12">
-<a href="{{route('courses.create')}}" class="btn btn-default">@lang('icon.create')</a>
+<a data-toggle="modal" data-target="#create" class="btn btn-default">@lang('icon.create')</a>
 <a href="{{route('report.course')}}" target="_blank" class="btn btn-default">@lang('icon.print')</a>
 </div>
 <div class="col-sm-12">
@@ -32,7 +32,7 @@
             @foreach($courses as $c)
             <tbody>
                 <tr>       
-                    <td>{{$c->course}}</td>
+                    <td><a href="{{route('courses.show', $c->id)}}">{{$c->course}}</a></td>
                     <td>{{$c->level->level}}</td>
                     <td>{{$c->course_option->name}}</td>
                     <td>{{$c->course_type->name}}</td>
@@ -43,7 +43,6 @@
                     <td>${{$c->price}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
-                            <a href="{{route('courses.show', $c->id)}}" class="btn btn-default">@lang('icon.show')</a>
                             <a href="{{route('courses.destroy', $c->id)}}" class="btn btn-default">@lang('icon.delete')</a>
                             <a href="{{route('courses.edit', $c->id)}}" class="btn btn-default">@lang('icon.edit')</a>
                         </div>
@@ -55,6 +54,7 @@
     </table>
 </div>
 @include('course.modal')
+@include('course.create')
 @endsection
 @section('scripts')
 <script>

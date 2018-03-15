@@ -2,11 +2,11 @@
     <form action="{{route('course_options.update', $option->id)}}" method="POST" role="form">
     {{csrf_field()}}
     {{method_field('PUT')}}
-        <div class="form-group col-sm-4">
+        <div class="form-group col-sm-6">
                 <label for="">@lang('label.course_option')</label>
                 <input class="form-control" name="name" value="{{$option->name}}">
         </div>
-        <div class="form-group col-sm-4">
+        <div class="form-group col-sm-6">
             <label for="" class="required">@lang('label.classification')</label>
             <select name="classification_id" class="form-control">
                 <option value="">-Seleccione-</option>

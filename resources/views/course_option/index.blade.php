@@ -9,7 +9,7 @@
     <h1>@lang('title.course_options')</h1>
 </div>
 <div class="col-sm-12">
-<a href="{{route('course_options.create')}}" class="btn btn-default">@lang('icon.create')</a>
+<a data-toggle="modal" data-target="#create" class="btn btn-default">@lang('icon.create')</a>
 </div>
 <div class="col-sm-12">
     <table class="table">
@@ -39,6 +39,7 @@
     </table>
 </div>
 @include('course_option.modal')
+@include('course_option.create')
 @endsection
 @section('scripts')
 <script>
