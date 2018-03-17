@@ -69,10 +69,10 @@
                             </div>
                             <div class="form-group col-sm-4">
                                 <label for="" class="required">@lang('label.user_type')</label>
-                                <select name="role" class="form-control">
-                                    <option value="Recepcionista">Recepcionista</option>
-                                    <option value="Jefe">Jefe</option>
-                                    <option value="Administrativo">Administrativo</option>
+                                <select name="role_id" class="form-control">
+                                @foreach ($roles as $r)
+                                    <option value="{{$r->id}}">{{$r->name}}</option>
+                                @endforeach
                                 </select>
                             </div>
                             <div class="form-group col-sm-4">

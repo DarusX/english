@@ -5,4 +5,5 @@ return [
     'edit' => '<i class="fa fa-edit"></i>',
     'print' => '<i class="fa fa-print"></i>',
     'show' => '<i class="fa fa-eye"></i>', 
+    'update' => '<i class="fa fa-pencil"></i>', 
 ];

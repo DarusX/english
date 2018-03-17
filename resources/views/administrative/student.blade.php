@@ -35,6 +35,7 @@
                 <td>{{$s->status->status}}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
+                        <a href="{{route('administrative.inscription',$s->id)}}" class="btn btn-default">@lang('icon.update')</a>
                         <a href="" class="btn btn-default">@lang('icon.delete')</a>
                     </div>
                 </td>

@@ -10,6 +10,8 @@ use App\User;
 use App\Course;
 use App\Student;
 use App\Branch;
+use DateTime;
+use App\Role;
 
 class RecepcionistSiteController extends Controller
 {

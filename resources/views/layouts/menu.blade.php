@@ -7,5 +7,5 @@
     @elseif(Auth::user()->authorizeRoles(['name'=>"Recepcionista"]))
         @include('layouts.menu-recepcionist')
     @elseif(Auth::user()->authorizeRoles(['name'=>"Administrativo"]))
-        @include('layouts.menu-admon')
+        @include('layouts.menu-administrative')
     @endif

@@ -20,7 +20,8 @@ class EmployeeController extends Controller
     {
         $request->user()->authorizeRoles(['name' => 'Administrador']);
         return view('employee.index')->with([
-            'employees' => Employee::all()
+            'employees' => Employee::all(),
+            'roles' => Role::all()
         ]);
     }
 
@@ -32,7 +33,9 @@ class EmployeeController extends Controller
     public function create(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Administrador']);
-        return view('employee.create');
+        return view('employee.create')->with([
+            'roles' => Role::all()
+        ]);
     }
 
     /**
@@ -44,22 +47,12 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {   
         $username =  $this->username($request);
-        if($role = $request->input("role", "Recepcionista")) 
-        {     
-            User::create([   
-                'username' => $username,
-                'password' => bcrypt($username),
-                'name' => $request->name.' '.$request->lastname   
-            ])->roles()->attach(Role::where('name', 'Recepcionista')->get()->first()); 
-        }
-        elseif($role = $request->input("role", "Jefe")) 
-        {
-            User::create([   
-                'username' => $username,
-                'password' => bcrypt($username),
-                'name' => $request->name.' '.$request->lastname   
-            ])->roles()->attach(Role::where('name', 'Jefe')->get()->first()); 
-        }
+        
+                User::create([   
+                    'username' => $username,
+                    'password' => bcrypt($username),
+                    'name' => $request->name.' '.$request->lastname   
+                ])->roles()->attach([$request->role_id]);  
             $employee = Employee::create($request->all()); 
             $employee->update([
                 'matricula' => $username,

@@ -1,0 +1,39 @@
+@extends('layouts.app')
+@section('side')
+<div class="col-sm-12">
+@include('layouts.menu')
+</div> 
+@endsection
+@section('content')
+<br>
+<div class="col-sm-12">
+    <form action="{{route('administrative.storeinscription', $student->id)}}"  method="POST" role="form">
+        {{csrf_field()}}
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h2><center>Inscribir alumno</center></h2>
+            </div>
+            
+        </div><br>
+        <input type="hidden" name="student_id" value="{{$student->id}}">
+        <input type="hidden" name="status_id" value="2">
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label for="">@lang('label.name')</label>
+                <input class="form-control" value="{{$student->name}}" disabled>
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="">@lang('label.lastname')</label>
+                <input class="form-control" value="{{$student->lastname}}" disabled>
+            </div>
+            <div class="form-group col-sm-4">
+                <label for="">@lang('label.birthdate')</label>
+                <input class="form-control" value="{{$student->birthdate}}" disabled>
+            </div>
+        </div>  
+        <div class="form-group col-sm-12">
+            <button type="submit" class="btn btn-default">@lang('button.save')</button>
+        </div>
+    </form>
+</div>
+@endsection

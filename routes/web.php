@@ -68,6 +68,8 @@ Route::prefix('/page')->group(function(){
     Route::get('administrative/list', 'AdministrativeSiteController@course')->name('administrative.list'); 
     Route::get('administrative/{id}/show', 'AdministrativeSiteController@show')->name('administrative.show');
     Route::get('/administrative/student', 'AdministrativeSiteController@student')->name('administrative.student'); 
+    Route::get('/administrative/{id}/inscription', 'AdministrativeSiteController@inscription')->name('administrative.inscription'); 
+    Route::post('administrative/{id}/storeinscription', 'AdministrativeSiteController@storeinscription')->name('administrative.storeinscription');
 });
 //Route::get('/home', 'Auth\LoginController@redirectPath')->name('home');
 Route::POST('/students/search', 'StudentController@search')->name('students.search');
@@ -83,3 +85,4 @@ Route::get('/ajax/options', 'CourseOptionController@ajax')->name('options.ajax')
 Route::get('/ajax/items', 'ItemController@ajax')->name('items.ajax');
 Route::get('/ajax/employees', 'EmployeeController@ajax')->name('employees.ajax');
 Route::get('/ajax/recepcionist', 'RecepcionistSiteController@ajax')->name('recepcionist.ajax');
+Route::get('/ajax/aministrative', 'AdministrativeSiteController@ajax')->name('administrative.ajax');

@@ -7,8 +7,10 @@ use Carbon\Carbon;
 use Auth;
 use App\Employee;
 use App\User;
+use App\Role;
 use App\Course;
 use App\Student;
+use DateTime;
 
 class AdministrativeSiteController extends Controller
 {
@@ -32,15 +34,42 @@ class AdministrativeSiteController extends Controller
     public function student(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Administrativo']);
-        
         return view('administrative.student')->with([
-            'students' => Student::all()
+            'students' => Student::all(),
         ]);
     }
-    public function item(Request $request)
+    public function inscription($id, Request $request)
+    {   
+        return view('administrative.inscription')->with([
+            'student' => Student::find($id),
+            ]); 
+    }
+    public function storeinscription($id, Request $request)
     {
-        return view('item.index')->with([
-            'items' => Item::all()]
-        );
+        $username =  $this->username($request);
+        $user = User::create([
+            'username' => $username,
+            'password' => bcrypt($username),
+            'name' => $request->name.' '.$request->lastname
+        ])->roles()->attach(Role::where('name', 'Estudiante')->get()->first());
+        $student = Student::find($id);
+        $student->update([
+            'matricula' => $username,
+            'status_id' => $request->status_id,
+            'registration_date' => Carbon::now()
+        ]);
+        return redirect()->route('administrative.student');
+    }
+    public function username($data){
+        $n = $data->name;
+        $l = $data->lastname;
+        $b = DateTime::createFromFormat('Y-m-d',$data->birthdate);
+        $b = $b->format('ym');
+        $str = $n[0].$n[1].$l[0].$l[1].$b;
+        return strtoupper($str);
+    }
+    public function ajax(Request $request)
+    {
+        return response()->json(Student::all());
     }
 }

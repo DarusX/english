@@ -8,6 +8,7 @@ use Auth;
 use App\Student;
 use App\User;
 use App\Course;
+use App\CourseStudent;
 use Hash;
 use Validator;
 
@@ -37,7 +38,16 @@ class StudentSiteController extends Controller
         $request->user()->authorizeRoles(['name' => 'Estudiante']);
         
         return view('student.schedule')->with([
-            'student' => Student::where('matricula', Auth::user()->username)->get()->first(),        
+            'student' => Student::with([
+                'lists' =>  CourseStudent::with([
+                    'courses' =>function($query){
+                    $query->where([
+                        ['start_date', '<', Carbon::now()],
+                        ['finish_date', '>', Carbon::now()]
+                    ]);
+                }
+            ])->first() n
+            ])
         ]);
     }
     public function password(Request $request)
