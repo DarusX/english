@@ -43,6 +43,10 @@ class Student extends Model
         }
         
     }
+    public function scopePreinscrito($query)
+    {
+        return $query->where('status_id','=',1)->get();
+    }
     public function lists()
     {
     return $this->hasMany(CourseStudent::class);

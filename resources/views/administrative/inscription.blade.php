@@ -20,15 +20,15 @@
         <div class="row">
             <div class="form-group col-sm-4">
                 <label for="">@lang('label.name')</label>
-                <input class="form-control" value="{{$student->name}}" disabled>
+                <input class="form-control" name="name" value="{{$student->name}}">
             </div>
             <div class="form-group col-sm-4">
                 <label for="">@lang('label.lastname')</label>
-                <input class="form-control" value="{{$student->lastname}}" disabled>
+                <input class="form-control" name="lastname" value="{{$student->lastname}}">
             </div>
             <div class="form-group col-sm-4">
                 <label for="">@lang('label.birthdate')</label>
-                <input class="form-control" value="{{$student->birthdate}}" disabled>
+                <input class="form-control datepicker" name="birthdate" value="{{$student->birthdate}}">
             </div>
         </div>  
         <div class="form-group col-sm-12">
@@ -36,4 +36,7 @@
         </div>
     </form>
 </div>
+@endsection
+@section('scripts')
+@include('scriptdatepicker')
 @endsection

@@ -35,7 +35,7 @@ class AdministrativeSiteController extends Controller
     {
         $request->user()->authorizeRoles(['name' => 'Administrativo']);
         return view('administrative.student')->with([
-            'students' => Student::all(),
+            'students' => Student::Preinscrito(),
         ]);
     }
     public function inscription($id, Request $request)
@@ -54,6 +54,8 @@ class AdministrativeSiteController extends Controller
         ])->roles()->attach(Role::where('name', 'Estudiante')->get()->first());
         $student = Student::find($id);
         $student->update([
+            'name' => $request->name.' '.$request->lastname,
+            'birthdate' => $request->birthdate,
             'matricula' => $username,
             'status_id' => $request->status_id,
             'registration_date' => Carbon::now()
