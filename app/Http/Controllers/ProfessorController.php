@@ -19,6 +19,7 @@ class ProfessorController extends Controller
     public function index(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Administrador']);
+        $request->user()->authorizeRoles(['name' => 'Jefe de académico']);
         return view('professor.index')->with([
             'professors' => Professor::all()
         ]);
@@ -32,6 +33,7 @@ class ProfessorController extends Controller
     public function create(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Administrador']);
+        $request->user()->authorizeRoles(['name' => 'Jefe de académico']);
         return view('professor.create');
     }
 

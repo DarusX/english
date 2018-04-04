@@ -19,6 +19,7 @@ class ProfessorSiteController extends Controller
     }
     public function index()
     {
+        $request->user()->authorizeRoles(['name' => 'Profesor']);
         return view('page.professor')->with([
             'datos' => Professor::where('matricula', Auth::user()->username)->get()->first()
         ]);

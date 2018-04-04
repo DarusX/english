@@ -22,27 +22,27 @@ class AdministrativeSiteController extends Controller
     public function course(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Administrativo']);    
-        return view('administrative.course')->with([
+        return view('administration.course')->with([
             'courses' => Course::where('start_date', '>', Carbon::now())->get()
         ]);
     }
     public function show($id)
     {
-        return view('administrative.show')->with([
+        return view('administration.show')->with([
             'course' => Course::findOrFail($id)   
         ]);
     }
     public function student(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Administrativo']);
-        return view('student.pre-registered')->with([
+        return view('administration.pre-registered')->with([
             'students' => Student::Preinscrito(),
             'branches' => Branch::all()
         ]);
     }
     public function inscription($id, Request $request)
     {   
-        return view('administrative.inscription')->with([
+        return view('administration.inscription')->with([
             'student' => Student::find($id),
             ]); 
     }
@@ -62,7 +62,7 @@ class AdministrativeSiteController extends Controller
             'status_id' => $request->status_id,
             'registration_date' => Carbon::now()
         ]);
-        return redirect()->route('administrative.student');
+        return redirect()->route('administration.student');
     }
     public function username($data){
         $n = $data->name;

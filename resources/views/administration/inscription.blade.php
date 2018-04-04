@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-    <form action="{{route('administrative.storeinscription', $student->id)}}"  method="POST" role="form">
+    <form action="{{route('administration.storeinscription', $student->id)}}"  method="POST" role="form">
         {{csrf_field()}}
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">

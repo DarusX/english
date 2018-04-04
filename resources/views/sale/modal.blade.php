@@ -10,7 +10,7 @@
             <div class="modal-body">
                 <div class="row" id="modalContent">
                 <div class="col-sm-12">
-                        <form action="{{route('recepcionist.store')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('sale.store')}}" method="post" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="form-group col-sm-4">
                                 <label for="" class="required">@lang('label.name')</label>

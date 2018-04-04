@@ -18,22 +18,31 @@ class RecepcionistSiteController extends Controller
     public function course(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Recepcionista']);    
-        return view('recepcionist.course')->with([
+        return view('sale.course')->with([
             'courses' => Course::where('start_date', '>', Carbon::now())->get()
         ]);
     }
     public function show($id)
     {
-        return view('recepcionist.show')->with([
+        return view('sale.show')->with([
             'course' => Course::findOrFail($id)   
+        ]);
+    }
+    public function preregistered(Request $request)
+    {
+        $request->user()->authorizeRoles(['name' => 'Recepcionista']);
+        
+        return view('sale.pre-registered')->with([
+            'students' => Student::Preinscrito(),
+            'branches' => Branch::all()
         ]);
     }
     public function student(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Recepcionista']);
         
-        return view('recepcionist.student')->with([
-            'students' => Student::all(),
+        return view('sale.student')->with([
+            'students' => Student::Inscrito(),
             'branches' => Branch::all()
         ]);
     }
@@ -49,7 +58,7 @@ class RecepcionistSiteController extends Controller
         $student->update([
             'matricula' => $username,
         ]);
-        return redirect()->route('recepcionist.student');
+        return redirect()->route('sale.pre-registered');
     }
     public function username($data){
         $n = $data->name;

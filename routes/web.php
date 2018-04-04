@@ -59,17 +59,17 @@ Route::prefix('/page')->group(function(){
     Route::get('/employee/password', 'EmployeeGeneralController@password')->name('employee.password');
     Route::post('/employee/updatepassword', 'EmployeeGeneralController@updatepassword')->name('employee.updatepassword');   
 
-    Route::get('employee/list', 'RecepcionistSiteController@course')->name('employee.list'); 
+    Route::get('sale/list', 'RecepcionistSiteController@course')->name('sale.list'); 
     Route::get('courselist/{id}/show', 'RecepcionistSiteController@show')->name('courselist.show');
-    Route::get('/recepcionist/student', 'RecepcionistSiteController@student')->name('recepcionist.student'); 
-    Route::post('/recepcionist/store', 'RecepcionistSiteController@store')->name('recepcionist.store');    
+    Route::get('/sale/student', 'RecepcionistSiteController@student')->name('sale.student'); 
+    Route::post('/sale/store', 'RecepcionistSiteController@store')->name('sale.store');    
     
     
-    Route::get('administrative/list', 'AdministrativeSiteController@course')->name('administrative.list'); 
-    Route::get('administrative/{id}/show', 'AdministrativeSiteController@show')->name('administrative.show');
-    Route::get('/student/pre-registered', 'AdministrativeSiteController@student')->name('student.pre-registered'); 
-    Route::get('/administrative/{id}/inscription', 'AdministrativeSiteController@inscription')->name('administrative.inscription'); 
-    Route::post('administrative/{id}/storeinscription', 'AdministrativeSiteController@storeinscription')->name('administrative.storeinscription');
+    Route::get('administration/course', 'AdministrativeSiteController@course')->name('administration.course'); 
+    Route::get('administration/{id}/show', 'AdministrativeSiteController@show')->name('administration.show');
+    Route::get('/administration/pre-registered', 'AdministrativeSiteController@student')->name('administration.pre-registered'); 
+    Route::get('/administration/{id}/inscription', 'AdministrativeSiteController@inscription')->name('administration.inscription'); 
+    Route::post('administration/{id}/storeinscription', 'AdministrativeSiteController@storeinscription')->name('administration.storeinscription');
 });
 //Route::get('/home', 'Auth\LoginController@redirectPath')->name('home');
 Route::POST('/students/search', 'StudentController@search')->name('students.search');
@@ -85,4 +85,4 @@ Route::get('/ajax/options', 'CourseOptionController@ajax')->name('options.ajax')
 Route::get('/ajax/items', 'ItemController@ajax')->name('items.ajax');
 Route::get('/ajax/employees', 'EmployeeController@ajax')->name('employees.ajax');
 Route::get('/ajax/recepcionist', 'RecepcionistSiteController@ajax')->name('recepcionist.ajax');
-Route::get('/ajax/aministrative', 'AdministrativeSiteController@ajax')->name('administrative.ajax');
+Route::get('/ajax/administrative', 'AdministrativeSiteController@ajax')->name('administrative.ajax');

@@ -46,7 +46,7 @@ class StudentSiteController extends Controller
                         ['finish_date', '>', Carbon::now()]
                     ]);
                 }
-            ])->first() n
+            ])->first()
             ])
         ]);
     }
