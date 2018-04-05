@@ -24,8 +24,14 @@ class StudentController extends Controller
             'students' => Student::Inscrito(),
             'branches' => Branch::all()
         ]);
+    }   
+    public function preregistered(Request $request)
+    {
+        return view('student.pre-registered')->with([
+            'students' => Student::Preinscrito(),
+            'branches' => Branch::all()
+        ]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -56,7 +62,7 @@ class StudentController extends Controller
         $student->update([
             'matricula' => $username,
         ]);
-        return redirect()->route('students.index');
+        return redirect()->route('students.pre-registered');
     }
     public function search(Request $request)
     {

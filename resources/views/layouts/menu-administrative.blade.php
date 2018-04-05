@@ -39,7 +39,8 @@
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('administration.pre-registered')}}" class="list-group-item">@lang('menu.students')</a>
+                    <a href="{{route('administration.pre-registered')}}" class="list-group-item">@lang('menu.pre-registered')</a>
+                    <a href="{{route('administration.student')}}" class="list-group-item">@lang('menu.students')</a>
                 </div>
             </div>
         </div>

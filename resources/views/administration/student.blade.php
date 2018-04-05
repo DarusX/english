@@ -6,10 +6,9 @@
 @endsection
 @section('content')
 <div class="col-sm-12">
-    <h1>@lang('title.pre-registered')</h1>
+    <h1>@lang('title.students')</h1>
 </div>
 <div class="col-sm-12">
-<a data-toggle="modal" data-target="#create" class="btn btn-default">@lang('icon.create')</a>
 <a href="" target="_blank" class="btn btn-default">@lang('icon.print')</a>
 </div>
 <div class="col-sm-12">
@@ -30,7 +29,7 @@
         <tbody>
             @foreach($students as $s)
             <tr>
-                <td><a href="{{route('students.show', $s->id)}}">{{$s->name}} {{$s->lastname}}</a></td>
+                <td><a href="{{route('students.show', $s->id)}}">{{$s->name}} {{$s->lastname}}</a></td>                
                 <td>{{$s->matricula}}</td>
                 <td>{{$s->phone}}</td>
                 <td>{{$s->emergency_phone}}</td>
@@ -40,7 +39,6 @@
                 <td>{{$s->status->status}}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
-                        <a href="{{route('students.edit',$s->id)}}" class="btn btn-default">@lang('icon.edit')</a>
                         <a href="" class="btn btn-default">@lang('icon.delete')</a>
                     </div>
                 </td>
@@ -50,7 +48,6 @@
     </table>
 </div>
 @include('student.modal')
-@include('student.create')
 @endsection
 @section('scripts')
 <script>

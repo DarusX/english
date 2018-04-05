@@ -37,7 +37,7 @@
                     <td>${{$c->price}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
-                            <a href="{{route('administrative.show', $c->id)}} " class="btn btn-default">@lang('icon.show')</a>
+                            <a href="{{route('administration.show', $c->id)}} " class="btn btn-default">@lang('icon.show')</a>
                             <a href="" target="_blank" class="btn btn-default">@lang('icon.print')</a>
                             <a href="" class="btn btn-default">@lang('icon.delete')</a>
                         </div>

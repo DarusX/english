@@ -42,5 +42,25 @@
             </tr>
         </tbody>
     </table>   
+    <center><div class="btn-group" role="group" aria-label="...">
+    <a data-toggle="modal" data-target="#data"  class="btn btn-default">@lang('icon.edit')</a>
+    </div></center>
 </div>
+@include('employee.data')
+@endsection
+@section('scripts')
+<script>
+$("td a").click(function(event){
+    event.preventDefault();
+    $("#modalContent").html("<img src='{{asset('img/loading.gif')}}' class='img-responsive' width='content'>");
+
+    $("#modalShow").modal("toggle");
+    $.ajax({
+        url: $(this).attr("href"),
+        success: function(data){
+            $("#modalContent").html(data);
+        }
+    });
+})
+</script>
 @endsection

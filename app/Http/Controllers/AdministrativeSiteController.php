@@ -32,11 +32,19 @@ class AdministrativeSiteController extends Controller
             'course' => Course::findOrFail($id)   
         ]);
     }
-    public function student(Request $request)
+    public function preregistered(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Administrativo']);
         return view('administration.pre-registered')->with([
             'students' => Student::Preinscrito(),
+            'branches' => Branch::all()
+        ]);
+    }
+    public function student(Request $request)
+    {
+        $request->user()->authorizeRoles(['name' => 'Administrativo']);
+        return view('administration.student')->with([
+            'students' => Student::Inscrito(),
             'branches' => Branch::all()
         ]);
     }
@@ -56,8 +64,6 @@ class AdministrativeSiteController extends Controller
         ])->roles()->attach(Role::where('name', 'Estudiante')->get()->first());
         $student = Student::find($id);
         $student->update([
-            'name' => $request->name.' '.$request->lastname,
-            'birthdate' => $request->birthdate,
             'matricula' => $username,
             'status_id' => $request->status_id,
             'registration_date' => Carbon::now()

@@ -25,7 +25,7 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="list-group">
-                    <a href="{{route('sale.course')}}" class="list-group-item">@lang('menu.courses')</a>
+                    <a href="{{route('sale.list')}}" class="list-group-item">@lang('menu.courses')</a>
                 </div>
             </div>
         </div> 

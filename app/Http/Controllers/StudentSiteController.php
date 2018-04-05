@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Auth;
 use App\Student;
+use App\Branch;
 use App\User;
 use App\Course;
 use App\CourseStudent;
@@ -25,6 +26,20 @@ class StudentSiteController extends Controller
             'datos' => Student::where('matricula', Auth::user()->username)->get()->first()
         ]);
     }
+    public function edit(Request $request)
+    {
+        $request->user()->authorizeRoles(['name' => 'Estudiante']);
+        return view('student.data')->with([
+            'data' => Student::where('matricula', Auth::user()->username)->get()->first(),
+            'branches' => Branch::all()
+        ]);
+    }
+    public function update(Request $request)
+    {
+        $data = Student::where('matricula', Auth::user()->username)->get()->first()
+        ->update($request->all());
+        return redirect()->route('page.student'); 
+    }
     public function score(Request $request)
     {
         $request->user()->authorizeRoles(['name' => 'Estudiante']);
@@ -38,16 +53,7 @@ class StudentSiteController extends Controller
         $request->user()->authorizeRoles(['name' => 'Estudiante']);
         
         return view('student.schedule')->with([
-            'student' => Student::with([
-                'lists' =>  CourseStudent::with([
-                    'courses' =>function($query){
-                    $query->where([
-                        ['start_date', '<', Carbon::now()],
-                        ['finish_date', '>', Carbon::now()]
-                    ]);
-                }
-            ])->first()
-            ])
+            'student' => Student::where('matricula', Auth::user()->username)->get()->first()
         ]);
     }
     public function password(Request $request)

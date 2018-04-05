@@ -24,6 +24,19 @@ class EmployeeGeneralController extends Controller
             'datos' => Employee::where('matricula', Auth::user()->username)->get()->first()
         ]);
     }
+    public function edit(Request $request)
+    {
+        return view('employee.data')->with([
+            'data' => Employee::where('matricula', Auth::user()->username)->get()->first(),
+            'branches' => Branch::all()
+        ]);
+    }
+    public function update(Request $request)
+    {
+        $data = Employee::where('matricula', Auth::user()->username)->get()->first()
+        ->update($request->all());
+        return redirect()->route('page.employee'); 
+    }
     public function password(Request $request)
     {
         return view('employee.password')->with([
