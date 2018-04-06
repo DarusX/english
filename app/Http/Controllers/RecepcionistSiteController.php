@@ -68,4 +68,7 @@ class RecepcionistSiteController extends Controller
         $str = $n[0].$n[1].$l[0].$l[1].$b;
         return strtoupper($str);
     }
+    public function recepcionist(Request $request)
+    {
+    }
 }

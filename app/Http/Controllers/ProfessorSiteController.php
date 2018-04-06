@@ -24,6 +24,19 @@ class ProfessorSiteController extends Controller
             'datos' => Professor::where('matricula', Auth::user()->username)->get()->first()
         ]);
     }
+    public function edit(Request $request)
+    {
+        return view('professor.data')->with([
+            'data' => Professor::where('matricula', Auth::user()->username)->get()->first(),
+            'branches' => Branch::all()
+        ]);
+    }
+    public function update(Request $request)
+    {
+        $data = Professor::where('matricula', Auth::user()->username)->get()->first()
+        ->update($request->all());
+        return redirect()->route('page.professor'); 
+    }
     public function show($id)
     {
         return view('professor.list')->with([
@@ -81,5 +94,9 @@ class ProfessorSiteController extends Controller
                 return redirect('page/professors/password')->with('message', 'Credenciales incorrectas');
             }
         }
+    }
+    public function ajax(Request $request)
+    {
+        return response()->json(Professor::all());
     }
 }

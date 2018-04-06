@@ -73,4 +73,8 @@ class EmployeeGeneralController extends Controller
             }
         }
     }
+    public function ajax(Request $request)
+    {
+        return response()->json(Employee::all());
+    }
 }

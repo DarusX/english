@@ -53,6 +53,8 @@ Route::prefix('/page')->group(function(){
     Route::post('/student/updatepassword', 'StudentSiteController@updatepassword')->name('student.updatepassword');
     
     Route::get('/professor', 'ProfessorSiteController@index')->name('page.professor');
+    Route::get('/professor/data', 'ProfessorSiteController@edit')->name('professor.data');
+    Route::post('/professor/update', 'ProfessorSiteController@update')->name('professor.update');
     Route::get('/professor/schedule', 'ProfessorSiteController@schedule')->name('professor.schedule');  
     Route::get('/professor/{id}/list', 'ProfessorSiteController@show')->name('professor.list');
     Route::get('/professor/password', 'ProfessorSiteController@password')->name('professor.password');
@@ -95,3 +97,4 @@ Route::get('/ajax/recepcionist', 'RecepcionistSiteController@ajax')->name('recep
 Route::get('/ajax/administrative', 'AdministrativeSiteController@ajax')->name('administrative.ajax');
 Route::get('/ajax/student', 'StudentSiteController@ajax')->name('student.ajax');
 Route::get('/ajax/employee', 'EmployeeGeneralController@ajax')->name('employee.ajax');
+Route::get('/ajax/professor', 'ProfessorSiteController@ajax')->name('professor.ajax');
