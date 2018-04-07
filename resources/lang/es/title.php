@@ -18,6 +18,7 @@ return [
     'items' => 'Productos',    
     'level' => 'Nivel',
     'levels' => 'Niveles',  
+    'payments' => 'Pagos',
     'pre-registered' => 'Preinscritos', 
     'professor' => 'Profesor',
     'professors' => 'Profesores',

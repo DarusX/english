@@ -13,6 +13,7 @@ return [
     'employees' => 'Empleados',
     'items' => 'Productos',
     'levels' => 'Niveles',
+    'payments' => 'Pagos',
     'password' => 'Contraseña',
     'personal_information' => 'Información personal',
     'pre-registered' => 'Preinscritos',

@@ -119,5 +119,19 @@
                 </div>
             </div>
         </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen">
+                        @lang('menu.payments')
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThirteen" class="panel-collapse collapse">
+                <div class="list-group">
+                    <a href="{{route('payments.index')}}" class="list-group-item">@lang('menu.payments')</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

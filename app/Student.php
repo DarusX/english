@@ -34,6 +34,10 @@ class Student extends Model
     {
     return $this->belongsTo(Status::class);
     }
+    public function payments()
+    {
+    return $this->hasMany(Payment::class);
+    }
     public function setStatusAttribute()
     {
         if ($this->status==1) {

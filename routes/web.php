@@ -33,6 +33,7 @@ Route::resources([
     'students' => 'StudentController',
     'items' => 'ItemController',
     'employees' => 'EmployeeController',
+    'payments' => 'PaymentController',
 ]);
 Route::prefix('/report')->group(function(){ 
     Route::get('/lista/{id}', 'CourseStudentController@lista')->name('report.lista');
