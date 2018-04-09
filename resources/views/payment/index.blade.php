@@ -46,6 +46,8 @@
         </tbody>
     </table>
 </div>
+@include('payment.modal')
+@include('payment.create') 
 @endsection
 @section('scripts')
 <script>

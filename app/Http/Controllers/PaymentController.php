@@ -13,13 +13,14 @@ class PaymentController extends Controller
 {
     public function index(Request $request)
     {
-        return view('payment.index')->with(['payments' => Payment::all(),
-        'students' => Student::all()
+        return view('payment.index')->with([
+            'payments' => Payment::all(),
+            'students' => Student::all()
         ]);
     }
     public function create()
     {
-        return view('payment.todos')->with([
+        return view('payment.create')->with([
             'students' => Student::all(),
             'payments' => Payment::all(),
             ]);
@@ -49,5 +50,9 @@ class PaymentController extends Controller
     {   
         Income::find($id)->update($request->all());
         return redirect('payment.index');
+    }
+    public function ajax(Request $request)
+    {
+        return response()->json(Payment::all());
     }
 }

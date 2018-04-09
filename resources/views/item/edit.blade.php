@@ -1,48 +1,16 @@
 <div class="col-sm-12">
-    <form action="{{route('payments.update', $payment->id)}}" method="POST" role="form">
+    <form action="{{route('items.update', $item->id)}}" method="POST" role="form">
     {{csrf_field()}}
     {{method_field('PUT')}}
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Item</th>
-                <th>Discount</th>
-                <th>Price</th>
-                <th>Total_price</th>
-            </tr>
-        <tbody>
-            @foreach($payment->details as $d)
-            @isset($detail->item_id)
-            <tr>            
-                <td>{{$d->course->course}}</td>     
-                <td>{{$d->discount}}%</td>
-                <td>${{$d->course->price}}</td> 
-                <td>${{$d->priceDiscount}}</td>          
-            </tr>
-            @endisset
-            @isset($detail->course_id)
-            <tr>
-            
-                <td>Curso no. {{$d->course->CourseP}}</td>
-                <td>{{$d->discount}}%</td>
-                <td>${{$d->course->price}}</td>
-                <td>${{$d->PriceDiscount}}</td>           
-            </tr>
-            @endisset
-            @endforeach
-        </tbody>
-            <tr>   
-                <th></th>
-                <th></th>
-                <th>Total a pagar</th>
-                <th>${{$payment->Total}}</th>
-            </tr>
-            <tr>  
-                <th></th>
-                <th></th>
-                <th>Resta</th>
-                <th>${{$payment->Debit}}</th>
-            </tr>
-    </table>
+        <div class="form-group">
+            <label for="" class="required">@lang('label.name')</label>
+            <input class="form-control" name="name" value="{{$item->name}}">
+        </div>
+        <div class="form-group">
+            <label for="">@lang('label.price')</label>
+            <input class="form-control" name="price" value="{{$item->price}}">
+        </div>
+            <button type="submit" class="btn btn-default">@lang('button.save')</button>
+        </div>
     </form>
 </div>

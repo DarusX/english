@@ -99,3 +99,4 @@ Route::get('/ajax/administrative', 'AdministrativeSiteController@ajax')->name('a
 Route::get('/ajax/student', 'StudentSiteController@ajax')->name('student.ajax');
 Route::get('/ajax/employee', 'EmployeeGeneralController@ajax')->name('employee.ajax');
 Route::get('/ajax/professor', 'ProfessorSiteController@ajax')->name('professor.ajax');
+Route::get('/ajax/payments', 'PaymentController@ajax')->name('payments.ajax');
