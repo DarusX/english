@@ -28,9 +28,9 @@
             @foreach($payments as $p)
             <tbody>
                 <tr>       
-                    <td><a href="{{route('payments.show', $p->id)}}">{{$p->id}}</td>
-                    <td>${{$p->created_at}}</td>
-                    <td>${{$p->student->StudentName}}</td>
+                    <td><a href="">{{$p->id}}</td>
+                    <td>{{$p->created_at}}</td>
+                    <td>{{$p->student->StudentName}}</td>
                     <td>${{$p->total}}</td>
                     <td>${{$p->amount}}</td>
                     <td>${{$p->debit}}</td>
@@ -64,4 +64,18 @@
         });
     })
 </script>
+<script>
+    function show(){
+    var div = document.getElementById('new');
+    div.style.display = "block";    
+    }
+</script>
+<script>
+    $('#search').click(function(){
+        $('#list').load('{!!route('students.payment-student')!!}',{
+            '_token': '{!!csrf_token()!!}',
+            'name': $('#name').val()
+        });
+    });
+    </script>
 @endsection

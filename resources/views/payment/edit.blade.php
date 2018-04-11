@@ -12,7 +12,7 @@
             </tr>
         <tbody>
             @foreach($payment->details as $d)
-            @isset($detail->item_id)
+            @isset($d->item_id)
             <tr>            
                 <td>{{$d->course->course}}</td>     
                 <td>{{$d->discount}}%</td>
@@ -20,7 +20,7 @@
                 <td>${{$d->priceDiscount}}</td>          
             </tr>
             @endisset
-            @isset($detail->course_id)
+            @isset($d->course_id)
             <tr>
             
                 <td>Curso no. {{$d->course->CourseP}}</td>

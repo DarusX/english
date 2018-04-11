@@ -7,6 +7,7 @@ use App\Payment;
 use App\PaymentDetail;
 use App\Student;
 use App\Income;
+use App\Course;
 use Carbon\Carbon;
 
 class PaymentController extends Controller
@@ -27,8 +28,20 @@ class PaymentController extends Controller
     }
     public function store(Request $request)
     {       
-        $pago= Pagos::create($request->all());
-        return redirect('payment/detail/'.$payment->id);
+        $payment= Payment::create($request->all());
+        return redirect('payments/detail/'.$payment->id);
+    }
+    public function detail($id)
+    { 
+        return view('payment.detail')->with([
+            'payment' => Payment::find($id)
+            ]);
+    }
+    public function paymentdetail(Request $request)
+    {       
+        $detail= PaymentDetail::create($request->all());
+        return redirect('payments/detail/'.$request->payment_id);
+        dd($request->all());
     }
     public function show($id)
     {
@@ -54,5 +67,17 @@ class PaymentController extends Controller
     public function ajax(Request $request)
     {
         return response()->json(Payment::all());
+    }
+    public function search(Request $request)
+    {
+        return view('student/payment-student')->with([
+            'students' => Student::where('name','LIKE','%'.$request->name.'%')->get()
+            ]);
+    }
+    public function searchcourse(Request $request)
+    {
+        return view('course/search')->with([
+            'courses' => Course::where('course','LIKE','%'.$request->course.'%')->get()
+            ]);
     }
 }

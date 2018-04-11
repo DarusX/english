@@ -9,14 +9,21 @@
             </div> <!-- Cierre de modal-header -->
             <div class="modal-body">
                 <div class="row" id="modalContent">
-                    <div class="col-sm-12">
-                        <div class="col-sm-6">
-                            @lang('title.items')
+                    <div class="input-group col-sm-8 col-sm-offset-2">
+                        <input type="text" id="name" class="form-control" placeholder="Alumno">
+                        <span class="input-group-btn">
+                        <button id="search" class="btn btn-default" title="Buscar" onclick="show();">
+                            Go</button>
+                        </span> 
+                    </div><br>
+                    <form action="{{route('payments.store')}}" method="POST" role="form">
+                        {{csrf_field()}}
+                        <div class="col-sm-6 col-sm-offset-2" id="list">                                
+                        </div><br>
+                        <div class="col-sm-2 col-sm-offset-4" id="new" style="display: none;">
+                            <button type="submit" class="btn btn-default"> Pago </button>
                         </div>
-                        <div class="col-sm-6">
-                            @lang('title.courses')
-                        </div>
-                    </div>
+                    </form>                    
                 </div> <!-- Cierre row -->
             </div> <!-- Cierre de modal-body -->
         </div> <!-- Cierre de modal-content -->

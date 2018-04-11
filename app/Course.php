@@ -44,4 +44,8 @@ class Course extends Model
     {
         return $this->start_time. ' a '.$this->finish_time;
     }
+    public function getCourseInformationAttribute()
+    {
+        return $this->course.' '.$this->course_type->name.' de '.$this->course_option->name.', inicio: '.$this->start_date.' de '.$this->start_time.' a '.$this->finish_time.', Precio $'.$this->price;
+    }
 }

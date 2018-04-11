@@ -13,7 +13,7 @@ class CreateIncomesTable extends Migration
      */
     public function up()
     {
-        Schema::create('-incomes', function (Blueprint $table) {
+        Schema::create('incomes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('payment_id')->unsigned()->nullable();
             $table->double('amount')->nullable();
@@ -28,6 +28,6 @@ class CreateIncomesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('-incomes');
+        Schema::dropIfExists('incomes');
     }
 }
