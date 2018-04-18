@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CourseStudent;
 use App\Course;
+use App\Payment;
+use App\PaymentDetail;
 use PDF;
 
 class CourseStudentController extends Controller
@@ -20,12 +22,15 @@ class CourseStudentController extends Controller
     public function store(Request $request)
     {
         CourseStudent::create($request->all());
+        /*Payment::create($request->all());
+        PaymentDetail::create($request->all());*/
         return redirect()->back(); 
     }
     public function show($id)
     {
         return view('list.show')->with([
-            'course' => Course::findOrFail($id)   
+            'course' => Course::findOrFail($id), 
+            'payment' => Payment::all()  
         ]);
     }
     public function edit($id)

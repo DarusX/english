@@ -19,7 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/students/pre-registered', 'StudentController@preregistered')->name('students.pre-registered'); 
-Route::POST('/courses/search', 'PaymentController@searchcourse')->name('courses.search');
 
 Route::resources([
     'professors' => 'ProfessorController',
@@ -83,10 +82,15 @@ Route::prefix('/page')->group(function(){
     Route::post('administration/{id}/storeinscription', 'AdministrativeSiteController@storeinscription')->name('administration.storeinscription');
 });
 //Route::get('/home', 'Auth\LoginController@redirectPath')->name('home');
-Route::POST('/students/search', 'StudentController@search')->name('students.search');
-Route::POST('/students/payment-student', 'PaymentController@search')->name('students.payment-student');
-Route::get('/payments/detail/{id}', 'PaymentController@detail')->name('payments.detail');
-Route::post('/payments/detail', 'PaymentController@paymentdetail')->name('payments.detail');
+Route::post('/students/search', 'StudentController@search')->name('students.search');
+Route::post('/courses/search', 'PaymentController@searchcourse')->name('courses.search');
+Route::post('/items/search', 'PaymentController@searchitem')->name('items.search');
+Route::post('/students/payment-student', 'PaymentController@search')->name('students.payment-student');
+Route::post('/payments/storei', 'PaymentController@storei')->name('payments.storei');
+Route::get('/payments/coursedetail/{id}', 'PaymentController@detailc')->name('payments.coursedetail');
+Route::post('/payments/coursedetail', 'PaymentController@coursedetail')->name('payments.coursedetail');
+Route::get('/payments/itemdetail/{id}', 'PaymentController@detaili')->name('payments.itemdetail');
+Route::post('/payments/itemdetail', 'PaymentController@itemdetail')->name('payments.itemdetail');
 
 Route::get('/ajax/professors', 'ProfessorController@ajax')->name('professors.ajax');
 Route::get('/ajax/students', 'StudentController@ajax')->name('students.ajax');

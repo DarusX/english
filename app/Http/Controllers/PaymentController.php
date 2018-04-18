@@ -8,6 +8,7 @@ use App\PaymentDetail;
 use App\Student;
 use App\Income;
 use App\Course;
+use App\Item;
 use Carbon\Carbon;
 
 class PaymentController extends Controller
@@ -29,19 +30,41 @@ class PaymentController extends Controller
     public function store(Request $request)
     {       
         $payment= Payment::create($request->all());
-        return redirect('payments/detail/'.$payment->id);
+        return redirect('payments/coursedetail/'.$payment->id);
     }
-    public function detail($id)
+    public function storei(Request $request)
+    {       
+        $payment= Payment::create($request->all());
+        return redirect('payments/itemdetail/'.$payment->id);
+    }
+    public function detailc($id)
     { 
-        return view('payment.detail')->with([
+        return view('payment.coursedetail')->with([
             'payment' => Payment::find($id)
             ]);
     }
-    public function paymentdetail(Request $request)
+    public function coursedetail(Request $request)
     {       
         $detail= PaymentDetail::create($request->all());
-        return redirect('payments/detail/'.$request->payment_id);
+        return redirect('payments/coursedetail/'.$request->payment_id);
         dd($request->all());
+    }
+    public function detaili($id)
+    { 
+        return view('payment.itemdetail')->with([
+            'payment' => Payment::find($id)
+            ]);
+    }
+    public function itemdetail(Request $request)
+    {       
+        $detail= PaymentDetail::create($request->all());
+        return redirect('payments/itemdetail/'.$request->payment_id);
+        dd($request->all());
+    }
+    public function destroy($id)
+    {
+       PaymentDetail::destroy($id);
+        return redirect()->back();
     }
     public function show($id)
     {
@@ -61,8 +84,8 @@ class PaymentController extends Controller
     }
     public function update($id, Request $request)
     {   
-        Income::find($id)->update($request->all());
-        return redirect('payment.index');
+        $income = Income::create($request->all());
+        return redirect()->route('payments.index');
     }
     public function ajax(Request $request)
     {
@@ -78,6 +101,12 @@ class PaymentController extends Controller
     {
         return view('course/search')->with([
             'courses' => Course::where('course','LIKE','%'.$request->course.'%')->get()
+            ]);
+    }
+    public function searchitem(Request $request)
+    {
+        return view('item/search')->with([
+            'items' => Item::where('name','LIKE','%'.$request->name.'%')->get()
             ]);
     }
 }

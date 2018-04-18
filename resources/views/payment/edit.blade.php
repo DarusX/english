@@ -5,25 +5,27 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Item</th>
-                <th>Discount</th>
-                <th>Price</th>
-                <th>Total_price</th>
+                <th>@lang('head.item')</th>
+                <th>@lang('head.discount')</th>
+                <th>@lang('head.price')</th>
+                <th>@lang('head.total_price')</th>
+                <th></th>
             </tr>
         <tbody>
             @foreach($payment->details as $d)
             @isset($d->item_id)
             <tr>            
-                <td>{{$d->course->course}}</td>     
+                <td>{{$d->item->name}}</td>     
                 <td>{{$d->discount}}%</td>
-                <td>${{$d->course->price}}</td> 
-                <td>${{$d->priceDiscount}}</td>          
+                <td>${{$d->item->price}}</td> 
+                <td>${{$d->priceDiscount}}</td>   
+                <td></td>         
             </tr>
             @endisset
             @isset($d->course_id)
             <tr>
             
-                <td>Curso no. {{$d->course->CourseP}}</td>
+                <td>Curso no. {{$d->course->course}}</td>
                 <td>{{$d->discount}}%</td>
                 <td>${{$d->course->price}}</td>
                 <td>${{$d->PriceDiscount}}</td>           
@@ -34,15 +36,28 @@
             <tr>   
                 <th></th>
                 <th></th>
-                <th>Total a pagar</th>
+                <th>@lang('head.total_payment')</th>
                 <th>${{$payment->Total}}</th>
             </tr>
             <tr>  
                 <th></th>
                 <th></th>
-                <th>Resta</th>
+                <th>@lang('head.debit')</th>
                 <th>${{$payment->Debit}}</th>
             </tr>
     </table>
+    <div class="row">
+        {{csrf_field()}}
+        <input class="hidden" name="payment_id" value="{{$payment->id}}" id="payment_id">
+        <div class="col-sm-2 col-sm-offset-3">
+            <label for=""><b>@lang('label.amount')<b></label>
+        </div>
+        <div class="col-sm-3">
+            <input type="text" name="amount" class="form-control">
+        </div>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-default"> <i class="fa fa-check-square-o fa-lg" aria-hidden="true"></i> Pagar</button>
+        </div>
+    </div>
     </form>
 </div>

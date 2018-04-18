@@ -68,7 +68,7 @@ class AdministrativeSiteController extends Controller
             'status_id' => $request->status_id,
             'registration_date' => Carbon::now()
         ]);
-        return redirect()->route('administration.student');
+        return redirect()->route('payments.index');
     }
     public function username($data){
         $n = $data->name;

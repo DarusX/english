@@ -23,6 +23,7 @@ return [
     'debit' => 'Adeudo',
     'department' => 'Departamento',
     'description' => 'Descripción',
+    'discount' => 'Descuento',
     'duration' => 'Duración',
     'email' => 'Correo electrónico',
     'emergency_phone' => 'Teléfono de emergencia',
@@ -34,6 +35,7 @@ return [
     'homework' => 'Tarea',
     'id' => 'Matricula',
     'information' => 'Información',
+    'item' => 'Producto',
     'level' => 'Nivel',
     'mobile' => 'Celular',
     'name' => 'Nombre',
@@ -48,5 +50,7 @@ return [
     'status' => 'Estado',
     'student' => 'Estudiante',
     'total' => 'Total',
+    'total_payment' => 'Total a pagar',
+    'total_price' => 'Precio total',
     'written_exam' => 'Examen escrito',
 ];

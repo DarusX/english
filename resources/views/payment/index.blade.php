@@ -28,11 +28,11 @@
             @foreach($payments as $p)
             <tbody>
                 <tr>       
-                    <td><a href="">{{$p->id}}</td>
+                    <td><a href="">{{$p->id}}</a></td>
                     <td>{{$p->created_at}}</td>
                     <td>{{$p->student->StudentName}}</td>
                     <td>${{$p->total}}</td>
-                    <td>${{$p->amount}}</td>
+                    <td>${{$p->AmountTotal}}</td>
                     <td>${{$p->debit}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
@@ -65,9 +65,30 @@
     })
 </script>
 <script>
-    function show(){
-    var div = document.getElementById('new');
-    div.style.display = "block";    
+    function showgeneral(idButton){
+    var div1 = document.getElementById('ca');
+    var div2 = document.getElementById('i');
+    var div3 = document.getElementById('ia');
+    var div4 = document.getElementById('c');
+    var div5 = document.getElementById('newca');
+    var div6 = document.getElementById('newia');
+    switch(idButton)
+        {
+            case 1:
+            div1.style.display= "block";
+            div2.style.display= "none";
+            break;
+            case 2:
+            div3.style.display= "block";
+            div4.style.display= "none";
+            break;
+            case 3:
+            div5.style.display= "block";
+            break;
+            case 4:
+            div6.style.display= "block";
+            break;
+        }
     }
 </script>
 <script>
@@ -77,5 +98,13 @@
             'name': $('#name').val()
         });
     });
-    </script>
+</script>
+<script>
+    $('#search2').click(function(){
+        $('#list2').load('{!!route('students.payment-student')!!}',{
+            '_token': '{!!csrf_token()!!}',
+            'name': $('#name').val()
+        });
+    });
+</script>
 @endsection
