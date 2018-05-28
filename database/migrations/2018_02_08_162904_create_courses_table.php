@@ -27,6 +27,7 @@ class CreateCoursesTable extends Migration
             $table->integer('professor_id')->unsigned()->nullable();
             $table->integer('branch_id')->unsigned()->nullable();
             $table->double('price')->nullable();
+            $table->integer('course_count')->nullable();
             $table->timestamps();
         });
     }

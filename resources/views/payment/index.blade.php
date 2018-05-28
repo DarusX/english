@@ -36,8 +36,8 @@
                     <td>${{$p->debit}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
-                            <a href="{{route('payments.destroy', $p->id)}}" class="btn btn-default">@lang('icon.delete')</a>
-                            <a href="{{route('payments.edit', $p->id)}}" class="btn btn-default">@lang('icon.edit')</a>
+                            <a href="{{route('payments.destroy', $p->id)}}" class="btn btn-default">@lang('icon.delete')</a>                            
+                            <a href="{{route('payments.edit', $p->id)}}" class="btn btn-default">@lang('icon.edit')</a>                             
                         </div>
                     </td>
                 <tr>

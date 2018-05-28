@@ -16,8 +16,8 @@ class CourseStudentController extends Controller
         $request->user()->authorizeRoles(['name' => 'Administrador']);
         $request->user()->authorizeRoles(['name' => 'Jefe de académico']);
         return view('list.index')->with([
-            'courses' => Course::all()]
-        );
+            'courses' => Course::all(),
+        ]);
     }
     public function store(Request $request)
     {

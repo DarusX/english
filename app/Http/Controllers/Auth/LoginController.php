@@ -53,8 +53,14 @@ class LoginController extends Controller
                 ['name'=>"Administrativo"])
                  ||
                 (
-                    ['name'=> "Jefe"])
-                    )
+                    ['name'=> "Jefe de ventas"])
+                    ||
+                    (
+                        ['name'=> "Jefe de administración"])
+                        ||
+                        (
+                            ['name'=> "Jefe de académico"])
+                            )
         {
             //$data = Professor::where('matricula', Auth::user()->username)->get()->first();
             return '/page/employee';

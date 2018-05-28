@@ -19,6 +19,7 @@
                 <th>@lang('head.classroom')</th>
                 <th>@lang('head.professor')</th>
                 <th>@lang('head.price')</th>
+                <th>@lang('head.total_students')</th>
                 <th>@lang('head.actions')</th>
             </tr>
         </thead>
@@ -33,8 +34,9 @@
                     <td>{{$c->date}}</td>
                     <td>{{$c->schedule}}</td>
                     <td>{{$c->classroom->number}}</td>
-                    <td>{{$c->professor->teacher}}</td>
+                    <td>{{$c->professor->teacher}}</td>                    
                     <td>${{$c->price}}</td>
+                    <td>{{$c->course_count}}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="...">
                             <a href="{{route('lists.show', $c->id)}} " class="btn btn-default">@lang('icon.show')</a>

@@ -2,6 +2,20 @@
     <form action="{{route('payments.update', $payment->id)}}" method="POST" role="form">
     {{csrf_field()}}
     {{method_field('PUT')}}
+    <div class="row">
+        <div class="col-sm-2">
+            <label for="">@lang('label.student')</label>
+        </div>
+        <div class="col-sm-5">
+            <input type="text"  value="{{$payment->student->StudentName}}" class="form-control" disabled>
+        </div>
+        <div class="col-sm-1 col-sm-offset-1">
+            <label for="">@lang('label.date')</label>
+        </div>
+        <div class="col-sm-3">
+            <input type="text"  value="{{$payment->Date}}" class="form-control" disabled>
+        </div>
+    </div><br>
     <table class="table">
         <thead>
             <tr>
